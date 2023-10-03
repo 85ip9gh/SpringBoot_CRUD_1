@@ -1,12 +1,9 @@
-package service;
+package crud_1.carSale;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import entity.Car;
-import repository.CarRepository;
 
 @Service
 public class CarService {
@@ -42,7 +39,7 @@ public class CarService {
 		return carRepository.findByType(type);
 	}
 	
-	public Car getCarByAge(String age) {
+	public Car getCarByAge(int age) {
 		return carRepository.findByAge(age);
 	}
 	

@@ -1,0 +1,12 @@
+.header-component{
+  display: flex;
+  gap: 10%;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-link,
+.login-link,
+.create-account-link{
+  text-decoration: none;
+}

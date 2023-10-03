@@ -1,9 +1,9 @@
-package repository;
+package crud_1.carSale;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import entity.Car;
-
+@Repository
 public interface CarRepository extends JpaRepository<Car, Integer>{
 
 	Car findByBrand(String brand);
@@ -12,5 +12,5 @@ public interface CarRepository extends JpaRepository<Car, Integer>{
 
 	Car findByType(String type);
 
-	Car findByAge(String age);
+	Car findByAge(int age);
 }
