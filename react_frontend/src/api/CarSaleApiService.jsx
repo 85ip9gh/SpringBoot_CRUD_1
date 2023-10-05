@@ -1,6 +1,12 @@
 import { apiClient } from "./ApiBaseURL";
 
-const basicToken = 'Basic ' + window.btoa('sam:man');
+// const basicToken = 'Basic ' + window.btoa('sam:man');
+
+export const basicAuthentication = (token) => apiClient.get('/basic-auth',{
+  headers:{
+    Authorization: token
+  } 
+});
 
 export const retrieveCars = () => apiClient.get('/cars');
 
@@ -18,14 +24,14 @@ export const listCarForSale = (brand, color, type, age) => apiClient.post('/addC
   }
 );
 
-apiClient.interceptors.request.use(
-  (config) => {
-      console.log('intercepting');
-      config.headers.Authorization = basicToken;
-      return config;
-    }
+// apiClient.interceptors.request.use(
+//   (config) => {
+//       console.log('intercepting');
+//       config.headers.Authorization = basicToken;
+//       return config;
+//     }
     
-  )
+//   )
 
 export const createNewUser = (newUserName, newPassword) => apiClient.post('/createUser',{
   "name": `${newUserName}`

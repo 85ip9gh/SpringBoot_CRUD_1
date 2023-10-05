@@ -1,5 +1,6 @@
 package crud_1.carSale;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +15,30 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class carController {
+public class CarSaleController {
 
 	@Autowired
 	private CarService carService;
 	
+	@Autowired
+	private UserService userService;
+	
+	@GetMapping("/basic-auth")
+	public String basicAuthentication() {
+		return "Success";
+	}
+	
 	@PostMapping("/addCar")
-	public Car addCar(@RequestBody Car car) {
+	public Car addCar(@RequestBody Car car, Principal principal) {
+		User currentUser =  userService.getUserByName(principal.getName());
+		car.setUser(currentUser);
+		
 		return carService.saveCar(car);
+	}
+	
+	@PostMapping("/addUser")
+	public User addUser(@RequestBody User user) {
+		return userService.saveUser(user);
 	}
 	
 	@PostMapping("/addAllCars")
@@ -31,7 +48,18 @@ public class carController {
 
 	@GetMapping("/cars")
 	public List<Car> getAllCars(){
-		return carService.getAllCars();
+		
+		List<Car> allCars = carService.getAllCars();
+		
+		allCars.forEach(car -> {
+			if(car.getUser() != null) {
+				car.setSeller(car.getUser().getName());
+			} else {
+				car.setSeller("Anonymous");
+			}
+		} );
+		
+		return allCars;
 	}
 	
 	@GetMapping("/cars/{id}")

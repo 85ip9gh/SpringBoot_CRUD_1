@@ -1,9 +1,13 @@
 package crud_1.carSale;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,6 +25,20 @@ public class Car {
 	private String type;
 	private int age;
 	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JsonIgnore
+	private User user;
+	
+	private String seller;
+	
+	public void setSeller(String seller) {
+		this.seller = seller;
+	}
+	
+	public String getSeller() {
+		return seller;
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -28,6 +46,7 @@ public class Car {
 	public String getBrand() {
 		return brand;
 	}
+	
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
@@ -48,6 +67,14 @@ public class Car {
 	}
 	public void setAge(int age) {
 		this.age = age;
+	}
+	
+	public User getUser() {
+		return user;
+	}
+	
+	public void setUser(User user) {
+		this.user = user;
 	}
 	
 }

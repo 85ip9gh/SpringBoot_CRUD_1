@@ -7,7 +7,9 @@ export default function HomeComponent(){
 
    
     useEffect(
-    () => refreshCars(), []
+      () => {
+        refreshCars()
+      }, []
     )
 
     function refreshCars(){
@@ -28,6 +30,7 @@ export default function HomeComponent(){
             <th>Color</th>
             <th>Type</th>
             <th>Age</th>
+            <th>Seller</th>
           </tr>
         </thead>
 
@@ -41,6 +44,7 @@ export default function HomeComponent(){
                   <td>{car.color}</td>
                   <td>{car.type}</td>
                   <td>{car.age}</td>
+                  <td>{car.seller}</td>
                   <td> <button>Check Out</button> </td>
                   <td> <button>Update</button> </td>
                 </tr>
