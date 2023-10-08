@@ -10,6 +10,11 @@ export const basicAuthentication = (token) => apiClient.get('/basic-auth',{
 
 export const retrieveCars = () => apiClient.get('/cars');
 
+export const createUser = (name, password) => apiClient.post('/addUser',{
+  "name": `${name}`,
+    "password": `${password}`,
+});
+
 export const retrieveMyCars = (username) => apiClient.get(`/cars/${username}`);
 
 export const removeCar = (carId) => apiClient.delete(`/deleteCar/${carId}`);

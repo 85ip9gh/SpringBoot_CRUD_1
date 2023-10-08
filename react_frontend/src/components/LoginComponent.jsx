@@ -20,13 +20,18 @@ export default function LoginComponent(){
   }
 
    async function submit(){
-    await authContext.login(username, password).then(()=>navigate("/home")).catch(error => console.log("loginSubmitError"))
+     await authContext.login(username, password)
+     .then(() => {
+      navigate("/home")
+     })
+     .catch(error => console.log(error));
+    
   }
 
 
   return(
 
-    <div className="loginComponent" > 
+    <div className="loginComponent" >
       <form>
 
         <div>

@@ -44,6 +44,7 @@ public class User implements UserDetails{
 	public User(User user) {
 		this.name = user.getName();
 		this.password = user.getPassword();
+		
 	}
 	
 	public User(String name, List<Car> myCars) {
