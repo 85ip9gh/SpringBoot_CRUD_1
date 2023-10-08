@@ -2,10 +2,9 @@ package crud_1.carSale;
 
 import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,8 +29,8 @@ public class CarSaleController {
 	
 	@PostMapping("/addCar")
 	public Car addCar(@RequestBody Car car, Principal principal) {
-		User currentUser =  userService.getUserByName(principal.getName());
-		car.setUser(currentUser);
+		Optional<User> currentUser =  userService.getUserByName(principal.getName());
+		car.setUser(currentUser.get());
 		
 		return carService.saveCar(car);
 	}
@@ -48,7 +47,6 @@ public class CarSaleController {
 
 	@GetMapping("/cars")
 	public List<Car> getAllCars(){
-		
 		List<Car> allCars = carService.getAllCars();
 		
 		allCars.forEach(car -> {
@@ -60,6 +58,11 @@ public class CarSaleController {
 		} );
 		
 		return allCars;
+	}
+	
+	@GetMapping("/users")
+	public List<User> getAllUsers(){
+		return userService.getAllUsers();
 	}
 	
 	@GetMapping("/cars/{id}")
@@ -95,5 +98,10 @@ public class CarSaleController {
 	@DeleteMapping("/deleteCar/{id}")
 	public String deleteCar(@PathVariable int id) {
 		return carService.deleteCar(id);
+	}
+	
+	@DeleteMapping("/deleteUser/{id}")
+	public String deleteUser(@PathVariable int id) {
+		return userService.deleteUserById(id);
 	}
 }
