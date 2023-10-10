@@ -33,7 +33,6 @@ public class User implements UserDetails{
 	private String roles = "ROLE_USER";
 
 	@OneToMany(mappedBy = "user")
-	@JsonIgnore
 	public List<Car> myCars = new ArrayList<>();
 	
 	public User() {

@@ -28,12 +28,8 @@ public class Car {
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JsonIgnore
 	private User user;
-	
-	private String seller;
-	
-	public void setSeller(String seller) {
-		this.seller = seller;
-	}
+
+	private String seller = (user != null) ? user.getName() : "Anonymous";
 	
 	public String getSeller() {
 		return seller;
@@ -75,6 +71,7 @@ public class Car {
 	
 	public void setUser(User user) {
 		this.user = user;
+		this.seller = user.getName();
 	}
 	
 }

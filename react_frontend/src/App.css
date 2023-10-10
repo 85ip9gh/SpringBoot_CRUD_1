@@ -2,11 +2,29 @@
   display: flex;
   gap: 10%;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 100px;
+  background-color: rgb(177, 212, 241);
 }
 
-.home-link,
-.login-link,
-.create-account-link{
+.link{
   text-decoration: none;
+}
+
+.car-list{
+  table-layout: fixed;
+  width: 80%;
+}
+
+th,
+td{
+  text-align: center;
+}
+
+.btn{
+  height: 50px;
+  width: 150px;
+  .unlist-btn{
+    
+  }
 }

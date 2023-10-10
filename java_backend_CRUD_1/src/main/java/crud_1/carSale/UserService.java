@@ -51,6 +51,10 @@ public class UserService implements UserDetailsService{
 		return "removed User with id: " + id;
 	}
 	
+	public List<Car> getUserCars(String username){
+		return userRepository.findByName(username).get().getMyCars();
+	}
+	
 	public User updateUser(User user) {
 		User currentUser = userRepository.findById(user.getId()).orElse(null);
 

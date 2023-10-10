@@ -29,8 +29,7 @@ public class CarSaleController {
 	
 	@PostMapping("/addCar")
 	public Car addCar(@RequestBody Car car, Principal principal) {
-		Optional<User> currentUser =  userService.getUserByName(principal.getName());
-		car.setUser(currentUser.get());
+		car.setUser(userService.getUserByName(principal.getName()).get());
 		
 		return carService.saveCar(car);
 	}
@@ -49,20 +48,17 @@ public class CarSaleController {
 	public List<Car> getAllCars(){
 		List<Car> allCars = carService.getAllCars();
 		
-		allCars.forEach(car -> {
-			if(car.getUser() != null) {
-				car.setSeller(car.getUser().getName());
-			} else {
-				car.setSeller("Anonymous");
-			}
-		} );
-		
 		return allCars;
 	}
 	
 	@GetMapping("/users")
 	public List<User> getAllUsers(){
 		return userService.getAllUsers();
+	}
+	
+	@GetMapping("/users/cars")
+	public List<Car> getMyCars(Principal principal){
+		return userService.getUserCars(principal.getName());
 	}
 	
 	@GetMapping("/cars/{id}")
@@ -96,8 +92,13 @@ public class CarSaleController {
 	}
 	
 	@DeleteMapping("/deleteCar/{id}")
-	public String deleteCar(@PathVariable int id) {
+	public String removeCarFromMyList(@PathVariable int id) {
 		return carService.deleteCar(id);
+	}
+	
+	@PutMapping("/cars/unlist/users/{username}/cars/{id}")
+	public Car unlistCar(@PathVariable String username, @PathVariable int id) {
+		return carService.changeCarUser(userService.getUserByName(username).get(), id);
 	}
 	
 	@DeleteMapping("/deleteUser/{id}")

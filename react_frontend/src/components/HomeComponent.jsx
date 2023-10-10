@@ -1,8 +1,15 @@
 import { useEffect, useState } from "react"
 import { retrieveCars } from "../api/CarSaleApiService";
+import { useAuthContext } from "./security/AuthProvider";
+import toyota from '../images/toyota.jpeg';
+import audi from '../images/audi.jpeg';
+import ferrari from '../images/ferrari.jpeg';
+import lamborghini from '../images/lamborghini.jpeg';
 
 export default function HomeComponent(){
 
+
+  const authContext = useAuthContext();
     const [cars, setCars] = useState([]);
 
    
@@ -22,9 +29,10 @@ export default function HomeComponent(){
 
     return(
         <div className="container">
-      <table className="carList">
+      <table className="car-list">
         <thead>
           <tr>
+            <th>Image</th>
             <th>ID</th>
             <th>Brand</th>
             <th>Color</th>
@@ -39,14 +47,46 @@ export default function HomeComponent(){
             cars.map(
               car => (
                 <tr key={car.id}>
+                  {(car.brand == 'toyota') ?
+                  <td>
+                    <img src={toyota} />
+                  </td>
+                    :
+                    ((car.brand == 'audi')) ?
+
+                  <td>
+                    <img src={audi} />
+                  </td>
+                  
+                  :
+
+                  ((car.brand == 'lamborghini')) ?
+
+                  <td>
+                    <img src={lamborghini} />
+                  </td>
+                  
+                  :
+
+                  <td>
+                    <img src={ferrari} />
+                  </td>
+
+                  }
+
                   <td>{car.id}</td>
                   <td>{car.brand}</td>
                   <td>{car.color}</td>
                   <td>{car.type}</td>
                   <td>{car.age}</td>
                   <td>{car.seller}</td>
-                  <td> <button>Check Out</button> </td>
-                  <td> <button>Update</button> </td>
+                  
+                  {(car.seller == authContext.user) ? 
+                    <td> <button className="btn car-unlist-btn">Unlist</button> </td>
+                    : 
+                      <td> <button className="btn car-buy-btn">Buy</button> </td>                 
+                  }
+                  
                 </tr>
               )
             )

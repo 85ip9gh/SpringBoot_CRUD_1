@@ -15,6 +15,11 @@ public class CarService {
 		return carRepository.save(car);
 	}
 	
+	public Car changeCarUser(User user, int id) {
+		carRepository.findById(id).get().setUser(user);
+		return saveCar(carRepository.findById(id).get());
+	}
+	
 	public List<Car> saveAllCars(List<Car> cars) {
 		return carRepository.saveAll(cars);
 	}
