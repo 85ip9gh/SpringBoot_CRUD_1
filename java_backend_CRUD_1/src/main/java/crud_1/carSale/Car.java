@@ -24,12 +24,21 @@ public class Car {
 	private String color;
 	private String type;
 	private int age;
+	private boolean selling = false;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JsonIgnore
 	private User user;
 
 	private String seller = (user != null) ? user.getName() : "Anonymous";
+	
+	public boolean getSelling() {
+		return selling;
+	}
+	
+	public void setSelling(boolean bool) {
+		this.selling = bool;
+	}
 	
 	public String getSeller() {
 		return seller;

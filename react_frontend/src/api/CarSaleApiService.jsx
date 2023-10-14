@@ -15,6 +15,12 @@ export const createUser = (name, password) => apiClient.post('/addUser',{
     "password": `${password}`,
 });
 
+export const buyCar = (id) => apiClient.put(`/cars/${id}/buy`)
+
+export const sellCar = (id) => apiClient.put(`/cars/${id}/selling`)
+
+export const unlistCar = (id) => apiClient.put(`/cars/${id}/unlist`)
+
 export const retrieveMyCars = () => apiClient.get(`/users/cars`);
 
 export const removeCar = (carId) => apiClient.delete(`/deleteCar/${carId}`);

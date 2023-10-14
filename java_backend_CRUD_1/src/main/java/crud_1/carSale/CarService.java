@@ -15,17 +15,29 @@ public class CarService {
 		return carRepository.save(car);
 	}
 	
-	public Car changeCarUser(User user, int id) {
-		carRepository.findById(id).get().setUser(user);
-		return saveCar(carRepository.findById(id).get());
+	public Car changeCarUser(User user, int carId) {
+		carRepository.findById(carId).get().setUser(user);
+		return saveCar(carRepository.findById(carId).get());
 	}
 	
-	public List<Car> saveAllCars(List<Car> cars) {
-		return carRepository.saveAll(cars);
+	public List<Car> addAllCars(List<Car> listOfCars){
+		return carRepository.saveAll(listOfCars);
+	}
+	
+	public List<Car> saveAllCars() {
+		return carRepository.saveAll(carRepository.findAll());
 	}
 	
 	public List<Car> getAllCars(){
 		return carRepository.findAll();
+	}
+	
+	public void updateSellingCar(int id, boolean sell) {
+		
+		Car currentCar = carRepository.findById(id).get();
+		
+		currentCar.setSelling(sell);
+		carRepository.save(currentCar);
 	}
 	
 	public Car getCarById(int id) {

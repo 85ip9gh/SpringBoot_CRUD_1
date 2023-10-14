@@ -19,12 +19,19 @@ export default function LoginComponent(){
     setPassword(event.target.value);
   }
 
-   async function submit(){
-     await authContext.login(username, password)
-     .then(() => {
-      navigate("/home")
-     })
-     .catch(error => console.log(error));
+  async function submit(){
+     const loginResponse = await authContext.login(username, password);
+
+      console.log("LOGIN RESPONSE: " + loginResponse)
+      if(loginResponse == false){
+
+        document.getElementById("error-message").innerHTML = "Cannot connect to backend API!";        
+        console.log("Cannot connect to backend API!")
+      } else {
+        navigate("/home");
+      }
+
+ 
     
   }
 
@@ -32,9 +39,11 @@ export default function LoginComponent(){
   return(
 
     <div className="loginComponent" >
-      <form>
+      <h2 id="error-message">
 
-        <div>
+      </h2>
+      <form>
+        <div id="username-div">
           <label name="username" >Username: </label>
           <input name="username"  type="text" value={username} onChange={handleUsernameChange}></input>
         </div>

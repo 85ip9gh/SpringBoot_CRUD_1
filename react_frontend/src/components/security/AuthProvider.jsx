@@ -17,7 +17,7 @@ export default function AuthProvider({ children }) {
         const basicAuthToken = 'Basic ' + window.btoa(username + ":" + password)
 
         await basicAuthentication(basicAuthToken).then(
-            response =>{
+            (response) =>{
               console.log(response)
       
               if(response.status == 200){
@@ -33,7 +33,7 @@ export default function AuthProvider({ children }) {
                       }
                 )   
                 console.log("check2");  
-                return true;
+                return "Sucess!";
               }else{
                 console.log("check3");
                 setAuthenticated(false);
@@ -42,8 +42,11 @@ export default function AuthProvider({ children }) {
                 return false;
               }
             } 
-             
-              ).catch(error => console.log(error))
+              ).catch((error) => {
+                console.log(error);
+              } )
+
+          return false;
         }
 
     function logout(){

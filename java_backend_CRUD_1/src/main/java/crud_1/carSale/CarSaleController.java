@@ -26,6 +26,17 @@ public class CarSaleController {
 	public String basicAuthentication() {
 		return "Success";
 	}
+
+	@GetMapping("/cars")
+	public List<Car> getAllCars(){
+		List<Car> allCars = carService.getAllCars();
+		return allCars;
+	}
+	
+	@GetMapping("/users")
+	public List<User> getAllUsers(){
+		return userService.getAllUsers();
+	}
 	
 	@PostMapping("/addCar")
 	public Car addCar(@RequestBody Car car, Principal principal) {
@@ -41,20 +52,9 @@ public class CarSaleController {
 	
 	@PostMapping("/addAllCars")
 	public List<Car> addAllCar(@RequestBody List<Car> carList) {
-		return carService.saveAllCars(carList);
+		return carService.addAllCars(carList);
 	}
 
-	@GetMapping("/cars")
-	public List<Car> getAllCars(){
-		List<Car> allCars = carService.getAllCars();
-		
-		return allCars;
-	}
-	
-	@GetMapping("/users")
-	public List<User> getAllUsers(){
-		return userService.getAllUsers();
-	}
 	
 	@GetMapping("/users/cars")
 	public List<Car> getMyCars(Principal principal){
@@ -86,9 +86,24 @@ public class CarSaleController {
 		return carService.getCarByAge(age);
 	}
 	
+	@PutMapping("/cars/{id}/buy")
+	public Car buyCar(Principal principal, @PathVariable int carId) {
+		return carService.changeCarUser(userService.getUserByName(principal.getName()).get(), carId);
+	}
+	
 	@PutMapping("/updateCar")
 	public Car updateCar(@RequestBody Car car) {
 		return carService.updateCar(car);
+	}
+	
+	@PutMapping("/cars/{id}/selling")
+	public void sellCar(@PathVariable int id) {
+		carService.updateSellingCar(id, true);
+	}
+	
+	@PutMapping("/cars/{id}/unlist")
+	public void unlistCar(@PathVariable int id) {
+		carService.updateSellingCar(id, false);
 	}
 	
 	@DeleteMapping("/deleteCar/{id}")

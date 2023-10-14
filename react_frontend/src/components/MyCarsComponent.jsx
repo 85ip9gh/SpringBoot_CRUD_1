@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { retrieveMyCars } from "../api/CarSaleApiService";
+import { listCarForSale, retrieveMyCars, sellCar } from "../api/CarSaleApiService";
 import { useAuthContext } from "./security/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 export default function MyCarsComponent(){
     const authContext = useAuthContext();
     const [cars, setCars] = useState([]);
+    const navigate = useNavigate();
 
    
     useEffect(
@@ -21,13 +23,17 @@ export default function MyCarsComponent(){
       }).catch(error => console.log(error))
     }
 
-    function updateCar(){
-
+    async function sellCarFunction(id){
+      await sellCar(id)
+      .then(()=>{
+        refreshCars();
+      })
+      .catch(console.log('error'))
     }
    
     return(
         <div className="container">
-      <table className="carList">
+      <table className="car-list">
         <thead>
           <tr>
             <th>ID</th>
@@ -43,6 +49,7 @@ export default function MyCarsComponent(){
           {
             cars.map(
               car => (
+                (car.selling == false) ?
                 <tr key={car.id}>
                   <td>{car.id}</td>
                   <td>{car.brand}</td>
@@ -50,8 +57,9 @@ export default function MyCarsComponent(){
                   <td>{car.type}</td>
                   <td>{car.age}</td>
                   <td>{car.seller}</td>
-                <td><button className="car-update-btn">List for Sale</button></td>
+                <td><button className="car-update-btn" onClick={() => sellCarFunction(car.id)}>List for Sale</button></td>
                 </tr>
+                : <p></p>
               )
             )
           }
