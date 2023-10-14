@@ -86,9 +86,9 @@ public class CarSaleController {
 		return carService.getCarByAge(age);
 	}
 	
-	@PutMapping("/cars/{id}/buy")
-	public Car buyCar(Principal principal, @PathVariable int carId) {
-		return carService.changeCarUser(userService.getUserByName(principal.getName()).get(), carId);
+	@PutMapping("/cars/{carID}/buy")
+	public Car buyCar(@PathVariable int carID, Principal principal) {
+		return carService.changeCarUser(userService.getUserByName(principal.getName()).get(), carID);
 	}
 	
 	@PutMapping("/updateCar")

@@ -19,20 +19,10 @@ export default function LoginComponent(){
     setPassword(event.target.value);
   }
 
-  async function submit(){
-     const loginResponse = await authContext.login(username, password);
+   async function submit(){
+    const loginReply = await authContext.login(username, password);
 
-      console.log("LOGIN RESPONSE: " + loginResponse)
-      if(loginResponse == false){
-
-        document.getElementById("error-message").innerHTML = "Cannot connect to backend API!";        
-        console.log("Cannot connect to backend API!")
-      } else {
-        navigate("/home");
-      }
-
- 
-    
+    navigate("/home");
   }
 
 

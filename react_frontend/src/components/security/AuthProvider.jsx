@@ -12,11 +12,11 @@ export default function AuthProvider({ children }) {
     const [authenticated, setAuthenticated] = useState(false);
     const [token, setToken] = useState();
 
-    async function login(username, password){
+     async function login(username, password){
 
         const basicAuthToken = 'Basic ' + window.btoa(username + ":" + password)
 
-        await basicAuthentication(basicAuthToken).then(
+       const loginResponse = basicAuthentication(basicAuthToken).then(
             (response) =>{
               console.log(response)
       
@@ -33,20 +33,19 @@ export default function AuthProvider({ children }) {
                       }
                 )   
                 console.log("check2");  
-                return "Sucess!";
               }else{
                 console.log("check3");
                 setAuthenticated(false);
                 setUser(null);
                 setToken(null);
-                return false;
               }
             } 
               ).catch((error) => {
                 console.log(error);
               } )
 
-          return false;
+              console.log("login Response " + loginResponse)
+              return await loginResponse;
         }
 
     function logout(){
