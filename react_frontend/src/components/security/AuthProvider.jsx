@@ -11,6 +11,10 @@ export default function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
     const [authenticated, setAuthenticated] = useState(false);
     const [token, setToken] = useState();
+    const [type, setType] = useState();
+    const [brand, setBrand] = useState();
+    const [color, setColor] = useState();
+    const [age, setAge] = useState();
 
      async function login(username, password){
 
@@ -55,7 +59,7 @@ export default function AuthProvider({ children }) {
     }
   
       return (
-          <AuthContext.Provider value={{ user, login, logout, authenticated, setAuthenticated, token }}>
+          <AuthContext.Provider value={{ user, login, logout, authenticated, setAuthenticated, token, type, setType, brand, setBrand, age, setAge, color, setColor }}>
               {children}
           </AuthContext.Provider>
       )

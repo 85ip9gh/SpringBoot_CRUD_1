@@ -5,6 +5,7 @@ import LoginComponent from './components/LoginComponent';
 import CreateAccountComponent from './components/CreateAccountComponent';
 import MyCarsComponent from './components/MyCarsComponent';
 import SellCarComponent from './components/SellCarComponent';
+import UpdateCarComponent from './components/UpdateCarComponent';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path='/my-cars' element={<MyCarsComponent/>} />
           <Route path='/create-user' element={<CreateAccountComponent/>} />
           <Route path='/sell-car' element={<SellCarComponent/>} />
+          <Route path='/update-car' element={<UpdateCarComponent/>} />
         </Routes>
     </BrowserRouter>
 
