@@ -12,7 +12,6 @@ function App() {
   return (
     <BrowserRouter>
       <HeaderComponent/>
-
         <Routes>
           <Route path='/login' element={<LoginComponent/>} />
           <Route path='/home' element={<HomeComponent/>} />

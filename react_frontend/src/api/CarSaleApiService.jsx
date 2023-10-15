@@ -31,7 +31,7 @@ export const unlistCar = (id) => apiClient.put(`/cars/${id}/unlist`)
 
 export const retrieveMyCars = () => apiClient.get(`/users/cars`);
 
-export const removeCar = (carId) => apiClient.delete(`/deleteCar/${carId}`);
+export const removeCar = (carID) => apiClient.delete(`/deleteCar/${carID}`);
 
 export const searchCarByBrand = (carBrand) => apiClient.get(`/cars/${carBrand}`);
 

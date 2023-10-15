@@ -80,7 +80,7 @@ export default function UpdateCarComponent(){
 
         <div>
             <label name="age">Age: </label>
-            <input name="age" type="number" value={age} onChange={handleAgeChange}></input>
+            <input name="age" type="number" min={0} value={age} onChange={handleAgeChange}></input>
         </div>
 
         <button type="button" onClick={submit} >Submit</button>

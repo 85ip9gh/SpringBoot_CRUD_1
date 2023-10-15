@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { listCarForSale, retrieveMyCars, sellCar } from "../api/CarSaleApiService";
+import { listCarForSale, removeCar, retrieveMyCars, sellCar } from "../api/CarSaleApiService";
 import { useAuthContext } from "./security/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
@@ -23,8 +23,8 @@ export default function MyCarsComponent(){
       }).catch(error => console.log(error))
     }
 
-    async function sellCarFunction(id){
-      await sellCar(id)
+    async function sellCarFunction(carID){
+      await sellCar(carID)
       .then(()=>{
         refreshCars();
       })
@@ -38,6 +38,13 @@ export default function MyCarsComponent(){
       authContext.setType(type);
       authContext.setAge(age);
       navigate("/update-car")
+    }
+
+    function removeCarFunction(carID){
+      removeCar(carID).then(()=>{
+        refreshCars();
+      })
+      .catch(error => console.log(error));
     }
    
     return(
@@ -68,6 +75,7 @@ export default function MyCarsComponent(){
                   <td>{car.seller}</td>
                 <td><button className="car-list-for-sale-btn" onClick={() => sellCarFunction(car.id)}>List for Sale</button></td>
                 <td><button className="car-update-btn" onClick={() => updateCarFunction(car.id, car.brand, car.color,car.type, car.age)}>Update Car</button></td>
+                <td><button className="car-remove-btn" onClick={() => removeCarFunction(car.id)}>Remove Car</button></td>
                 </tr>
                 : <></>
               )
