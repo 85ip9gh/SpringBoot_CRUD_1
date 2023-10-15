@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "./security/AuthProvider";
 import { useState } from "react";
-import { listCarForSale } from "../api/CarSaleApiService";
+import { listCarForSale, updateCar } from "../api/CarSaleApiService";
 
 
 export default function UpdateCarComponent(){
@@ -15,6 +15,7 @@ export default function UpdateCarComponent(){
   const [color, setColor] = useState(authContext.color);
   const [type, setType] = useState(authContext.type);
   const [age, setAge] = useState(authContext.age);
+  const carID = authContext.carID;
 
   function handleBrandChange(event){
     setBrand(event.target.value)
@@ -33,9 +34,9 @@ export default function UpdateCarComponent(){
   }
 
    async function submit(){
-     await UpdateCar(brand, color, type, age)
+     await updateCar(carID, brand, color, type, age)
      .then(() => {
-      navigate("/home")
+      navigate("/my-cars")
      })
      .catch(error => console.log(error));
     

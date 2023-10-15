@@ -106,7 +106,7 @@ export default function HomeComponent(){
                     }
    
                 </tr>
-                  : <p></p>
+                  : <></>
               )
             )
           }

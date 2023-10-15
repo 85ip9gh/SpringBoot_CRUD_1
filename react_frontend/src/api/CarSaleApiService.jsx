@@ -15,7 +15,13 @@ export const createUser = (name, password) => apiClient.post('/addUser',{
     "password": `${password}`,
 });
 
-export const updateCar = () => apiClient.put();
+export const updateCar = (id, brand, color, type, age) => apiClient.put(`/updateCar`,{
+    "id": `${id}`,
+    "brand": `${brand}`,
+    "color": `${color}`,
+    "type": `${type}`,
+    "age": `${age}`
+});
 
 export const buyCar = (id) => apiClient.put(`/cars/${id}/buy`)
 

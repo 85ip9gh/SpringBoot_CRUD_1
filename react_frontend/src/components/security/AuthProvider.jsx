@@ -15,6 +15,7 @@ export default function AuthProvider({ children }) {
     const [brand, setBrand] = useState();
     const [color, setColor] = useState();
     const [age, setAge] = useState();
+    const [carID, setCarID] = useState();
 
      async function login(username, password){
 
@@ -59,7 +60,7 @@ export default function AuthProvider({ children }) {
     }
   
       return (
-          <AuthContext.Provider value={{ user, login, logout, authenticated, setAuthenticated, token, type, setType, brand, setBrand, age, setAge, color, setColor }}>
+          <AuthContext.Provider value={{ user, login, logout, authenticated, setAuthenticated, token, type, setType, brand, setBrand, age, setAge, color, setColor, carID, setCarID }}>
               {children}
           </AuthContext.Provider>
       )
