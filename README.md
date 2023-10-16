@@ -1,7 +1,7 @@
-#About this App
+# About this App
 CarSale app lets you buy cars from other users and sell your own cars!
 
-##Features:
+## Features:
 - React as front-end
 - Java Spring Boot as back-end api
     - Basic Spring Security Authentication (Will be Updated to JWT Authorization in the future)
@@ -11,7 +11,7 @@ CarSale app lets you buy cars from other users and sell your own cars!
 - MySQL for relational database
     - use mysql cli or mysql workbench to access database manually and check to see if data entries are being properly implemented
 
-##Features:
+## Features:
 - Add car to the site by providing the brand, type, color, and age of said car
 - Update car when needed in case you've made a mistake
 - List car for sale so that other users can buy it
@@ -22,9 +22,5 @@ CarSale app lets you buy cars from other users and sell your own cars!
 
 
 
-
-
-
-
-#Initial Sketches:
-![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)
+# Initial Sketches:
+[Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)
