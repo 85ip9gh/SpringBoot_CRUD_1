@@ -26,9 +26,10 @@ CarSale app lets you buy cars from other users and sell your own cars!
 
 # Updates
 
-##10/15/2023
+### 10/15/2023
 - Dockerfile has been created and a snapshot.jar file of the Spring Boot API has also been made so that a docker image can be created.
-- Docker image for mysql database and spring boot api has been created.
+- Docker image for mysql database and spring boot api has been created. 
+- used video for reference: https://www.youtube.com/watch?v=S2s28PCg4M4
 - Docker containers using above docker images have been run after numerous attempts and fixes to docker images and were successful. 
 - Have checked that an initial user with username: "sam" and password: "man" gets added to the database by going into the docker container for mysql using command "docker exec -it <mysql container name> -uroot -p<Password>", selecting database by using command "use pesanth" and seeing what entries are in the user_details table with "select * from user_details;". Might change 
 
