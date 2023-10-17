@@ -4,6 +4,7 @@ CarSale app lets you buy cars from other users and sell your own cars!
 ## Architecture:
 - React as front-end
 - Java Spring Boot as back-end api
+    - REST api
     - Basic Spring Security Authentication (Will be Updated to JWT Authorization in the future)
     - Authenticates and authorizes users based on user details obtained from mysql database.
     - JPA and hibernate to send SQL queries to database in response to user interaction
