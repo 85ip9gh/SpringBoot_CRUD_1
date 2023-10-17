@@ -5,12 +5,13 @@ CarSale app lets you buy cars from other users and sell your own cars!
 - React as front-end
 - Java Spring Boot as back-end api
     - REST api
-    - Basic Spring Security Authentication (Will be Updated to JWT Authorization in the future)
+    - Basic Spring Security Authentication 
+    - Basic Authorization Token(Will be Updated to JWT Authorization in the future)
     - Authenticates and authorizes users based on user details obtained from mysql database.
     - JPA and hibernate to send SQL queries to database in response to user interaction
-    - datasource setup in application.properties file depending on localhost machine or docker container
+    - Datasource setup in application.properties file depending on localhost machine or docker container
 - MySQL for relational database
-    - use mysql cli or mysql workbench to access database manually and check to see if data entries are being properly implemented
+    - Use mySQL CLI or mysql workbench to access database manually and check to see if data entries are being properly implemented
 
 ## Features:
 - Add car to the site by providing the brand, type, color, and age of said car
@@ -22,8 +23,11 @@ CarSale app lets you buy cars from other users and sell your own cars!
 - Change password encoder in spring boot api from NoOpPasswordEncoder to BCryptPasswordEncoder and figure out how to implement this given that all user details are stored in mysql database. Need to figure out where and how to decode the password for Spring Security to authenticate and authorize the user.
 - Change login page from basic to form login in spring boot so that the user doesn't have access to their information after logging in and logging out in the same session. For example, the user can login, logout, then type in a random username/password and still be granted access to their information based on their first login.
 - Add JWT and/or OAuth Authorization for extra security in spring boot.
-- Convert the hex color value in the "update-car" page on front-end to show color names using the color hex values stored in the database.
+- Convert the hex color value in the "update-car" page on front-end to show color names using the color hex values stored in the database. Use hex color code to 
+  tint the image of car to add individuality.
 - Add ADMIN users and give them ADMIN priviledges to see what cars all users have
+- Use CSS to make website presentable
+- Add money system to add value to cars and simulate real-life car-sale website.
 
 # Updates
 
