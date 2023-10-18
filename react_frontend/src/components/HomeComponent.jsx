@@ -45,73 +45,65 @@ export default function HomeComponent(){
 
     return(
         <div className="container">
-      <table className="car-list">
-        <thead>
-          <tr>
-            <th>Image</th>
-            <th>ID</th>
-            <th>Brand</th>
-            <th>Color</th>
-            <th>Type</th>
-            <th>Age</th>
-            <th>Seller</th>
-          </tr>
-        </thead>
+      <div className="car-list">
 
-        <tbody>
+        <div>
           {
             cars.map(
               car => (
               (car.selling == true) ?
-                <tr key={car.id}>
+                <div key={car.id} className="card">
                    {
                     (car.brand == 'toyota') ?
-                    <td>
+                    <div>
                       <img src={toyota} />
-                    </td>
+                    </div>
                       :
                       ((car.brand == 'audi')) ?
 
-                    <td>
+                    <div>
                       <img src={audi} />
-                    </td>
+                    </div>
 
                     :
 
                     ((car.brand == 'lamborghini')) ?
 
-                    <td>
+                    <div>
                       <img src={lamborghini} />
-                    </td>
+                    </div>
 
                     :
 
-                    <td>
+                    <div>
                       <img src={ferrari} />
-                    </td>
+                    </div>
 
                     }
 
-                    <td>{car.id}</td>
-                    <td>{car.brand}</td>
-                    <td>{car.color}</td>
-                    <td>{car.type}</td>
-                    <td>{car.age}</td>
-                    <td>{car.seller}</td>
+                  <div className="inner-card">
+                    <div><span><str>ID:</str></span> {car.id}</div>
+                    <div>Brand: {car.brand}</div>
+                    <div>Color: {car.color}</div>
+                    <div>Type: {car.type}</div>
+                    <div>Age: {car.age}</div>
+                    <div>Seller: {car.seller}</div>
+                  </div>
+                    
 
                     {(car.seller == authContext.user) ? 
-                      <td> <button className="btn car-unlist-btn" onClick={() => unlistCarFunction(car.id)}>Unlist</button> </td>
+                      <div> <button className="btn car-unlist-btn" onClick={() => unlistCarFunction(car.id)}>Unlist</button> </div>
                       : 
-                        <td> <button className="btn car-buy-btn" onClick={() => buyCarFunction(car.id)} >Buy</button> </td>                 
+                        <div> <button className="btn car-buy-btn" onClick={() => buyCarFunction(car.id)} >Buy</button> </div>                 
                     }
    
-                </tr>
+                </div>
                   : <></>
               )
             )
           }
-        </tbody>
-      </table>
+        </div>
+      </div>
       
     </div>
     )

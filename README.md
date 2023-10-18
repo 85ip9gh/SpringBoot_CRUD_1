@@ -38,7 +38,12 @@ CarSale app lets you buy cars from other users and sell your own cars!
 - Docker containers using above docker images have been run after numerous attempts and fixes to docker images and were successful. 
 - Have checked that an initial user with username: "sam" and password: "man" gets added to the database by going into the docker container for mysql using command "docker exec -it <mysql container name> -uroot -p<Password>", selecting database by using command "use pesanth" and seeing what entries are in the user_details table with "select * from user_details;". Might change 
 
-
+### 10/17/2023
+- pushed react image onto google cloud run - gcr.io/carsaleapplication/react-frontend-car-sale
+- react image successfully ran on google cloud run and was able to be accessed through internet, but cloud run is not viable for
+a full-stack application. Need to do more research and probably use a gcp vm or multiple vm instances to host front-end, back-end
+and database.
+- Changed cars on homepage to be generated in div "cards" instead of table elements. Much easier to style with css this way. Need to figure out 
 
 
 # Initial Sketches:
