@@ -43,7 +43,7 @@ CarSale app lets you buy cars from other users and sell your own cars!
 - react image successfully ran on google cloud run and was able to be accessed through internet, but cloud run is not viable for
 a full-stack application. Need to do more research and probably use a gcp vm or multiple vm instances to host front-end, back-end
 and database.
-- Changed cars on homepage to be generated in div "cards" instead of table elements. Much easier to style with css this way. Need to figure out 
+- Changed cars on homepage to be generated in div "cards" instead of table elements. Much easier to style with css this way. Website as a whole needs to be styled and made presentable - might use css website template for this.
 
 
 # Initial Sketches:
