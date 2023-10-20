@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+    frontend:
+      build: ./react_frontend/
+      volumes:
+        - ./:/usr/src/app/
+        - /usr/src/app/node_modules
+      ports:
+        - 3000:3000
+      command: npm start
+      networks:
+        - springapimysql-net
+
+    api:
+      build: ./java_backend_CRUD_1/target/
+      restart: always
+      ports:
+        - 8080:8080
+      networks:
+        - springapimysql-net  
+      depends_on:
+        - mysqldb
+      volumes:
+        - .m2:/root/.m2
+
+    mysqldb:
+      image: mysql:latest
+      restart: unless-stopped
+      environment:
+        MYSQL_DATABASE: pesanth
+        MYSQL_PASSWORD: man
+        MYSQL_ROOT_PASSWORD: man
+      ports:
+        - 3306:3306
+      volumes:
+        - .db:/var/lib/mysql
+      networks:
+        - springapimysql-net          
+
+networks:
+  springapimysql-net:

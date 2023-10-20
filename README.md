@@ -1,6 +1,11 @@
 # About this App
 CarSale app lets you buy cars from other users and sell your own cars!
 
+# Link to Site
+http://34.148.248.82:3000/
+
+- hosted on GCP(Google Cloud Platform) using e2-medium machine vm instance
+
 ## Architecture:
 - React as front-end
 - Java Spring Boot as back-end api
@@ -44,6 +49,14 @@ CarSale app lets you buy cars from other users and sell your own cars!
 a full-stack application. Need to do more research and probably use a gcp vm or multiple vm instances to host front-end, back-end
 and database.
 - Changed cars on homepage to be generated in div "cards" instead of table elements. Much easier to style with css this way. Website as a whole needs to be styled and made presentable - might use css website template for this.
+
+### 10/20/2023
+- Successfully hosted website on GCP(Google Cloud Platform)! (http://34.148.248.82:3000)
+- Used docker, dockerhub, and docker compose to build images of frontend and backend and upload onto dockerhub.
+- Used docker pull in the GCP vm instance to pull images from dockerhub and docker compose to configure the containers they would run on. The mysql container needed 'MYSQL_ROOT_HOST' environment variable in order for the springboot backend to successfuly establish a connection 
+- Spent almost 7 hours yesterday trying to debug why the react app from local computer (i.e. localhost:3000) could communicate with springboot backend, but the react app hosted on the GCP vm (i.e. 34.148.248.82:3000) couldn't. The console would only show a simple "NETWOR_ERROR" that axios threw instead of the actual problem, which was CORS. 
+
+I only found out about this after accessing the GCP vm react app on firefox and the console gave a more detailed "CORS" error which also showed in the network tab in dev tools. After this, I went to the network tab in chrome devtools and indeed, the basic-auth springboot api call was having a CORS error. I assumed that it was some sort of connection error between either the dockker containers which the front-end and back-end where running on the GCP vm or the firewall on the VPC network of the GCP vm, but it was just a simple "CORS" error. I just had to change the "AllowedOrigins" in the Security Configuration in the Spring Boot backend parameter to "*" instead of "hhttp://localhost:3000"(I tried setting it to "http://34.148.248.82:3000", but the same error came back so I have allowed all origins to access it for now) 
 
 
 # Initial Sketches:
