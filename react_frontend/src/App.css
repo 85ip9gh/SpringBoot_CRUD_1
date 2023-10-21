@@ -1,3 +1,7 @@
+ /* COLORS: 
+ LIGHT BLUE: rgb(189, 213, 234)  
+ DARK BLUE: rgb(54, 106, 152)*/
+
 *{
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -6,33 +10,56 @@
   display: flex;
   gap: 10%;
   align-items: center;
-  justify-content: space-between;
-  padding: 100px;
-  background-color: rgb(177, 212, 241);
+  justify-content: space-around;
+  padding: 50px;
+  background-image: url("./images/low_poly_grid_blue_1920_1080.svg");
 }
 
 .link{
   text-decoration: none;
 }
 
+form{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: rgb(54, 106, 152);
+  border-radius: 20px;
+  padding: 50px 25px;
+  gap: 20px;
+}
+
+.login-row{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.input-text,
+.input-password{
+  border-radius: 5px;
+  height: 25px;
+  width: auto;
+  margin-top: 5px;
+}
+
+form .form-login-row{
+  margin: 20px;
+}
 /* Home Component */
 
 .container{
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  background-color: rgb(184, 210, 211);
-}
-
-table{
-  table-layout: fixed;
-  border-collapse: collapse;
-  width: 90vw;
-}
-
-th,
-td{
-  text-align: center;
-  border-spacing: 0;
+  align-items: center;
+  background-image: url("./images/polygon_blue_massive.svg");
+  height: 100%;
+  min-height: 100vh;
 }
 
 .card{
@@ -69,6 +96,9 @@ tr{
   border-radius: 10px;
   border: none;
   background-color: rgb(189, 213, 234);
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .btn:hover{
@@ -78,4 +108,11 @@ tr{
 img{
   width: 100%;
   display: block;
+  border-radius: 10px;
+}
+
+.my-cars-btns{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }

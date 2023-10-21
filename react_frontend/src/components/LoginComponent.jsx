@@ -28,23 +28,25 @@ export default function LoginComponent(){
 
   return(
 
-    <div className="loginComponent" >
+    <div className="container" >
       <h2 id="error-message">
 
       </h2>
       <form>
-        
-        <div id="username-div">
-          <label name="username" >Username: </label>
-          <input name="username"  type="text" value={username} onChange={handleUsernameChange}></input>
-        </div>
+          <h3>
+            Log in 
+          </h3>
+          <div className="login-row">
+            <label name="username" >Username: </label>
+            <input name="username"  type="text" className="input-text" value={username} onChange={handleUsernameChange}></input>
+          </div>
 
-        <div>
-          <label name="password">Password: </label>
-          <input name="password" type="password" value={password} onChange={handlePasswordChange} ></input>
-        </div>
+          <div className="login-row">
+            <label name="password">Password: </label>
+            <input name="password" className="input-password" type="password" value={password} onChange={handlePasswordChange} ></input>
+          </div>
 
-        <button type="button" onClick={submit} >Submit</button>
+          <button type="button" onClick={submit} className="btn">Submit</button>
       </form>
     </div>
 

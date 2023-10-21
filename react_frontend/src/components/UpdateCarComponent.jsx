@@ -45,7 +45,7 @@ export default function UpdateCarComponent(){
 
   return(
 
-    <div className="loginComponent" >
+    <div className="container" >
         <h1>Update Car!</h1>
       <form>
 

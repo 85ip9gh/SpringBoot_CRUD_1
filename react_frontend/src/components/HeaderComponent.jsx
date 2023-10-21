@@ -13,12 +13,36 @@ export default function HeaderComponent(){
   return (
 
     <div className="header-component">
-      {isAuthenticated && <Link  to='/home' className="link home-link">Home</Link> }
-      {!isAuthenticated && <Link to="/login" className="link login-link">Login</Link>}
-      {isAuthenticated && <Link to="/my-cars" className="link my-cars-link">My Cars</Link>}
-      {!isAuthenticated && <Link to={'/create-user'} className="link create-account-link">Create Account</Link>}
-      {isAuthenticated && <Link to="/sell-car" className="link sell-link">Add Car</Link>}
-      {isAuthenticated && <Link onClick={logout} to="/login" className="link logout-link">Logout</Link>}
+      {isAuthenticated && ( <Link  to='/home' className="link home-link">
+        <button className="btn header-btn">
+          Home
+        </button>
+      </Link> )}
+      {!isAuthenticated && (<Link to="/login" className="link login-link">
+        <button className="btn header-btn">
+          Login
+        </button>
+      </Link>)}
+      {isAuthenticated && (<Link to="/my-cars" className="link my-cars-link">
+        <button className="btn header-btn">
+          My Cars
+        </button>
+      </Link>)}
+      {!isAuthenticated && (<Link to={'/create-user'} className="link create-account-link">
+        <button className="btn header-btn">
+          Create Account
+        </button>
+      </Link>)}
+      {isAuthenticated && (<Link to="/sell-car" className="link sell-link">
+        <button className="btn header-btn">
+          Add Car
+        </button>
+      </Link>)}
+      {isAuthenticated && (<Link onClick={logout} to="/login" className="link logout-link">
+        <button className="btn header-btn">
+          Log Out
+        </button>
+        </Link>)}
     </div>
 
   )

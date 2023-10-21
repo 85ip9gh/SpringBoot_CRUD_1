@@ -44,10 +44,8 @@ export default function HomeComponent(){
     }
 
     return(
-        <div className="container">
+    <div className="container">
       <div className="car-list">
-
-        <div>
           {
             cars.map(
               car => (
@@ -102,7 +100,6 @@ export default function HomeComponent(){
               )
             )
           }
-        </div>
       </div>
       
     </div>

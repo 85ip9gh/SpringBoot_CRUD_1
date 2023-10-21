@@ -11,9 +11,9 @@ export default function SellCarComponent(){
 
   //brand, color, type, age
 
-  const [brand, setBrand] = useState();
-  const [color, setColor] = useState();
-  const [type, setType] = useState();
+  const [brand, setBrand] = useState("Toyota");
+  const [color, setColor] = useState("#000000");
+  const [type, setType] = useState("SUV");
   const [age, setAge] = useState("1");
 
   function handleBrandChange(event){
@@ -35,7 +35,7 @@ export default function SellCarComponent(){
    async function submit(){
      await listCarForSale(brand, color, type, age)
      .then(() => {
-      navigate("/home")
+      navigate("/my-cars")
      })
      .catch(error => console.log(error));
     
@@ -44,7 +44,7 @@ export default function SellCarComponent(){
 
   return(
 
-    <div className="loginComponent" >
+    <div className="container" >
       <form>
 
         <div>

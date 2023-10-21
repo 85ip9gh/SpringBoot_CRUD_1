@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import { listCarForSale, removeCar, retrieveMyCars, sellCar } from "../api/CarSaleApiService";
 import { useAuthContext } from "./security/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import toyota from '../images/toyota.jpeg';
+import audi from '../images/audi.jpeg';
+import ferrari from '../images/ferrari.jpeg';
+import lamborghini from '../images/lamborghini.jpeg';
 
 export default function MyCarsComponent(){
     const authContext = useAuthContext();
@@ -49,40 +53,61 @@ export default function MyCarsComponent(){
    
     return(
         <div className="container">
-      <table className="car-list">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Brand</th>
-            <th>Color</th>
-            <th>Type</th>
-            <th>Age</th>
-            <th>Seller</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {
-            cars.map(
-              car => (
-                (car.selling == false) ?
-                <tr key={car.id}>
-                  <td>{car.id}</td>
-                  <td>{car.brand}</td>
-                  <td>{car.color}</td>
-                  <td>{car.type}</td>
-                  <td>{car.age}</td>
-                  <td>{car.seller}</td>
-                <td><button className="car-list-for-sale-btn" onClick={() => sellCarFunction(car.id)}>List for Sale</button></td>
-                <td><button className="car-update-btn" onClick={() => updateCarFunction(car.id, car.brand, car.color,car.type, car.age)}>Update Car</button></td>
-                <td><button className="car-remove-btn" onClick={() => removeCarFunction(car.id)}>Remove Car</button></td>
-                </tr>
-                : <></>
+          <div>
+            {
+              cars.map(
+                car => (
+                  (car.selling == false) ?
+                    <div key={car.id} className="card">
+                       {
+                        (car.brand == 'toyota') ?
+                        <div>
+                          <img src={toyota} />
+                        </div>
+                          :
+                          ((car.brand == 'audi')) ?
+    
+                        <div>
+                          <img src={audi} />
+                        </div>
+    
+                        :
+    
+                        ((car.brand == 'lamborghini')) ?
+    
+                        <div>
+                          <img src={lamborghini} />
+                        </div>
+    
+                        :
+    
+                        <div>
+                          <img src={ferrari} />
+                        </div>
+    
+                        }
+    
+                      <div className="inner-card">
+                        <div><span><str>ID:</str></span> {car.id}</div>
+                        <div>Brand: {car.brand}</div>
+                        <div>Color: {car.color}</div>
+                        <div>Type: {car.type}</div>
+                        <div>Age: {car.age}</div>
+                        <div>Seller: {car.seller}</div>
+                      </div>
+                        
+                      <div className="my-cars-btns">
+                        <button className="btn" onClick={() => sellCarFunction(car.id)}>List for Sale</button>
+                        <button className="btn" onClick={() => updateCarFunction(car.id, car.brand, car.color,car.type, car.age)}>Update Car</button>
+                        <button className="btn" onClick={() => removeCarFunction(car.id)}>Remove Car</button></div>
+                      
+       
+                      </div>
+                      : <></>
+                  )
               )
-            )
-          }
-        </tbody>
-      </table>
+            }
+          </div>
       
     </div>
     )

@@ -39,7 +39,7 @@ export default function LoginComponent(){
 
 
   return(
-    <div className="create-account-component" >
+    <div className="container" >
         {!passwordMatch && <p>Your passwords don't match!</p>}
 
         {userCreated && 
@@ -67,7 +67,7 @@ export default function LoginComponent(){
           <input name="password-confirm" type="password" value={passwordConfirm} onChange={handlePasswordConfirmChange} ></input>
         </div>
 
-        <button type="button" onClick={submit} >Submit</button>
+        <button type="button" className="btn" onClick={submit} >Submit</button>
       </form>}
       
     </div>
