@@ -60,5 +60,6 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 
 
 
+
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)
