@@ -23,6 +23,8 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -38,8 +40,15 @@ public class SecurityConfig{
 	
 	@Autowired
 	private UserService userService;
+	
+	@Bean
+	public AuthenticationSuccessHandler successHandler() {
+	    SimpleUrlAuthenticationSuccessHandler handler = new SimpleUrlAuthenticationSuccessHandler();
+	    handler.setUseReferer(true);
+	    return handler;
+	}
 
-  @Bean
+	@Bean
   SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
   	
 		return http
@@ -49,13 +58,27 @@ public class SecurityConfig{
 						.requestMatchers("/addUser").permitAll()	
 						.anyRequest().authenticated())
 				.userDetailsService(userService)
-				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-				.httpBasic(Customizer.withDefaults())
+				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
+				//.httpBasic(Customizer.withDefaults())
+				.formLogin(login -> {	
+					login
+						.loginProcessingUrl("/login")
+						.defaultSuccessUrl("/cars", true)
+						.permitAll();
+					} ) 
+				.logout(logout -> 
+				logout
+					.invalidateHttpSession(true)
+					.deleteCookies("remove")
+					.permitAll()
+						)
+				
 				.build();
 	}
   
   @Bean
   PasswordEncoder passwordEncoder() {
+	  //return new BCryptPasswordEncoder();
 	  return NoOpPasswordEncoder.getInstance();
   }
 

@@ -41,6 +41,11 @@ public class User implements UserDetails{
 		this.password = "man";
 	}
 	
+	public User(String name, String password) {
+		this.name = name;
+		this.password = password;
+	}
+	
 	public User(User user) {
 		this.name = user.getName();
 		this.password = user.getPassword();

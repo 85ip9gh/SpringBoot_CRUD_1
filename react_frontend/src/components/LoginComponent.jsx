@@ -22,7 +22,7 @@ export default function LoginComponent(){
    async function submit(){
     const loginReply = await authContext.login(username, password);
 
-    navigate("/home");
+    // navigate("/home");
   }
 
 

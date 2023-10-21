@@ -62,6 +62,7 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 - Added background images made on haikei(https://haikei.app/)
 - Added styling to form elements and divs
 - Changed "my-cars" page to match "home" page styling with cars being inside of "cards" instead of a table 
+- Add Redirect Route with path "*" and element "LoginComponent" so that all invalid URLs are redirected to login component
 
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)
