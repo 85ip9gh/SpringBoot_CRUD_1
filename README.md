@@ -58,8 +58,10 @@ and database.
 
 I only found out about this after accessing the GCP vm react app on firefox and the console gave a more detailed "CORS" error which also showed in the network tab in dev tools. After this, I went to the network tab in chrome devtools and indeed, the basic-auth springboot api call was having a CORS error. I assumed that it was some sort of connection error between either the dockker containers which the front-end and back-end where running on the GCP vm or the firewall on the VPC network of the GCP vm, but it was just a simple "CORS" error. I just had to change the "AllowedOrigins" in the Security Configuration in the Spring Boot backend parameter to "*" instead of "hhttp://localhost:3000"(I tried setting it to "http://34.148.248.82:3000", but the same error came back so I have allowed all origins to access it for now) 
 
-
-
+### 10/21/2023
+- Added background images made on haikei(https://haikei.app/)
+- Added styling to form elements and divs
+- Changed "my-cars" page to match "home" page styling with cars being inside of "cards" instead of a table 
 
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)
