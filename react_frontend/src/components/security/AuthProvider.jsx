@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import { basicAuthentication } from '../../api/CarSaleApiService';
+import { basicAuthentication, logout } from '../../api/CarSaleApiService';
 import { apiClient } from '../../api/ApiBaseURL';
 
 const AuthContext = createContext();
@@ -53,10 +53,13 @@ export default function AuthProvider({ children }) {
               return await loginResponse;
         }
 
-    function logout(){
-      setAuthenticated(false);
-      setUser(null);
-      setToken(null);
+    function logoutFunction(){
+      logout().then(
+        setAuthenticated(false),
+        setUser(null),
+        setToken(null)
+      ).catch(error => console.log(error));
+     
     }
   
       return (

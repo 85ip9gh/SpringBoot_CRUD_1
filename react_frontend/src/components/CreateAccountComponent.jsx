@@ -40,11 +40,11 @@ export default function LoginComponent(){
 
   return(
     <div className="container" >
-        {!passwordMatch && <p>Your passwords don't match!</p>}
+        {!passwordMatch && <h1 className="create-account-pop-up">Your passwords don't match!</h1>}
 
         {userCreated && 
             <div>
-                <h1>
+                <h1 className="create-account-pop-up">
                     User {username} has been created!
                 </h1>
             </div>}

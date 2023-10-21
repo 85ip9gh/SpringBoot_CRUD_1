@@ -58,21 +58,8 @@ public class SecurityConfig{
 						.requestMatchers("/addUser").permitAll()	
 						.anyRequest().authenticated())
 				.userDetailsService(userService)
-				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
-				//.httpBasic(Customizer.withDefaults())
-				.formLogin(login -> {	
-					login
-						.loginProcessingUrl("/login")
-						.defaultSuccessUrl("/cars", true)
-						.permitAll();
-					} ) 
-				.logout(logout -> 
-				logout
-					.invalidateHttpSession(true)
-					.deleteCookies("remove")
-					.permitAll()
-						)
-				
+				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+				.httpBasic(Customizer.withDefaults())
 				.build();
 	}
   
