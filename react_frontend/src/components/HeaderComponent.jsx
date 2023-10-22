@@ -11,39 +11,52 @@ export default function HeaderComponent(){
   }
 
   return (
+      <div className="header-component">
+        {authContext.authenticated &&
+          <div>
+          {authContext.authenticated && 
+          <div className="header-profile">
+              <h2>
+                Logged in as: {authContext.user}
+              </h2>
+          </div>
+          }
+        </div>
+      }
+        <div className="header-component-inner">
 
-    <div className="header-component">
-      {isAuthenticated && ( <Link  to='/home' className="link home-link">
-        <button className="btn header-btn">
-          Home
-        </button>
-      </Link> )}
-      {!isAuthenticated && (<Link to="/login" className="link login-link">
-        <button className="btn header-btn">
-          Login
-        </button>
-      </Link>)}
-      {isAuthenticated && (<Link to="/my-cars" className="link my-cars-link">
-        <button className="btn header-btn">
-          My Cars
-        </button>
-      </Link>)}
-      {!isAuthenticated && (<Link to={'/create-user'} className="link create-account-link">
-        <button className="btn header-btn">
-          Create Account
-        </button>
-      </Link>)}
-      {isAuthenticated && (<Link to="/sell-car" className="link sell-link">
-        <button className="btn header-btn">
-          Add Car
-        </button>
-      </Link>)}
-      {isAuthenticated && (<Link onClick={logout} to="/login" className="link logout-link">
-        <button className="btn header-btn">
-          Log Out
-        </button>
+        {isAuthenticated && ( <Link  to='/home' className="link home-link">
+          <button className="btn header-btn">
+            Home
+          </button>
+        </Link> )}
+        {!isAuthenticated && (<Link to="/login" className="link login-link">
+          <button className="btn header-btn">
+            Login
+          </button>
         </Link>)}
-    </div>
+        {isAuthenticated && (<Link to="/my-cars" className="link my-cars-link">
+          <button className="btn header-btn">
+            My Cars
+          </button>
+        </Link>)}
+        {!isAuthenticated && (<Link to={'/create-user'} className="link create-account-link">
+          <button className="btn header-btn">
+            Create Account
+          </button>
+        </Link>)}
+        {isAuthenticated && (<Link to="/sell-car" className="link sell-link">
+          <button className="btn header-btn">
+            Add Car
+          </button>
+        </Link>)}
+        {isAuthenticated && (<Link onClick={logout} to="/login" className="link logout-link">
+          <button className="btn header-btn">
+            Log Out
+          </button>
+          </Link>)}
+          </div>
+      </div>
 
   )
 
