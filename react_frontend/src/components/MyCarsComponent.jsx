@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { listCarForSale, removeCar, retrieveMyCars, sellCar } from "../api/CarSaleApiService";
+import { removeCar, retrieveMyCars, sellCar } from "../api/CarSaleApiService";
 import { useAuthContext } from "./security/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import toyota from '../images/toyota.jpeg';
@@ -57,38 +57,38 @@ export default function MyCarsComponent(){
             {
               cars.map(
                 car => (
-                  (car.selling == false) ?
+                  (car.selling === false) ?
                     <div key={car.id} className="card">
                        {
-                        (car.brand == 'toyota') ?
+                        (car.brand === 'Toyota') ?
                         <div>
-                          <img src={toyota} />
+                          <img src={toyota} alt="Grey Toyota Sedan" />
                         </div>
                           :
-                          ((car.brand == 'audi')) ?
+                          ((car.brand === 'Audi')) ?
     
                         <div>
-                          <img src={audi} />
+                          <img src={audi} alt="Black Audi SUV"/>
                         </div>
     
                         :
     
-                        ((car.brand == 'lamborghini')) ?
+                        ((car.brand === 'Lamborghini')) ?
     
                         <div>
-                          <img src={lamborghini} />
+                          <img src={lamborghini} alt="Orange Lamborghini Supercar"/>
                         </div>
     
                         :
     
                         <div>
-                          <img src={ferrari} />
+                          <img src={ferrari} alt="Red Ferrari Sportscar" />
                         </div>
     
                         }
     
                       <div className="inner-card">
-                        <div><span><str>ID:</str></span> {car.id}</div>
+                        <div><span>ID:</span> {car.id}</div>
                         <div>Brand: {car.brand}</div>
                         <div>Color: {car.color}</div>
                         <div>Type: {car.type}</div>

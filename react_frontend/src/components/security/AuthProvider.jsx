@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState } from 'react';
 import { basicAuthentication, logout } from '../../api/CarSaleApiService';
 import { apiClient } from '../../api/ApiBaseURL';
+import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext();
 
@@ -21,11 +22,10 @@ export default function AuthProvider({ children }) {
 
         const basicAuthToken = 'Basic ' + window.btoa(username + ":" + password)
 
-       const loginResponse = basicAuthentication(basicAuthToken).then(
+       const loginResponse = await basicAuthentication(basicAuthToken).then(
             (response) =>{
-              console.log(response)
-      
-              if(response.status == 200){
+              console.log(response);
+              if(response.status === 200){
                 setAuthenticated(true);
                 setUser(username);
                 setToken(basicAuthToken);
@@ -48,9 +48,10 @@ export default function AuthProvider({ children }) {
               ).catch((error) => {
                 console.log(error);
               } )
-
-              console.log("login Response " + loginResponse)
-              return await loginResponse;
+              .finally(response =>
+                {return response}
+              )
+          return loginResponse;
         }
 
     function logoutFunction(){

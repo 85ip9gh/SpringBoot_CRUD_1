@@ -49,38 +49,38 @@ export default function HomeComponent(){
           {
             cars.map(
               car => (
-              (car.selling == true) ?
+              (car.selling === true) ?
                 <div key={car.id} className="card">
                    {
-                    (car.brand == 'toyota') ?
+                    (car.brand === 'Toyota') ?
                     <div>
-                      <img src={toyota} />
+                      <img src={toyota} alt="Grey Toyota Sedan" />
                     </div>
                       :
-                      ((car.brand == 'audi')) ?
+                      ((car.brand === 'Audi')) ?
 
                     <div>
-                      <img src={audi} />
+                      <img src={audi} alt="Black Audi SUV"/>
                     </div>
 
                     :
 
-                    ((car.brand == 'lamborghini')) ?
+                    ((car.brand === 'Lamborghini')) ?
 
                     <div>
-                      <img src={lamborghini} />
+                      <img src={lamborghini} alt="Orange Lamborghini Supercar" />
                     </div>
 
                     :
 
                     <div>
-                      <img src={ferrari} />
+                      <img src={ferrari} alt="Red Ferrari Sportscar" />
                     </div>
 
                     }
 
                   <div className="inner-card">
-                    <div><span><str>ID:</str></span> {car.id}</div>
+                    <div><span>ID:</span> {car.id}</div>
                     <div>Brand: {car.brand}</div>
                     <div>Color: {car.color}</div>
                     <div>Type: {car.type}</div>
@@ -89,7 +89,7 @@ export default function HomeComponent(){
                   </div>
                     
 
-                    {(car.seller == authContext.user) ? 
+                    {(car.seller === authContext.user) ? 
                       <div> <button className="btn car-unlist-btn" onClick={() => unlistCarFunction(car.id)}>Unlist</button> </div>
                       : 
                         <div> <button className="btn car-buy-btn" onClick={() => buyCarFunction(car.id)} >Buy</button> </div>                 

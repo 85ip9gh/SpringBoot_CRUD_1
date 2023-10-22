@@ -16,9 +16,9 @@ export default function HeaderComponent(){
           <div>
           {authContext.authenticated && 
           <div className="header-profile">
-              <h2>
-                Logged in as: {authContext.user}
-              </h2>
+              <h1>
+              Logged in as: {authContext.user}
+              </h1>
           </div>
           }
         </div>

@@ -1,13 +1,8 @@
-import { useNavigate } from "react-router-dom";
-import { useAuthContext } from "./security/AuthProvider";
 import { useState } from "react";
 import { createUser } from "../api/CarSaleApiService";
 
 
 export default function LoginComponent(){
-
-  const authContext = useAuthContext();
-  const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -28,7 +23,7 @@ export default function LoginComponent(){
   }
 
    async function submit(){
-    if(password == passwordConfirm){
+    if(password === passwordConfirm){
         createUser(username,password);
         setUserCreated(true);
     } else {

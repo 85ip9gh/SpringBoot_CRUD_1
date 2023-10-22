@@ -6,7 +6,7 @@ import CreateAccountComponent from './components/CreateAccountComponent';
 import MyCarsComponent from './components/MyCarsComponent';
 import SellCarComponent from './components/SellCarComponent';
 import UpdateCarComponent from './components/UpdateCarComponent';
-
+import { useAuthContext } from './components/security/AuthProvider';
 import './App.css';
 
 function App() {
@@ -14,13 +14,13 @@ function App() {
     <BrowserRouter>
       <HeaderComponent/>
         <Routes>
-          <Route path='*' element={<LoginComponent/>}/>
           <Route path='/login' element={<LoginComponent/>} />
           <Route path='/home' element={<HomeComponent/>} />
           <Route path='/my-cars' element={<MyCarsComponent/>} />
           <Route path='/create-user' element={<CreateAccountComponent/>} />
           <Route path='/sell-car' element={<SellCarComponent/>} />
           <Route path='/update-car' element={<UpdateCarComponent/>} />
+          < Route path='*' element={<LoginComponent/>}/>
         </Routes>
     </BrowserRouter>
 

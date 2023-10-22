@@ -6,7 +6,6 @@ import { listCarForSale } from "../api/CarSaleApiService";
 
 export default function SellCarComponent(){
 
-  const authContext = useAuthContext();
   const navigate = useNavigate();
 
   //brand, color, type, age
