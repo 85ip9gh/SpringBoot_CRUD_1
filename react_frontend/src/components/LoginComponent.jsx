@@ -11,8 +11,8 @@ const navigate = useNavigate();
 
   const [username, setUsername] = useState("sam");
   const [password, setPassword] = useState("man");
-  const [authenticated, setAuthenticated] = useState(authContext.authenticated);
-  const [navigated, setNavigated] = useState(false);
+  const [wrongCredentials, setWrongCredentials] = useState(false);
+  const [hideLogin, sethideLogin] = useState(false);
 
   function handleUsernameChange(event){
     setUsername(event.target.value)
@@ -22,35 +22,50 @@ const navigate = useNavigate();
     setPassword(event.target.value);
   }
 
-   async function submit(){
-    await authContext.login(username, password);
-    navigate("/home");
+   const submit = async (e) => {
+    e.preventDefault();
+    console.log("submit");
+    const loginReply = await authContext.login(username, password);
+    if(loginReply == 200){
+      sethideLogin(true);
+    } else {
+      setWrongCredentials(true);
+    }
   }
 
 
   return(
 
     <div className="container" >
-      {!navigated && 
-      <h2 id="error-message">
-        Wrong Credentials
-      </h2>}
-      <form>
+      {wrongCredentials && 
+      <h1 className="create-account-pop-up">
+        {authContext.errorMsg}
+      </h1>}
+      {hideLogin && 
+      <h1 className="create-account-pop-up">
+        Welcome {authContext.user}! Click Home to start buying cars!
+      </h1>
+      }
+
+      {!hideLogin &&
+        <form method="POST" onSubmit={submit}>
           <p className="login-form-title">
             Login
           </p>
           <div className="login-row">
             <label name="username" className="login-label">Username: </label>
-            <input name="username"  type="text" className="input-text" value={username} onChange={handleUsernameChange}></input>
+            <input name="username"  type="text" className="input-text" value={username} onChange={handleUsernameChange} required></input>
           </div>
 
           <div className="login-row">
             <label name="password" className="login-label">Password: </label>
-            <input name="password" className="input-password" type="password" value={password} onChange={handlePasswordChange} ></input>
+            <input name="password" className="input-password" type="password" value={password} onChange={handlePasswordChange} required></input>
           </div>
 
-          <button type="button" onClick={submit} className="btn">Submit</button>
+          <button type="submit" className="btn">Sign in</button>
       </form>
+      }
+      
     </div>
 
   )
