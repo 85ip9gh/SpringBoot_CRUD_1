@@ -28,6 +28,7 @@ const navigate = useNavigate();
     const loginReply = await authContext.login(username, password);
     if(loginReply == 200){
       sethideLogin(true);
+      navigate("/home");
     } else {
       setWrongCredentials(true);
     }
@@ -41,11 +42,6 @@ const navigate = useNavigate();
       <h1 className="create-account-pop-up">
         {authContext.errorMsg}
       </h1>}
-      {hideLogin && 
-      <h1 className="create-account-pop-up">
-        Welcome {authContext.user}! Click Home to start buying cars!
-      </h1>
-      }
 
       {!hideLogin &&
         <form method="POST" onSubmit={submit}>

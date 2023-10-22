@@ -26,7 +26,10 @@ http://34.148.248.82:3000/
 
 # Future Features to be Added
 - Change password encoder in spring boot api from NoOpPasswordEncoder to BCryptPasswordEncoder and figure out how to implement this given that all user details are stored in mysql database. Need to figure out where and how to decode the password for Spring Security to authenticate and authorize the user.
-- Change login page from basic to form login in spring boot so that the user doesn't have access to their information after logging in and logging out in the same session. For example, the user can login, logout, then type in a random username/password and still be granted access to their information based on their first login.
+
+<!-- - Change login page from basic to form login in spring boot so that the user doesn't have access to their information after logging in and logging out in the same session. For example, the user can login, logout, then type in a random username/password and still be granted access to their information based on their first login. --> 
+    - fixed on 10/22/2023, kept httpBasic but logout button works now
+
 - Add JWT and/or OAuth Authorization for extra security in spring boot.
 - Convert the hex color value in the "update-car" page on front-end to show color names using the color hex values stored in the database. Use hex color code to 
   tint the image of car to add individuality.
@@ -64,6 +67,12 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 - Changed "my-cars" page to match "home" page styling with cars being inside of "cards" instead of a table 
 - Added Redirect Route with path "*" and element "LoginComponent" so that all invalid URLs are redirected to login component
 - Cleaned up react warning errors such as using "==" instead of "==="
+
+### 10/22/2023
+- Fix login authentication with a try/catch block instead of a messy .then().catch() promise so that the login function in AuthProvider actually returns a value instead of undefined.
+- Use said value to display different error messages depending on server response
+- used this video(https://www.youtube.com/watch?v=X3qyxo_UTR4) for reference.
+
 
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)
