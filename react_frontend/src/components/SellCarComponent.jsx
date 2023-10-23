@@ -45,9 +45,11 @@ export default function SellCarComponent(){
 
     <div className="container" >
       <form>
-
-        <div>
-          <label name="brand" >Brand: </label>
+          <p className="form-title">
+            Enter Car Details
+          </p>
+        <div className="form-row">
+          <label name="brand" className="label-add-car">Brand: </label>
           <select name="brand" value={brand} onChange={handleBrandChange}>
             <option value="toyota">Toyota</option>
             <option value="audi">Audi</option>
@@ -56,13 +58,13 @@ export default function SellCarComponent(){
           </select>
         </div>
 
-        <div>
-          <label name="color">Color: </label>
-          <input name="color" type="color" value={color} onChange={handleColorChange} ></input>
+        <div className="form-row">
+          <label name="color" className="label-add-car">Color: </label>
+          <input name="color" type="color" value={color} className="input-color" onChange={handleColorChange} ></input>
         </div>
 
-        <div>
-            <label name="type">Type: </label>
+        <div className="form-row">
+            <label name="type" className="label-add-car">Type: </label>
             <select name="type" value={type} onChange={handleTypeChange} >
                 <option value="SUV">SUV</option>
                 <option value="Sedan">Sedan</option>
@@ -75,12 +77,12 @@ export default function SellCarComponent(){
             </select>
         </div>
 
-        <div>
-            <label name="age">Age: </label>
-            <input name="age" type="number" value={age} onChange={handleAgeChange}></input>
+        <div className="form-row">
+            <label name="age" className="label-add-car">Age: </label>
+            <input name="age" type="number" value={age} min={"0"} onChange={handleAgeChange} className="input-text input-number"></input>
         </div>
 
-        <button type="button" onClick={submit} >Submit</button>
+        <button type="button" onClick={submit} className="btn" >Add Car</button>
       </form>
     </div>
 

@@ -45,15 +45,15 @@ const navigate = useNavigate();
 
       {!hideLogin &&
         <form method="POST" onSubmit={submit}>
-          <p className="login-form-title">
+          <p className="form-title">
             Login
           </p>
-          <div className="login-row">
+          <div className="form-row">
             <label name="username" className="login-label">Username: </label>
             <input name="username"  type="text" className="input-text" value={username} onChange={handleUsernameChange} required></input>
           </div>
 
-          <div className="login-row">
+          <div className="form-row">
             <label name="password" className="login-label">Password: </label>
             <input name="password" className="input-password" type="password" value={password} onChange={handlePasswordChange} required></input>
           </div>

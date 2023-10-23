@@ -1,6 +1,7 @@
  /* COLORS: 
  LIGHT BLUE: rgb(189, 213, 234)  
- DARK BLUE: rgb(54, 106, 152)*/
+ DARK BLUE: rgb(54, 106, 152)
+ DARKER BLUE: rgb(36, 69, 97)*/
 
 *{
   font-family: Arial, Helvetica, sans-serif;
@@ -38,6 +39,24 @@
   text-decoration: none;
 }
 
+label { 
+  display: inline-block;
+  width: 100px; 
+  text-align: right; 
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.label-add-car{
+  display: inline-block;
+  width: 40px; 
+  text-align: right; 
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+
+
 form{
   display: flex;
   align-items: center;
@@ -53,26 +72,53 @@ form{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   font-size: 16px;
   font-weight: bold;
 }
 
+
+
 .input-text,
-.input-password{
-  border-radius: 5px;
-  height: 25px;
+.input-password,
+select{
+  border-radius: 15px;
+  height: 40px;
   width: auto;
   margin-top: 5px;
   font-size: 16px;
+  color: rgb(189, 213, 234);
+  background-color: rgb(36, 69, 97);
+  padding-left: 10px;
+}
+
+.input-number{
+  width: 100px;
+}
+
+.input-color{
+  border-radius: 15px;
+  border: transparent;
+  background-color: transparent;
+  height: 40px;
+  width: 40px;
+}
+
+.input-text:focus,
+.input-password:focus,
+select:focus{
+  background-color: rgb(189, 213, 234);
+  color: rgb(36, 69, 97);
 }
 
 .login-label{
   font-size: 16px;
 }
 
-form .form-login-row{
-  margin: 20px;
+.form-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 /* Home Component */
 
@@ -86,9 +132,15 @@ form .form-login-row{
   min-height: 100vh;
 }
 
+.grid-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column: 1/3;
+}
+
 .card{
   display: flex;
-  gap: 100px;
+  gap: 20px;
   margin: 20px;
   border-radius: 20px;
   background-color: rgb(221, 241, 255);
@@ -96,10 +148,14 @@ form .form-login-row{
 }
 
 .inner-card{
+  border-radius: 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  background-color: rgb(36, 69, 97);
+  color: rgb(189, 213, 234);
 }
 
 th{
@@ -141,7 +197,8 @@ img{
   gap: 20px;
 }
 
-.login-form-title,
+.form-title,
 h1{
+  font-size: 48px;
   font-weight: bold;
 }

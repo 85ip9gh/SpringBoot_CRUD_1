@@ -45,7 +45,7 @@ export default function HomeComponent(){
 
     return(
     <div className="container">
-      <div className="car-list">
+      <div className="grid-container">
           {
             cars.map(
               car => (
@@ -80,12 +80,12 @@ export default function HomeComponent(){
                     }
 
                   <div className="inner-card">
-                    <div><span>ID:</span> {car.id}</div>
-                    <div>Brand: {car.brand}</div>
-                    <div>Color: {car.color}</div>
-                    <div>Type: {car.type}</div>
-                    <div>Age: {car.age}</div>
-                    <div>Seller: {car.seller}</div>
+                    <div><strong>ID:</strong> {car.id}</div>
+                    <div><strong>Brand:</strong>  {car.brand}</div>
+                    <div><strong>Color:</strong> {car.color}</div>
+                    <div><strong>Type:</strong> {car.type}</div>
+                    <div><strong>Age:</strong> {car.age}</div>
+                    <div><strong>Seller:</strong> {car.seller}</div>
                   </div>
                     
 

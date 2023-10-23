@@ -22,10 +22,14 @@ export default function LoginComponent(){
     setPasswordConfirm(event.target.value);
   }
 
-   async function submit(){
+  const submit = async (e) => {
+    e.preventDefault();
     if(password === passwordConfirm){
-        createUser(username,password);
-        setUserCreated(true);
+        const created = await createUser(username,password);
+        if(created.status == 200){
+          setUserCreated(true);
+        } 
+
     } else {
         setPasswordMatch(false);
     }
@@ -45,24 +49,26 @@ export default function LoginComponent(){
             </div>}
 
         {!userCreated && 
-        <form>
-
-        <div>
+        <form method="POST" onSubmit={submit}>
+          <p className="form-title">
+            Enter Details
+          </p>
+        <div className="form-row">
           <label name="username" >Username: </label>
-          <input name="username"  type="text" value={username} onChange={handleUsernameChange}></input>
+          <input name="username" className="input-text"  type="text" value={username} onChange={handleUsernameChange} required></input>
         </div>
 
-        <div>
+        <div className="form-row">
           <label name="password">Password: </label>
-          <input name="password" type="password" value={password} onChange={handlePasswordChange} ></input>
+          <input name="password" className="input-password" type="password" value={password} onChange={handlePasswordChange} required></input>
         </div>
 
         <div>
           <label name="password-confirm">Confirm Password: </label>
-          <input name="password-confirm" type="password" value={passwordConfirm} onChange={handlePasswordConfirmChange} ></input>
+          <input name="password-confirm" className="input-password" type="password" value={passwordConfirm} onChange={handlePasswordConfirmChange} required></input>
         </div>
 
-        <button type="button" className="btn" onClick={submit} >Submit</button>
+        <button type="submit" className="btn">Create Account</button>
       </form>}
       
     </div>

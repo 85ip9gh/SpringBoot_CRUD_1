@@ -53,10 +53,10 @@ export default function MyCarsComponent(){
    
     return(
         <div className="container">
-          <div>
+          <div className="grid-container">
             {
               cars.map(
-                car => (
+                  car => (
                   (car.selling === false) ?
                     <div key={car.id} className="card">
                        {
@@ -87,14 +87,14 @@ export default function MyCarsComponent(){
     
                         }
     
-                      <div className="inner-card">
-                        <div><span>ID:</span> {car.id}</div>
-                        <div>Brand: {car.brand}</div>
-                        <div>Color: {car.color}</div>
-                        <div>Type: {car.type}</div>
-                        <div>Age: {car.age}</div>
-                        <div>Seller: {car.seller}</div>
-                      </div>
+                    <div className="inner-card">
+                      <div><strong>ID:</strong> {car.id}</div>
+                      <div><strong>Brand:</strong>  {car.brand}</div>
+                      <div><strong>Color:</strong> {car.color}</div>
+                      <div><strong>Type:</strong> {car.type}</div>
+                      <div><strong>Age:</strong> {car.age}</div>
+                      <div><strong>Seller:</strong> {car.seller}</div>
+                    </div>
                         
                       <div className="my-cars-btns">
                         <button className="btn" onClick={() => sellCarFunction(car.id)}>List for Sale</button>
@@ -103,6 +103,7 @@ export default function MyCarsComponent(){
                       
        
                       </div>
+
                       : <></>
                   )
               )
