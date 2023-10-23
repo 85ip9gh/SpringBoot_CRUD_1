@@ -73,6 +73,11 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 - Use said value to display different error messages depending on server response
 - used this video(https://www.youtube.com/watch?v=X3qyxo_UTR4) for reference.
 
+### 10/23/2023
+- Style form inputs so that the color fits with the website's theme of dark and light blue
+- Add css grid to the "/home" page and "my-cars" page
+- Make the car "cards" look more appealing by adding background color to the car details and making the labels bold
+- Revert "===" back to "==" for the "buy" button in "/home" page because the car's seller wasn't being recognized and the "buy" button was not changing to a "unlist"
 
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)
