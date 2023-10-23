@@ -33,7 +33,8 @@ export default function UpdateCarComponent(){
     setAge(event.target.value);
   }
 
-   async function submit(){
+  const submit = async (e) => {
+    e.preventDefault();
      await updateCar(carID, brand, color, type, age)
      .then(() => {
       navigate("/my-cars")
@@ -46,11 +47,13 @@ export default function UpdateCarComponent(){
   return(
 
     <div className="container" >
-      <form>
-
-        <div>
-          <label name="brand" >Brand: </label>
-          <select name="brand" value={brand} onChange={handleBrandChange}>
+      <form method="PUT" onSubmit={submit}>
+          <p className="form-title">
+            Update Car
+          </p>
+        <div className="form-row">
+          <label name="brand" className="update-label" >Brand: </label>
+          <select name="brand" value={brand} onChange={handleBrandChange} required>
             <option value="Toyota">Toyota</option>
             <option value="Audi">Audi</option>
             <option value="Ferrari">Ferrari</option>
@@ -58,14 +61,14 @@ export default function UpdateCarComponent(){
           </select>
         </div>
 
-        <div>
-          <label name="color">Color: </label>
-          <input name="color" type="color" value={color} onChange={handleColorChange} ></input>
+        <div className="form-row">
+          <label name="color" className="update-label">Color: </label>
+          <input name="color" type="color" value={color} onChange={handleColorChange} className="input-color" required></input>
         </div>
 
-        <div>
-            <label name="type">Type: </label>
-            <select name="type" value={type} onChange={handleTypeChange} >
+        <div className="form-row">
+            <label name="type" className="update-label">Type: </label>
+            <select name="type" value={type} onChange={handleTypeChange} required>
                 <option value="SUV">SUV</option>
                 <option value="Sedan">Sedan</option>
                 <option value="Sports Car">Sports Car</option>
@@ -77,12 +80,12 @@ export default function UpdateCarComponent(){
             </select>
         </div>
 
-        <div>
-            <label name="age">Age: </label>
-            <input name="age" type="number" min={0} value={age} onChange={handleAgeChange}></input>
+        <div className="form-row">
+            <label name="age" className="update-label">Age: </label>
+            <input name="age" type="number" className="input-text input-number" min={0} value={age} onChange={handleAgeChange} required></input>
         </div>
 
-        <button type="button" onClick={submit} >Submit</button>
+        <button type="submit" className="btn" >Update</button>
       </form>
     </div>
 

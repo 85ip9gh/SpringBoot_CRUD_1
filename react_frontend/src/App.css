@@ -47,12 +47,9 @@ label {
   font-weight: bold;
 }
 
-.label-add-car{
-  display: inline-block;
-  width: 40px; 
-  text-align: right; 
-  margin-right: 10px;
-  font-weight: bold;
+.label-add-car,
+.update-label{
+  width: 60px; 
 }
 
 
@@ -118,7 +115,7 @@ select:focus{
 .form-row{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: left;
 }
 /* Home Component */
 
