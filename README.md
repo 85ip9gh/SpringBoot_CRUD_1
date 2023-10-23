@@ -77,7 +77,7 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 - Style form inputs so that the color fits with the website's theme of dark and light blue
 - Add css grid to the "/home" page and "my-cars" page
 - Make the car "cards" look more appealing by adding background color to the car details and making the labels bold
-- Revert "===" back to "==" for the "buy" button in "/home" page because the car's seller wasn't being recognized and the "buy" button was not changing to a "unlist"
+- Revert "===" back to "==" for the "buy" button in "/home" page because the car's seller wasn't being recognized and the "buy" button was not changing to a "unlist". Also change both car's seller and current user to lowercase before comparing.
 
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)
