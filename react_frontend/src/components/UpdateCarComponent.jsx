@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "./security/AuthProvider";
 import { useState } from "react";
-import { listCarForSale, updateCar } from "../api/CarSaleApiService";
+import { updateCar } from "../api/CarSaleApiService";
 
 
 export default function UpdateCarComponent(){
@@ -46,7 +46,6 @@ export default function UpdateCarComponent(){
   return(
 
     <div className="container" >
-        <h1>Update Car!</h1>
       <form>
 
         <div>
