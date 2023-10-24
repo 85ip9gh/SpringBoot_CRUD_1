@@ -79,7 +79,7 @@ export default function SellCarComponent(){
 
         <div className="form-row">
             <label name="age" className="label-add-car">Age: </label>
-            <input name="age" type="number" value={age} min={"0"} onChange={handleAgeChange} className="input-text input-number"></input>
+            <input name="age" type="number" value={age} min={0} onChange={handleAgeChange} className="input-text input-number"></input>
         </div>
 
         <button type="button" onClick={submit} className="btn" >Add Car</button>
