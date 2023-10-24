@@ -37,6 +37,15 @@ http://34.148.248.82:3000/
 - Use CSS to make website presentable
 - Add money system to add value to cars and simulate real-life car-sale website.
 
+# General Problems
+- Header too tall, needs to be shorter
+- Make Header buttons smaller
+- Need Logo or Website name on top left
+- Make "Logged in as x" smaller/less intrusive
+- Need to add Footer
+- Make elements mobile friendly (Especially '/home' and '/my-cars' pages)
+- Buttons and image of car too big in cards. The information can look better and be better arranged.
+
 # Updates
 
 ### 10/15/2023
