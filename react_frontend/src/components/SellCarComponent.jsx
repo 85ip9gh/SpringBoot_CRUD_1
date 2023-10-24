@@ -31,7 +31,8 @@ export default function SellCarComponent(){
     setAge(event.target.value);
   }
 
-   async function submit(){
+  const submit = async (e) => {
+    e.preventDefault();
      await listCarForSale(brand, color, type, age)
      .then(() => {
       navigate("/my-cars")
@@ -44,7 +45,7 @@ export default function SellCarComponent(){
   return(
 
     <div className="container" >
-      <form>
+      <form method="POST" onSubmit={submit}>
           <p className="form-title">
             Enter Car Details
           </p>
@@ -82,7 +83,7 @@ export default function SellCarComponent(){
             <input name="age" type="number" value={age} min={0} onChange={handleAgeChange} className="input-text input-number"></input>
         </div>
 
-        <button type="button" onClick={submit} className="btn" >Add Car</button>
+        <button type="submit" className="btn" >Add Car</button>
       </form>
     </div>
 
