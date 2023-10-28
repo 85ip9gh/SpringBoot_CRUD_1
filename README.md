@@ -88,5 +88,14 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 - Make the car "cards" look more appealing by adding background color to the car details and making the labels bold
 - Revert "===" back to "==" for the "buy" button in "/home" page because the car's seller wasn't being recognized and the "buy" button was not changing to a "unlist". Also change both car's seller and current user to lowercase before comparing.
 
+### 10/28/2023
+- Remove border-radius for a cleaner look
+- Remove labels in initial "login" and "create-account" forms and replace with placeholders
+- Let inputs and buttons in "login" and "create-account" forms take full width of the form
+- Let buttons in "car-cards" take full height of the card
+- Add website name to left side of header
+- Add error messages to "create-account" page by placing function to call api in AuthContext instead of "create-account" component
+- Change style of error messages by adding light red background and red border to look more appealing
+
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)

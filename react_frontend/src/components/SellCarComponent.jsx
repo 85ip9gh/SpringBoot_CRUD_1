@@ -52,10 +52,10 @@ export default function SellCarComponent(){
         <div className="form-row">
           <label name="brand" className="label-add-car">Brand: </label>
           <select name="brand" value={brand} onChange={handleBrandChange}>
-            <option value="toyota">Toyota</option>
-            <option value="audi">Audi</option>
-            <option value="ferrari">Ferrari</option>
-            <option value="lamborghini">Lamborghini</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Audi">Audi</option>
+            <option value="Ferrari">Ferrari</option>
+            <option value="Lamborghini">Lamborghini</option>
           </select>
         </div>
 
