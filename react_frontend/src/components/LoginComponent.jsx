@@ -44,7 +44,7 @@ const navigate = useNavigate();
         {authContext.errorMsg}
         </h1>
       </div>  
-        }
+      }
 
       {!hideLogin &&
         <form method="POST" onSubmit={submit}>

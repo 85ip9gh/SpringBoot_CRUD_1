@@ -1,14 +1,18 @@
 import { useState } from "react";
 import { createUser } from "../api/CarSaleApiService";
+import { useAuthContext } from "./security/AuthProvider";
 
 
 export default function LoginComponent(){
 
-  const [username, setUsername] = useState("Username");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
   const [passwordMatch, setPasswordMatch] = useState(true);
   const [userCreated, setUserCreated] = useState(false);
+  const [wrongCredentials, setWrongCredentials] = useState(false);
+
+  const authContext = useAuthContext();
 
   function handleUsernameChange(event){
     setUsername(event.target.value)
@@ -25,9 +29,14 @@ export default function LoginComponent(){
   const submit = async (e) => {
     e.preventDefault();
     if(password === passwordConfirm){
-        const created = await createUser(username,password);
-        if(created.status == 200){
+        setPasswordMatch(true);
+        const created = await authContext.createAccount(username,password);
+        
+        if(created == 200){
           setUserCreated(true);
+          setWrongCredentials(false);
+        } else{
+          setWrongCredentials(true);
         } 
 
     } else {
@@ -39,11 +48,26 @@ export default function LoginComponent(){
 
   return(
     <div className="container" >
-        {!passwordMatch && <h1 className="create-account-pop-up">Your passwords don't match!</h1>}
+        {!passwordMatch && 
+        <div className="error-msg-box">
+          <h1 className="error-msg">
+            Your passwords don't match!
+          </h1>
+        </div>
+        }
+
+        {wrongCredentials &&
+        <div className="error-msg-box">
+          <h1 className="error-msg">
+            {authContext.errorMsg}
+          </h1>
+        </div> 
+
+        }
 
         {userCreated && 
-            <div>
-                <h1 className="create-account-pop-up">
+            <div className="error-msg-box">
+                <h1 className="error-msg">
                     User {username} has been created!
                 </h1>
             </div>}
@@ -51,21 +75,21 @@ export default function LoginComponent(){
         {!userCreated && 
         <form method="POST" onSubmit={submit}>
           <p className="form-title">
-            Enter Details
+            Create Account
           </p>
         <div className="form-row">
           {/* <label name="username" >Username: </label> */}
-          <input name="username" className="input-text"  type="text" value={username} onChange={handleUsernameChange} required></input>
+          <input name="username" className="input-text"  type="text" value={username} placeholder="Username" onChange={handleUsernameChange} required></input>
         </div>
 
         <div className="form-row">
           {/* <label name="password">Password: </label> */}
-          <input name="password" className="input-password" type="password" value={password} onChange={handlePasswordChange} required></input>
+          <input name="password" className="input-password" type="password" placeholder="Password" value={password} onChange={handlePasswordChange} required></input>
         </div>
 
-        <div>
+        <div className="form-row">
           {/* <label name="password-confirm">Confirm Password: </label> */}
-          <input name="password-confirm" className="input-password" type="password" value={passwordConfirm} onChange={handlePasswordConfirmChange} required></input>
+          <input name="password-confirm" className="input-password" type="password" placeholder="Confirm Password" value={passwordConfirm} onChange={handlePasswordConfirmChange} required></input>
         </div>
 
         <button type="submit" className="btn btn-form">Create Account</button>

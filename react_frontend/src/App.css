@@ -62,10 +62,12 @@
 }
 
 .error-msg-box{
-  padding: 1em 6em;
+  text-align: center;
+  padding: 1em 1em;
   margin-bottom: 0.5em;
   border: 0.1em solid red;
   background-color: rgb(255, 139, 139);
+  width: 30em;
 }
 
 .link{
@@ -94,33 +96,22 @@ form{
   flex-direction: column;
   background-color: rgb(54, 106, 152);
   height: 20%;
-  width: auto;
+  width: 30em;
   padding: 1em 2em;
   gap: 0.5em;
   border: 0.2em solid black;
 }
 
-.login-row{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-
-
 .input-text,
 .input-password,
 select{
-  height: 40px;
-  width: auto;
-  margin-top: 5px;
-  font-size: 16px;
+  height: 3em;
+  width: 100%;
+  margin-top: 0.5em;
+  font-size: 1em;
   color: rgb(189, 213, 234);
   background-color: rgb(36, 69, 97);
-  padding-left: 10px;
+  padding-left: 0.5em;
 }
 
 .input-text:focus,
@@ -129,10 +120,6 @@ select:focus{
   background-color: rgb(189, 213, 234);
   color: rgb(36, 69, 97);
   outline: none;
-}
-
-.input-number{
-  width: 100px;
 }
 
 .input-color{
@@ -151,6 +138,7 @@ select:focus{
   display: flex;
   align-items: center;
   justify-content: left;
+  width: 100%;
 }
 /* Home Component */
 

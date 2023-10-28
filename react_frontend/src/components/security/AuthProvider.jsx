@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import { basicAuthentication, logout } from '../../api/CarSaleApiService';
+import { basicAuthentication, createUser, logout } from '../../api/CarSaleApiService';
 import { apiClient } from '../../api/ApiBaseURL';
 import { useNavigate } from 'react-router-dom';
 
@@ -56,38 +56,21 @@ export default function AuthProvider({ children }) {
           setErrorMsg('Login Failed')
         }
       }
-       
-       
-      //  .then(
-      //       (response) =>{
-      //         console.log(response);
-      //         if(response.status === 200){
-      //           setAuthenticated(true);
-      //           setUser(username);
-      //           setToken(basicAuthToken);
-                
-      //           apiClient.interceptors.request.use(
-      //               (config) => {
-      //                   console.log('intercepting')
-      //                   config.headers.Authorization = basicAuthToken
-      //                   return config
-      //                 }
-      //           )   
-      //           console.log("check2");  
-      //         }else{
-      //           console.log("check3");
-      //           setAuthenticated(false);
-      //           setUser(null);
-      //           setToken(null);
-      //         }
-      //       } 
-      //         ).catch((error) => {
-      //           console.log(error);
-      //         } )
-
-      //     console.log("LOGIN RESPONSE: " + JSON.stringify(loginResponse?.data));
-      //     return loginResponse;
+    }
+    
+    async function createAccount(username, password){
+      try{
+        const createResponse = await createUser(user, password);
+        return JSON.stringify(createResponse?.status);
+      }catch(error){
+        if(!error.response){
+          setErrorMsg('No Server Response');
+        } else {
+          setErrorMsg('Create Account Failed')
         }
+      }
+    }
+
 
     function logoutFunction(){
       logout().then(
@@ -99,7 +82,7 @@ export default function AuthProvider({ children }) {
     }
   
       return (
-          <AuthContext.Provider value={{ user, login, logout, authenticated, setAuthenticated, token, type, setType, brand, setBrand, age, setAge, color, setColor, carID, setCarID, errorMsg }}>
+          <AuthContext.Provider value={{ user, login, createAccount, logout, authenticated, setAuthenticated, token, type, setType, brand, setBrand, age, setAge, color, setColor, carID, setCarID, errorMsg }}>
               {children}
           </AuthContext.Provider>
       )
