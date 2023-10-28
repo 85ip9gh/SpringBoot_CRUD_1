@@ -45,6 +45,12 @@ export default function HomeComponent(){
 
     return(
     <div className="container">
+      <div className="home-container-inner">
+        <p className="container-title">
+          Market
+        </p>
+
+      </div>
       <div className="grid-container">
           {
             cars.map(

@@ -63,7 +63,16 @@ export default function MyCarsComponent(){
     }
    
     return(
-        <div className="container">
+      <div className="container">
+        {(numberOfCars != 0) ? 
+        <div className="home-container-inner">
+          <p className="container-title">
+            {authContext.user}'s cars
+          </p>
+        </div>
+        :<></>
+        }
+
           <div className="grid-container">
             {
               cars.map(
@@ -108,9 +117,9 @@ export default function MyCarsComponent(){
                     </div>
                         
                       <div className="my-cars-btns">
-                        <button className="btn" onClick={() => sellCarFunction(car.id)}>List for Sale</button>
-                        <button className="btn" onClick={() => updateCarFunction(car.id, car.brand, car.color,car.type, car.age)}>Update Car</button>
-                        <button className="btn" onClick={() => removeCarFunction(car.id)}>Remove Car</button></div>
+                        <button className="btn btn-my-car" onClick={() => sellCarFunction(car.id)}>List for Sale</button>
+                        <button className="btn btn-my-car" onClick={() => updateCarFunction(car.id, car.brand, car.color,car.type, car.age)}>Update Car</button>
+                        <button className="btn btn-my-car" onClick={() => removeCarFunction(car.id)}>Remove Car</button></div>
                       
        
                       </div>

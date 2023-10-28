@@ -14,8 +14,8 @@ export default function HeaderComponent(){
       <div className="header-component">
         {authContext.authenticated &&
           <div className="header-profile">
-              <p className="header-user">
-              {authContext.user}
+              <p className="header-company">
+              Car Sale Application
               </p>
           </div>   
       }

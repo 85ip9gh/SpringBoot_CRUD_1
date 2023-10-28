@@ -14,9 +14,10 @@
 .footer-component{
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 2em;
   background-image: url("./images/low_poly_grid_blue_1920_1080.svg");
-  padding: 1em;
+  padding: 1em 0.2em;
   height: 5vh;
   overflow: scroll;
 }
@@ -29,12 +30,9 @@
   height: 0;
 }
 
-.header-component{
-  justify-content: space-between;
-}
-
-.header-user{
+.header-company{
   font-size: 1.5em;
+  
 }
 
 .footer-component{
@@ -55,6 +53,7 @@
 .header-profile{
   background-color: rgb(189, 213, 234);
   padding: 0.3em 1em;
+  border: 0.1em solid rgb(36, 69, 97);
 }
 
 .error-msg{
@@ -156,6 +155,7 @@ select:focus{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.1em;
+  margin: 0 auto;
 }
 
 .card{
@@ -166,6 +166,10 @@ select:focus{
   padding: 0.5em;
   box-shadow: 0.5em 0.5em 0.5em rgb(36, 69, 97);
   border: 0.1em solid rgb(36, 69, 97);
+}
+
+.card:hover{
+  border: 0.1em solid white;
 }
 
 .inner-card{
@@ -213,7 +217,12 @@ img{
 .my-cars-btns{
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  justify-content: space-between;
+}
+
+.btn-my-car{
+  height: 100%;
+  border: 0.2em solid rgb(189, 213, 234);
 }
 
 .form-title{
@@ -229,4 +238,22 @@ img{
   border: 0.1em solid rgb(36, 69, 97);
   font-size: 3em;
   padding: 1em;
+}
+
+.container-title{
+  color: rgb(166, 233, 255);
+  background-color: rgb(54, 106, 152);
+  border: 0.1em solid black;
+  text-align: center;
+  font-size: 3em;
+  padding: 0.1em;
+  width: 10em;
+  margin: 0.2em;
+}
+
+.home-container-inner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
