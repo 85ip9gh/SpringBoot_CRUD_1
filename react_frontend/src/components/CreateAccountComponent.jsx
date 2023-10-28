@@ -4,7 +4,7 @@ import { createUser } from "../api/CarSaleApiService";
 
 export default function LoginComponent(){
 
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState("Username");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
   const [passwordMatch, setPasswordMatch] = useState(true);
@@ -54,21 +54,21 @@ export default function LoginComponent(){
             Enter Details
           </p>
         <div className="form-row">
-          <label name="username" >Username: </label>
+          {/* <label name="username" >Username: </label> */}
           <input name="username" className="input-text"  type="text" value={username} onChange={handleUsernameChange} required></input>
         </div>
 
         <div className="form-row">
-          <label name="password">Password: </label>
+          {/* <label name="password">Password: </label> */}
           <input name="password" className="input-password" type="password" value={password} onChange={handlePasswordChange} required></input>
         </div>
 
         <div>
-          <label name="password-confirm">Confirm Password: </label>
+          {/* <label name="password-confirm">Confirm Password: </label> */}
           <input name="password-confirm" className="input-password" type="password" value={passwordConfirm} onChange={handlePasswordConfirmChange} required></input>
         </div>
 
-        <button type="submit" className="btn">Create Account</button>
+        <button type="submit" className="btn btn-form">Create Account</button>
       </form>}
       
     </div>

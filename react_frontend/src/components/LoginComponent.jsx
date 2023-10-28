@@ -39,9 +39,12 @@ const navigate = useNavigate();
 
     <div className="container" >
       {wrongCredentials && 
-      <h1 className="create-account-pop-up">
+      <div className="error-msg-box">
+        <h1 className="error-msg">
         {authContext.errorMsg}
-      </h1>}
+        </h1>
+      </div>  
+        }
 
       {!hideLogin &&
         <form method="POST" onSubmit={submit}>
@@ -49,16 +52,16 @@ const navigate = useNavigate();
             Login
           </p>
           <div className="form-row">
-            <label name="username" className="login-label">Username: </label>
+            {/* <label name="username" className="login-label">Username: </label> */}
             <input name="username"  type="text" className="input-text" value={username} onChange={handleUsernameChange} required></input>
           </div>
 
           <div className="form-row">
-            <label name="password" className="login-label">Password: </label>
+            {/* <label name="password" className="login-label">Password: </label> */}
             <input name="password" className="input-password" type="password" value={password} onChange={handlePasswordChange} required></input>
           </div>
 
-          <button type="submit" className="btn">Sign in</button>
+          <button type="submit" className="btn btn-form">Sign in</button>
       </form>
       }
       

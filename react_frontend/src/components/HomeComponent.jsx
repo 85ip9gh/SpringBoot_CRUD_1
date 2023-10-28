@@ -90,9 +90,9 @@ export default function HomeComponent(){
                     
 
                     {(car.seller.toLowerCase() == authContext.user.toLowerCase()) ? 
-                      <div> <button className="btn car-unlist-btn" onClick={() => unlistCarFunction(car.id)}>Unlist</button> </div>
+                      <div> <button className="btn btn-home car-unlist-btn " onClick={() => unlistCarFunction(car.id)}>Unlist</button> </div>
                       : 
-                        <div> <button className="btn car-buy-btn" onClick={() => buyCarFunction(car.id)} >Buy</button> </div>                 
+                        <div> <button className="btn btn-home car-buy-btn" onClick={() => buyCarFunction(car.id)} >Buy</button> </div>                 
                     }
    
                 </div>
