@@ -6,8 +6,8 @@ import CreateAccountComponent from './components/CreateAccountComponent';
 import MyCarsComponent from './components/MyCarsComponent';
 import SellCarComponent from './components/SellCarComponent';
 import UpdateCarComponent from './components/UpdateCarComponent';
-import { useAuthContext } from './components/security/AuthProvider';
 import './App.css';
+import FooterComponent from './components/FooterComponent';
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
           <Route path='/update-car' element={<UpdateCarComponent/>} />
           < Route path='*' element={<LoginComponent/>}/>
         </Routes>
+      <FooterComponent/>
     </BrowserRouter>
 
   );

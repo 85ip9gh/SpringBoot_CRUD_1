@@ -13,15 +13,11 @@ export default function HeaderComponent(){
   return (
       <div className="header-component">
         {authContext.authenticated &&
-          <div>
-          {authContext.authenticated && 
           <div className="header-profile">
-              <h1>
+              <p className="header-user">
               Logged in as: {authContext.user}
-              </h1>
-          </div>
-          }
-        </div>
+              </p>
+          </div>   
       }
         <div className="header-component-inner">
 

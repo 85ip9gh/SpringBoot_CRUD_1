@@ -10,25 +10,41 @@
   margin: 0;
 }
 
-.header-component{
+.header-component,
+.footer-component{
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 50px;
   background-image: url("./images/low_poly_grid_blue_1920_1080.svg");
+  padding: 1em;
+  height: 5vh;
+}
+
+.header-component{
+  justify-content: space-between;
+}
+
+.header-user{
+  font-size: 1.5em;
+}
+
+.footer-component{
+  justify-content: center;
+}
+
+
+.footer-copyright{
+  color: rgb(189, 213, 234) ;
 }
 
 .header-component-inner{
   display: flex;
-  gap: 50px;
+  align-items: center;
+  gap: 1em;
 }
 
 .header-profile{
   background-color: rgb(189, 213, 234);
-  border-radius: 10px;
-  padding: 15px 10px;
-  display: flex;
-  gap: 10px;
+  padding: 0.2em;
 }
 
 .create-account-pop-up{
@@ -126,7 +142,7 @@ select:focus{
   align-items: center;
   background-image: url("./images/polygon_blue_massive.svg");
   height: 100%;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 .grid-container{
@@ -168,17 +184,17 @@ tr{
 }
 
 .btn{
-  height: 50px;
-  width: 150px;
-  border-radius: 10px;
+  height: 2em;
+  width: 8em;
   border: none;
   background-color: rgb(189, 213, 234);
   text-align: center;
-  font-size: 16px;
+  font-size: 1em;
   font-weight: bold;
 }
 
 .btn:hover{
+  cursor: pointer;
   background-color: rgb(166, 233, 255);
 }
 
