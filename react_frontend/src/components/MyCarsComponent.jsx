@@ -10,6 +10,7 @@ import lamborghini from '../images/lamborghini.jpeg';
 export default function MyCarsComponent(){
     const authContext = useAuthContext();
     const [cars, setCars] = useState([]);
+    const [numberOfCars, setNumberOfCars] = useState(0);
     const navigate = useNavigate();
 
    
@@ -22,8 +23,18 @@ export default function MyCarsComponent(){
     function refreshCars(){
       retrieveMyCars().then(response => {
         console.log(response.data);
-        setCars(response.data);
-        console.log(Array.isArray(cars))
+        
+        const mycars = [];
+
+        response.data.map(
+          car => (
+            (car.selling === false) ?
+              mycars.push(car)
+            :null     
+          ));
+          setCars(mycars);
+          setNumberOfCars(mycars.length);
+          console.log(Array.isArray(cars));
       }).catch(error => console.log(error))
     }
 
@@ -109,6 +120,11 @@ export default function MyCarsComponent(){
               )
             }
           </div>
+            {(numberOfCars==0) ? 
+            <h1 className="my-cars-error">
+              You Have No Cars!
+            </h1>
+          :<></>}
       
     </div>
     )

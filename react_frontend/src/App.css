@@ -129,9 +129,8 @@ select:focus{
   width: 40px;
 }
 
-
 .login-label{
-  font-size: 16px;
+  font-size: 1em;
 }
 
 .form-row{
@@ -222,4 +221,12 @@ img{
   font-weight: bold;
   width: 100%;
   text-align: center;
+}
+
+.my-cars-error{
+  color: rgb(166, 233, 255);
+  background-color: rgb(54, 106, 152);
+  border: 0.1em solid rgb(36, 69, 97);
+  font-size: 3em;
+  padding: 1em;
 }

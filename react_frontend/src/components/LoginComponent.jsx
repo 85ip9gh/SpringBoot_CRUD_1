@@ -53,12 +53,12 @@ const navigate = useNavigate();
           </p>
           <div className="form-row">
             {/* <label name="username" className="login-label">Username: </label> */}
-            <input name="username"  type="text" className="input-text" value={username} onChange={handleUsernameChange} required></input>
+            <input name="username"  type="text" className="input-text" placeholder="Username" value={username} onChange={handleUsernameChange} required></input>
           </div>
 
           <div className="form-row">
             {/* <label name="password" className="login-label">Password: </label> */}
-            <input name="password" className="input-password" type="password" value={password} onChange={handlePasswordChange} required></input>
+            <input name="password" className="input-password" type="password" placeholder="Password" value={password} onChange={handlePasswordChange} required></input>
           </div>
 
           <button type="submit" className="btn btn-form">Sign in</button>
