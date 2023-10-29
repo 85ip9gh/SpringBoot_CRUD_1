@@ -32,7 +32,7 @@ http://34.148.248.82:3000/
 
 - Add JWT and/or OAuth Authorization for extra security in spring boot.
 - Convert the hex color value in the "update-car" page on front-end to show color names using the color hex values stored in the database. Use hex color code to tint the image of car to add individuality.
-    -- fixed on 10/28/2023, color in card now has square next to it with color(implementing ting on an image seems complicated for what would ultimately be an ugly feature)
+    - fixed on 10/28/2023, color in card now has square next to it with color(implementing ting on an image seems complicated for what would ultimately be an ugly feature)
 
 - Add ADMIN users and give them ADMIN priviledges to see what cars all users have
 - Use CSS to make website presentable
