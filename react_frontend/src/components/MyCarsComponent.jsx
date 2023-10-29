@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { removeCar, retrieveMyCars, sellCar } from "../api/CarSaleApiService";
 import { useAuthContext } from "./security/AuthProvider";
 import { useNavigate } from "react-router-dom";
-import toyota from '../images/toyota.jpeg';
-import audi from '../images/audi.jpeg';
-import ferrari from '../images/ferrari.jpeg';
-import lamborghini from '../images/lamborghini.jpeg';
+import toyota from '../images/toyota.jpg';
+import audi from '../images/audi_new.jpg';
+import ferrari from '../images/ferrari.jpg';
+import lamborghini from '../images/lamborghini.jpg';
 
 export default function MyCarsComponent(){
     const authContext = useAuthContext();
@@ -81,13 +81,13 @@ export default function MyCarsComponent(){
                     <div key={car.id} className="card">
                        {
                         (car.brand === 'Toyota') ?
-                        <div>
+                        <div className="img-box">
                           <img src={toyota} alt="Grey Toyota Sedan" />
                         </div>
                           :
                           ((car.brand === 'Audi')) ?
     
-                        <div>
+                        <div className="img-box">
                           <img src={audi} alt="Black Audi SUV"/>
                         </div>
     
@@ -95,13 +95,13 @@ export default function MyCarsComponent(){
     
                         ((car.brand === 'Lamborghini')) ?
     
-                        <div>
+                        <div className="img-box">
                           <img src={lamborghini} alt="Orange Lamborghini Supercar"/>
                         </div>
     
                         :
     
-                        <div>
+                        <div className="img-box">
                           <img src={ferrari} alt="Red Ferrari Sportscar" />
                         </div>
     
@@ -110,7 +110,7 @@ export default function MyCarsComponent(){
                     <div className="inner-card">
                       <div><strong>ID:</strong> {car.id}</div>
                       <div><strong>Brand:</strong>  {car.brand}</div>
-                      <div><strong>Color:</strong> {car.color}</div>
+                      <div className="color-row"><strong>Color:</strong> <div className="car-color" style={{backgroundColor: car.color}} ></div></div>
                       <div><strong>Type:</strong> {car.type}</div>
                       <div><strong>Age:</strong> {car.age}</div>
                       <div><strong>Seller:</strong> {car.seller}</div>

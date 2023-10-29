@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import { buyCar, retrieveCars, unlistCar } from "../api/CarSaleApiService";
 import { useAuthContext } from "./security/AuthProvider";
-import toyota from '../images/toyota.jpeg';
-import audi from '../images/audi.jpeg';
-import ferrari from '../images/ferrari.jpeg';
-import lamborghini from '../images/lamborghini.jpeg';
+import toyota from '../images/toyota.jpg';
+import audi from '../images/audi_new.jpg';
+import ferrari from '../images/ferrari.jpg';
+import lamborghini from '../images/lamborghini.jpg';
 
 export default function HomeComponent(){
 
@@ -59,13 +59,13 @@ export default function HomeComponent(){
                 <div key={car.id} className="card">
                    {
                     (car.brand === 'Toyota') ?
-                    <div>
+                    <div className="img-box">
                       <img src={toyota} alt="Grey Toyota Sedan" />
                     </div>
                       :
                       ((car.brand === 'Audi')) ?
 
-                    <div>
+                    <div className="img-box">
                       <img src={audi} alt="Black Audi SUV"/>
                     </div>
 
@@ -73,13 +73,13 @@ export default function HomeComponent(){
 
                     ((car.brand === 'Lamborghini')) ?
 
-                    <div>
+                    <div className="img-box">
                       <img src={lamborghini} alt="Orange Lamborghini Supercar" />
                     </div>
 
                     :
 
-                    <div>
+                    <div className="img-box">
                       <img src={ferrari} alt="Red Ferrari Sportscar" />
                     </div>
 
