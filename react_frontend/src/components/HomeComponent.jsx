@@ -80,7 +80,7 @@ export default function HomeComponent(){
                     :
 
                     <div className="img-box">
-                      <img src={ferrari} alt="Red Ferrari Sportscar" />
+                      <img src={ferrari} alt="Red Ferrari Sportscar" style={{ }} />
                     </div>
 
                     }
