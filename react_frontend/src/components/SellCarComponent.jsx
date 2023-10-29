@@ -13,7 +13,7 @@ export default function SellCarComponent(){
   const [brand, setBrand] = useState("Toyota");
   const [color, setColor] = useState("#000000");
   const [type, setType] = useState("SUV");
-  const [age, setAge] = useState("1");
+  const [age, setAge] = useState();
 
   function handleBrandChange(event){
     setBrand(event.target.value)
@@ -50,7 +50,7 @@ export default function SellCarComponent(){
             Enter Car Details
           </p>
         <div className="form-row">
-          <label name="brand" className="label-add-car">Brand: </label>
+          {/* <label name="brand" className="label-add-car">Brand: </label> */}
           <select name="brand" value={brand} onChange={handleBrandChange}>
             <option value="Toyota">Toyota</option>
             <option value="Audi">Audi</option>
@@ -60,12 +60,12 @@ export default function SellCarComponent(){
         </div>
 
         <div className="form-row">
-          <label name="color" className="label-add-car">Color: </label>
+          {/* <label name="color" className="label-add-car">Color: </label> */}
           <input name="color" type="color" value={color} className="input-color" onChange={handleColorChange} ></input>
         </div>
 
         <div className="form-row">
-            <label name="type" className="label-add-car">Type: </label>
+            {/* <label name="type" className="label-add-car">Type: </label> */}
             <select name="type" value={type} onChange={handleTypeChange} >
                 <option value="SUV">SUV</option>
                 <option value="Sedan">Sedan</option>
@@ -79,8 +79,8 @@ export default function SellCarComponent(){
         </div>
 
         <div className="form-row">
-            <label name="age" className="label-add-car">Age: </label>
-            <input name="age" type="number" value={age} min={0} onChange={handleAgeChange} className="input-text input-number"></input>
+            {/* <label name="age" className="label-add-car">Age: </label> */}
+            <input name="age" type="number" placeholder="Age of Car in Years" value={age} min={0} onChange={handleAgeChange} className="input-text input-number"></input>
         </div>
 
         <button type="submit" className="btn" >Add Car</button>

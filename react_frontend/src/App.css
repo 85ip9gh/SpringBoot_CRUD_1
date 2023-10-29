@@ -60,13 +60,24 @@
   color: rgb(144, 0, 0);
 }
 
-.error-msg-box{
+.success-msg{
+  color: rgb(0, 98, 0);
+}
+
+
+.error-msg-box,
+.success-msg-box{
   text-align: center;
   padding: 1em 1em;
   margin-bottom: 0.5em;
   border: 0.1em solid red;
   background-color: rgb(255, 139, 139);
   width: 30em;
+}
+
+.success-msg-box{
+  border: 0.1em solid green;
+  background-color: rgb(139, 254, 139);
 }
 
 .link{
@@ -124,8 +135,8 @@ select:focus{
 .input-color{
   border: transparent;
   background-color: transparent;
-  height: 40px;
-  width: 40px;
+  height: 3em;
+  width: 3em;
 }
 
 .login-label{

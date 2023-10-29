@@ -66,8 +66,8 @@ export default function LoginComponent(){
         }
 
         {userCreated && 
-            <div className="error-msg-box">
-                <h1 className="error-msg">
+            <div className="success-msg-box">
+                <h1 className="success-msg">
                     User {username} has been created!
                 </h1>
             </div>}
