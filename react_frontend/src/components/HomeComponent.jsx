@@ -88,7 +88,7 @@ export default function HomeComponent(){
                   <div className="inner-card">
                     <div><strong>ID:</strong> {car.id}</div>
                     <div><strong>Brand:</strong>  {car.brand}</div>
-                    <div><strong>Color:</strong> {car.color}</div>
+                    <div className="color-row"><strong>Color:</strong><div className="car-color" style={{backgroundColor: car.color}} ></div></div>
                     <div><strong>Type:</strong> {car.type}</div>
                     <div><strong>Age:</strong> {car.age}</div>
                     <div><strong>Seller:</strong> {car.seller}</div>

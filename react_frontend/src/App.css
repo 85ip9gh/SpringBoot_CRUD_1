@@ -185,11 +185,12 @@ select:focus{
 
 .color-row{
   display: flex;
+  align-items: center;
   gap: 0.4em;
 }
 
 .car-color{
-  width: 3em;
+  width: 1em;
   height: 1em;
 }
 
