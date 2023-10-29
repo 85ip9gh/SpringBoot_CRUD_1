@@ -97,6 +97,10 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 - Add website name to left side of header
 - Add error messages to "create-account" page by placing function to call api in AuthContext instead of "create-account" component
 - Change style of error messages by adding light red background and red border to look more appealing
+- "User create success" message now green
+- removed labels from "add car" form and added placeholder to age input
+- color in "car card" now has square next to it with color from hex value in database(which user chose when adding car)
+- deploy v2 front-end to GCP vm
 
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)
