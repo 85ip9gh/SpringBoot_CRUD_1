@@ -15,10 +15,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2em;
+  gap: 2rem;
   background-image: url("./images/low_poly_grid_blue_1920_1080.svg");
-  padding: 1em 0.2em;
-  height: 5vh;
+  padding: 1rem 0.2rem;
+  height: 4rem;
   overflow: scroll;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .header-company{
-  font-size: 1.5em;
+  font-size: 1.5rem;
   
 }
 
@@ -47,13 +47,14 @@
 .header-component-inner{
   display: flex;
   align-items: center;
-  gap: 0.5em;
+  gap: 0.5rem;
 }
 
 .header-profile{
   background-color: rgb(189, 213, 234);
-  padding: 0.3em 1em;
-  border: 0.1em solid rgb(36, 69, 97);
+  width: 4rem;
+  height: 4rem;
+  margin-left: -0.2rem;
 }
 
 .error-msg{
@@ -68,15 +69,15 @@
 .error-msg-box,
 .success-msg-box{
   text-align: center;
-  padding: 1em 1em;
-  margin-bottom: 0.5em;
-  border: 0.1em solid red;
+  padding: 1rem 1rem;
+  margin-bottom: 0.5rem;
+  border: 0.1rem solid red;
   background-color: rgb(255, 139, 139);
-  width: 30em;
+  width: 30rem;
 }
 
 .success-msg-box{
-  border: 0.1em solid green;
+  border: 0.1rem solid green;
   background-color: rgb(139, 254, 139);
 }
 
@@ -86,15 +87,15 @@
 
 label { 
   display: inline-block;
-  width: 100px; 
+  width: 20rem; 
   text-align: right; 
-  margin-right: 0.2em;
+  margin-right: 0.2rem;
   font-weight: bold;
 }
 
 .label-add-car,
 .update-label{
-  width: 60px; 
+  width: 20rem; 
 }
 
 
@@ -106,22 +107,22 @@ form{
   flex-direction: column;
   background-color: rgb(54, 106, 152);
   height: 20%;
-  width: 30em;
-  padding: 1em 2em;
-  gap: 0.5em;
-  border: 0.2em solid black;
+  width: 30rem;
+  padding: 1rem 2rem;
+  gap: 0.5rem;
+  border: 0.2rem solid black;
 }
 
 .input-text,
 .input-password,
 select{
-  height: 3em;
+  height: 3rem;
   width: 100%;
-  margin-top: 0.5em;
-  font-size: 1em;
+  margin-top: 0.5rem;
+  font-size: 1rem;
   color: rgb(189, 213, 234);
   background-color: rgb(36, 69, 97);
-  padding-left: 0.5em;
+  padding-left: 0.5rem;
 }
 
 .input-text:focus,
@@ -135,12 +136,12 @@ select:focus{
 .input-color{
   border: transparent;
   background-color: transparent;
-  height: 3em;
-  width: 3em;
+  height: 3rem;
+  width: 3rem;
 }
 
 .login-label{
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 .form-row{
@@ -165,27 +166,27 @@ select:focus{
 .grid-container{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.1em;
+  gap: 0.1rem;
   margin: 0 auto;
 }
 
 .card{
   display: flex;
   justify-content: space-between;
-  margin: 0.5em;
+  margin: 0.5rem;
   background-color: rgb(221, 241, 255);
-  padding: 0.5em;
-  box-shadow: 0.5em 0.5em 0.5em rgb(36, 69, 97);
-  border: 0.1em solid rgb(36, 69, 97);
+  padding: 0.5rem;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgb(36, 69, 97);
+  border: 0.1rem solid rgb(36, 69, 97);
 }
 
 .card:hover{
-  border: 0.1em solid white;
+  border: 0.1rem solid white;
 }
 
 .inner-card{
-  width: 15em;
-  padding: 1em;
+  width: 15rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -197,27 +198,27 @@ select:focus{
 .color-row{
   display: flex;
   align-items: center;
-  gap: 0.4em;
+  gap: 0.4rem;
 }
 
 .car-color{
-  width: 1em;
-  height: 1em;
+  width: 1rem;
+  height: 1rem;
 }
 
 .btn{
-  height: 2em;
-  width: 8em;
+  height: 2rem;
+  width: 8rem;
   border: none;
   background-color: rgb(189, 213, 234);
   text-align: center;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: bold;
 }
 
 .btn-form{
   width: 100%;
-  height: 3em;
+  height: 3rem;
 }
 
 .btn-home{
@@ -227,7 +228,7 @@ select:focus{
 .btn:hover{
   cursor: pointer;
   background-color: rgb(166, 233, 255);
-  border: 0.2em solid rgb(54, 106, 152);
+  border: 0.2rem solid rgb(54, 106, 152);
 }
 
 img{
@@ -236,9 +237,14 @@ img{
   display: block;
 }
 
+.logo{
+  height: 100%;
+  width: 100%;
+}
+
 .img-box{
-  width: 20em;
-  height: 10em;
+  width: 20rem;
+  height: 10rem;
 }
 
 .my-cars-btns{
@@ -249,11 +255,11 @@ img{
 
 .btn-my-car{
   height: 100%;
-  border: 0.2em solid rgb(189, 213, 234);
+  border: 0.2rem solid rgb(189, 213, 234);
 }
 
 .form-title{
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: bold;
   width: 100%;
   text-align: center;
@@ -262,20 +268,20 @@ img{
 .my-cars-error{
   color: rgb(166, 233, 255);
   background-color: rgb(54, 106, 152);
-  border: 0.1em solid rgb(36, 69, 97);
-  font-size: 3em;
-  padding: 1em;
+  border: 0.1rem solid rgb(36, 69, 97);
+  font-size: 3rem;
+  padding: 1rem;
 }
 
 .container-title{
   color: rgb(166, 233, 255);
   background-color: rgb(54, 106, 152);
-  border: 0.1em solid black;
+  border: 0.1rem solid black;
   text-align: center;
-  font-size: 3em;
-  padding: 0.1em;
-  width: 10em;
-  margin: 0.2em;
+  font-size: 3rem;
+  padding: 0.1rem;
+  width: 10rem;
+  margin: 0.2rem;
 }
 
 .home-container-inner{

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useAuthContext } from "./security/AuthProvider";
+import logo from "../images/logo_header.jpg"
 
 
 export default function HeaderComponent(){
@@ -12,13 +13,9 @@ export default function HeaderComponent(){
 
   return (
       <div className="header-component">
-        {authContext.authenticated &&
           <div className="header-profile">
-              <p className="header-company">
-              Car Sale Application
-              </p>
+              <img src={logo} className="header-logo" alt="logo for Car sale Application" />
           </div>   
-      }
         <div className="header-component-inner">
 
         {isAuthenticated && ( <Link  to='/home' className="link home-link">

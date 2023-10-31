@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "./security/AuthProvider";
 import { useState } from "react";
+import logo from "../images/logo.jpg"
 
 
 export default function LoginComponent(){
@@ -38,6 +39,7 @@ const navigate = useNavigate();
   return(
 
     <div className="container" >
+
       {wrongCredentials && 
       <div className="error-msg-box">
         <h1 className="error-msg">
@@ -48,9 +50,10 @@ const navigate = useNavigate();
 
       {!hideLogin &&
         <form method="POST" onSubmit={submit}>
-          <p className="form-title">
+          <img src={logo} className="logo" alt="logo for Car sale Application" />
+          {/* <p className="form-title">
             Login
-          </p>
+          </p> */}
           <div className="form-row">
             {/* <label name="username" className="login-label">Username: </label> */}
             <input name="username"  type="text" className="input-text" placeholder="Username" value={username} onChange={handleUsernameChange} required></input>
@@ -61,7 +64,7 @@ const navigate = useNavigate();
             <input name="password" className="input-password" type="password" placeholder="Password" value={password} onChange={handlePasswordChange} required></input>
           </div>
 
-          <button type="submit" className="btn btn-form">Sign in</button>
+          <button type="submit" className="btn btn-form">Login</button>
       </form>
       }
       

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createUser } from "../api/CarSaleApiService";
 import { useAuthContext } from "./security/AuthProvider";
+import logo from "../images/logo.jpg";
 
 
 export default function LoginComponent(){
@@ -74,9 +75,10 @@ export default function LoginComponent(){
 
         {!userCreated && 
         <form method="POST" onSubmit={submit}>
-          <p className="form-title">
+          <img src={logo} className="logo" alt="logo for Car sale Application" />
+          {/* <p className="form-title">
             Create Account
-          </p>
+          </p> */}
         <div className="form-row">
           {/* <label name="username" >Username: </label> */}
           <input name="username" className="input-text"  type="text" value={username} placeholder="Username" onChange={handleUsernameChange} required></input>

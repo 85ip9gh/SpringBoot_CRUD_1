@@ -102,5 +102,8 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 - color in "car card" now has square next to it with color from hex value in database(which user chose when adding car)
 - deploy v2 front-end to GCP vm
 
+### 10/31/2023
+- Add logo to header and Login/Create-Account pages
+
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)
