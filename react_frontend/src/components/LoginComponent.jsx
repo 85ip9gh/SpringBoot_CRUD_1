@@ -42,9 +42,9 @@ const navigate = useNavigate();
 
       {wrongCredentials && 
       <div className="error-msg-box">
-        <h1 className="error-msg">
+        <p className="error-msg">
         {authContext.errorMsg}
-        </h1>
+        </p>
       </div>  
       }
 

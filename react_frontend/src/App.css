@@ -1,7 +1,13 @@
  /* COLORS: 
  LIGHT BLUE: rgb(189, 213, 234)  
  DARK BLUE: rgb(54, 106, 152)
- DARKER BLUE: rgb(36, 69, 97)*/
+ DARKER BLUE: rgb(36, 69, 97)
+ 
+ HEADER BACKGROUN: rgba(0,52,102,255)
+ PEACH COLOR: rgba(241,156,111,255)
+
+ CONTAINER TITLE: rgba(255, 217, 0, 0.905)
+ */
 
 *{
   font-family: Arial, Helvetica, sans-serif;
@@ -16,10 +22,10 @@
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  background-image: url("./images/low_poly_grid_blue_1920_1080.svg");
-  padding: 1rem 0.2rem;
+  /* background-image: url("./images/low_poly_grid_blue_1920_1080.svg"); */
   height: 4rem;
   overflow: scroll;
+  background-color: rgba(0,52,102,255);
 }
 
 .header-component::-webkit-scrollbar,
@@ -41,13 +47,13 @@
 
 
 .footer-copyright{
-  color: rgb(189, 213, 234) ;
+  color: rgba(241,156,111,255);
 }
 
 .header-component-inner{
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  height: 100%;
 }
 
 .header-profile{
@@ -58,6 +64,7 @@
 }
 
 .error-msg{
+  font-size: 2rem;
   color: rgb(144, 0, 0);
 }
 
@@ -83,6 +90,7 @@
 
 .link{
   text-decoration: none;
+  height: 100%;
 }
 
 label { 
@@ -90,7 +98,6 @@ label {
   width: 20rem; 
   text-align: right; 
   margin-right: 0.2rem;
-  font-weight: bold;
 }
 
 .label-add-car,
@@ -161,6 +168,7 @@ select:focus{
   height: 100%;
   min-height: 90vh;
   overflow: scroll;
+  padding-bottom: 2rem;
 }
 
 .grid-container{
@@ -191,8 +199,8 @@ select:focus{
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  background-color: rgb(36, 69, 97);
-  color: rgb(189, 213, 234);
+  background-color: rgba(0,52,102,255);
+  color: rgba(241,156,111,255);
 }
 
 .color-row{
@@ -208,12 +216,16 @@ select:focus{
 
 .btn{
   height: 2rem;
-  width: 8rem;
+  width: 10rem;
   border: none;
   background-color: rgb(189, 213, 234);
   text-align: center;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 1.2rem;
+  color: rgb(145, 126, 0);
+}
+
+.header-btn{
+  height: 100%;
 }
 
 .btn-form{
@@ -227,8 +239,8 @@ select:focus{
 
 .btn:hover{
   cursor: pointer;
-  background-color: rgb(166, 233, 255);
-  border: 0.2rem solid rgb(54, 106, 152);
+  background-color: rgba(0,52,102,255);
+  color: rgba(241,156,111,255);
 }
 
 img{
@@ -255,14 +267,6 @@ img{
 
 .btn-my-car{
   height: 100%;
-  border: 0.2rem solid rgb(189, 213, 234);
-}
-
-.form-title{
-  font-size: 3rem;
-  font-weight: bold;
-  width: 100%;
-  text-align: center;
 }
 
 .my-cars-error{
@@ -274,14 +278,15 @@ img{
 }
 
 .container-title{
-  color: rgb(166, 233, 255);
-  background-color: rgb(54, 106, 152);
+  color: rgba(255, 217, 0, 0.905);
+  background-color: transparent;
   border: 0.1rem solid black;
   text-align: center;
-  font-size: 3rem;
+  font-size: 4rem;
   padding: 0.1rem;
-  width: 10rem;
+  width: 100%;
   margin: 0.2rem;
+  font-weight: bold;
 }
 
 .home-container-inner{

@@ -18,12 +18,14 @@ export default function AuthProvider({ children }) {
     const [age, setAge] = useState();
     const [carID, setCarID] = useState();
     const [errorMsg, setErrorMsg] = useState();
+    const [role, setRole] = useState();
 
      async function login(username, password){
 
       const basicAuthToken = 'Basic ' + window.btoa(username + ":" + password)
       try{
         const loginResponse = await basicAuthentication(basicAuthToken);
+        setRole(loginResponse.data);
         console.log("LOGIN AUTH " + JSON.stringify(loginResponse.status));
         if(loginResponse.status === 200){
           setAuthenticated(true);
@@ -82,7 +84,7 @@ export default function AuthProvider({ children }) {
     }
   
       return (
-          <AuthContext.Provider value={{ user, login, createAccount, logout, authenticated, setAuthenticated, token, type, setType, brand, setBrand, age, setAge, color, setColor, carID, setCarID, errorMsg }}>
+          <AuthContext.Provider value={{role, user, login, createAccount, logout, authenticated, setAuthenticated, token, type, setType, brand, setBrand, age, setAge, color, setColor, carID, setCarID, errorMsg }}>
               {children}
           </AuthContext.Provider>
       )

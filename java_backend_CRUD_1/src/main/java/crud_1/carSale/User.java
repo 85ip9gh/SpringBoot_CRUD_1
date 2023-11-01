@@ -31,7 +31,7 @@ public class User implements UserDetails{
 	
 	private String name;
 	private String password;
-	private String roles = "ROLE_USER";
+	private String roles;
 
 	@OneToMany(mappedBy = "user")
 	public List<Car> myCars = new ArrayList<>();
@@ -39,11 +39,13 @@ public class User implements UserDetails{
 	public User() {
 		this.name = "sam";
 		this.password = "man";
+		this.roles = "ROLE_USER";
 	}
 	
-	public User(String name, String password) {
+	public User(String name, String password, String roles) {
 		this.name = name;
 		this.password = password;
+		this.roles = roles;
 	}
 	
 	public User(User user) {

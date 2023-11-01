@@ -46,9 +46,6 @@ export default function SellCarComponent(){
 
     <div className="container" >
       <form method="POST" onSubmit={submit}>
-          <p className="form-title">
-            Enter Car Details
-          </p>
         <div className="form-row">
           {/* <label name="brand" className="label-add-car">Brand: </label> */}
           <select name="brand" value={brand} onChange={handleBrandChange}>

@@ -23,8 +23,8 @@ public class CarSaleController {
 	private UserService userService;
 	
 	@GetMapping("/basic-auth")
-	public String basicAuthentication() {
-		return "Success";
+	public String basicAuthentication(Principal principal) {
+		return userService.getUserByName(principal.getName()).get().getRoles();
 	}
 
 	@GetMapping("/cars")

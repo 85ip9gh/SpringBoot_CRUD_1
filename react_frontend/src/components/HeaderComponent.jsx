@@ -17,6 +17,13 @@ export default function HeaderComponent(){
               <img src={logo} className="header-logo" alt="logo for Car sale Application" />
           </div>   
         <div className="header-component-inner">
+        {(authContext.role == "ROLE_ADMIN") ? 
+          <button className="btn header-btn">
+          All Users
+        </button>
+        : <></>
+
+        }
 
         {isAuthenticated && ( <Link  to='/home' className="link home-link">
           <button className="btn header-btn">

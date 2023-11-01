@@ -104,6 +104,8 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 
 ### 10/31/2023
 - Add logo to header and Login/Create-Account pages
+- Added admin user with role "ROLE_ADMIN who has access to all users(can delete them from react front-end) to data.sql file. Means that by default, there will be a user with admin access which can be accessed.
+- Changed px to rem for sizing fonts and elements to 
 
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)

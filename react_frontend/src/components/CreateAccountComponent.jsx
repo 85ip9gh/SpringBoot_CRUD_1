@@ -51,26 +51,26 @@ export default function LoginComponent(){
     <div className="container" >
         {!passwordMatch && 
         <div className="error-msg-box">
-          <h1 className="error-msg">
+          <p className="error-msg">
             Your passwords don't match!
-          </h1>
+          </p>
         </div>
         }
 
         {wrongCredentials &&
         <div className="error-msg-box">
-          <h1 className="error-msg">
+          <p className="error-msg">
             {authContext.errorMsg}
-          </h1>
+          </p>
         </div> 
 
         }
 
         {userCreated && 
             <div className="success-msg-box">
-                <h1 className="success-msg">
+                <p className="success-msg">
                     User {username} has been created!
-                </h1>
+                </p>
             </div>}
 
         {!userCreated && 

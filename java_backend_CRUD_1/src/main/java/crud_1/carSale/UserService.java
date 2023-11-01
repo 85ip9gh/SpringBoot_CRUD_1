@@ -24,7 +24,7 @@ public class UserService implements UserDetailsService{
 			throw new UsernameNotFoundException("User: " + username + "not found");	
 		}
 		
-		return new User(currentUser.getName(), currentUser.getPassword());
+		return new User(currentUser.getName(), currentUser.getPassword(), currentUser.getRoles());
 				
 //				.map(User::new)
 //				.orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
