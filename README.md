@@ -109,8 +109,10 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 - Changed px to rem for sizing fonts and elements for better mobile experience
 - Replaced Background Images for Header and Footer with Logo Colors and changed colors of website fonts to be more aesthetically pleasing 
 
-### Initial Sketches:
+# Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)
 
-### Website Versions:
+# Website Versions:
+
+### V2
 ![Website V2 of Car Sale Application Website](./images/Website_V2.jpg)
