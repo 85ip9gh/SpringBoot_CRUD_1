@@ -6,7 +6,7 @@
  HEADER BACKGROUN: rgba(0,52,102,255)
  PEACH COLOR: rgba(241,156,111,255)
 
- CONTAINER TITLE: rgba(255, 217, 0, 0.905)
+ CONTAINER TITLE(GOLD): rgba(255, 217, 0, 0.905)
  */
 
 *{
@@ -41,13 +41,15 @@
   
 }
 
-.footer-component{
-  justify-content: center;
+.header-component{
+  border-bottom: 0.2rem solid rgba(241,156,111,255);
 }
 
-
-.footer-copyright{
+.footer-component{
+  justify-content: center;
+  border-top: 0.2rem solid rgba(241,156,111,255);
   color: rgba(241,156,111,255);
+  background-color: rgba(0,52,102,255);
 }
 
 .header-component-inner{
@@ -166,12 +168,19 @@ select:focus{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("./images/polygon_blue_massive.svg");
+  
   height: 100%;
-  min-height: 90vh;
+  min-height: 100vh;
   overflow: scroll;
   padding-bottom: 2rem;
   margin: 0 auto;
+
+  background-image: url("./images/polygon_blue_massive.svg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: rgb(189, 213, 234) ;
 }
 
 .grid-container{
@@ -182,8 +191,6 @@ select:focus{
 }
 
 .card{
-  display: flex;
-  justify-content: space-between;
   margin: 0.5rem;
   background-color: rgb(221, 241, 255);
   padding: 0.5rem;
@@ -191,15 +198,21 @@ select:focus{
   border: 0.1rem solid rgb(36, 69, 97);
 }
 
+.card-flex{
+  display: flex;
+}
+
 .card:hover{
   border: 0.1rem solid white;
+  box-shadow: 0 0 2rem rgba(255, 217, 0, 0.905);
 }
 
 .inner-card{
   width: 15rem;
+  height: 30rem;
+  flex-direction: column;
   padding: 1rem;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   background-color: rgba(0,52,102,255);
@@ -221,9 +234,15 @@ select:focus{
   height: 2rem;
   width: 10rem;
   border: none;
-  background-color: rgb(189, 213, 234);
   text-align: center;
   font-size: 1.2rem;
+  background-color: rgba(0,52,102,255);
+  color: rgba(241,156,111,255);
+}
+
+.btn:hover{
+  cursor: pointer;
+  background-color: rgb(189, 213, 234);
   color: rgb(145, 126, 0);
 }
 
@@ -240,11 +259,6 @@ select:focus{
   height: 100%;
 }
 
-.btn:hover{
-  cursor: pointer;
-  background-color: rgba(0,52,102,255);
-  color: rgba(241,156,111,255);
-}
 
 img{
   width: 100%;

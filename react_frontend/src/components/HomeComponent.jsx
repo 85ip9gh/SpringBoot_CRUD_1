@@ -84,6 +84,7 @@ export default function HomeComponent(){
                     </div>
 
                     }
+                <div className="card-flex">
 
                   <div className="inner-card">
                     <div><strong>ID:</strong> {car.id}</div>
@@ -98,9 +99,10 @@ export default function HomeComponent(){
                     {(car.seller.toLowerCase() == authContext.user.toLowerCase()) ? 
                       <div> <button className="btn btn-home car-unlist-btn " onClick={() => unlistCarFunction(car.id)}>Unlist</button> </div>
                       : 
-                        <div> <button className="btn btn-home car-buy-btn" onClick={() => buyCarFunction(car.id)} >Buy</button> </div>                 
+                      <div> <button className="btn btn-home car-buy-btn" onClick={() => buyCarFunction(car.id)} >Buy</button> </div>                 
                     }
    
+                  </div>
                 </div>
                   : <></>
               )

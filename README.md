@@ -47,6 +47,9 @@ http://34.148.248.82:3000/
 - Make elements mobile friendly (Especially '/home' and '/my-cars' pages)
 - Buttons and image of car too big in cards. The information can look better and be better arranged.
 
+# Bugs
+- Don't let user add username that is already in database(fix in api then have message pop up in front-end as well)
+
 # Updates
 
 ### 10/15/2023
