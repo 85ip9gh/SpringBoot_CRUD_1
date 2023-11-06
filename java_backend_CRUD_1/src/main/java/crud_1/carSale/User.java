@@ -17,6 +17,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.TableGenerator;
 import lombok.Data;
 
 @SuppressWarnings("serial")
@@ -25,9 +26,16 @@ import lombok.Data;
 public class User implements UserDetails{
 	
 
+	@TableGenerator(
+		name = "tableGenerator",
+		allocationSize = 1
+		)
 	@Id
-	@GeneratedValue
-	Long id;
+	@GeneratedValue(
+		strategy = GenerationType.TABLE,
+		generator = "tableGenerator"
+		)
+	int id;
 	
 	private String name;
 	private String password;

@@ -47,9 +47,6 @@ http://34.148.248.82:3000/
 - Make elements mobile friendly (Especially '/home' and '/my-cars' pages)
 - Buttons and image of car too big in cards. The information can look better and be better arranged.
 
-# Bugs
-- Don't let user add username that is already in database(fix in api then have message pop up in front-end as well)
-
 # Updates
 
 ### 10/15/2023
@@ -111,6 +108,10 @@ I only found out about this after accessing the GCP vm react app on firefox and 
     - Still need to implement in front-end
 - Changed px to rem for sizing fonts and elements for better mobile experience
 - Replaced Background Images for Header and Footer with Logo Colors and changed colors of website fonts to be more aesthetically pleasing 
+
+### 11/05/2023
+- Fix generated value for user ids incrementing by 50 when created. Had to create a table generator for User class with allocationSize of 1 and set the GeneratedValue strategy to GenerationType.TABLE and set generator to the aforementioned table generator.
+- Don't allow creation of duplicate users by checking if user exists before saving in userRepository. Also return HttpResponse of 409 if user already exists. I really like returning specific http status codes for different circumstances. Will change all controller methods to return http status codes manually.
 
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)

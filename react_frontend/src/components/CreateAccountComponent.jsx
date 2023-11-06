@@ -52,7 +52,7 @@ export default function LoginComponent(){
         {!passwordMatch && 
         <div className="error-msg-box">
           <p className="error-msg">
-            Your passwords don't match!
+            passwords do not match
           </p>
         </div>
         }

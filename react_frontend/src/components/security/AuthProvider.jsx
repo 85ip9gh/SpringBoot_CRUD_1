@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 import { basicAuthentication, createUser, logout } from '../../api/CarSaleApiService';
 import { apiClient } from '../../api/ApiBaseURL';
-import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext();
 
@@ -51,24 +50,27 @@ export default function AuthProvider({ children }) {
         setUser(null);
         setToken(null);
         if(!error.response){
-          setErrorMsg('No Server Response');
+          setErrorMsg('no server response');
         } else if(error.response.status === 401){
-          setErrorMsg('Unauthorized');
+          setErrorMsg('unauthorized');
         } else {
-          setErrorMsg('Login Failed')
+          setErrorMsg('login Failed')
         }
       }
     }
     
     async function createAccount(username, password){
       try{
-        const createResponse = await createUser(user, password);
+        const createResponse = await createUser(username, password);
+        console.log(JSON.stringify(createResponse));
         return JSON.stringify(createResponse?.status);
       }catch(error){
         if(!error.response){
-          setErrorMsg('No Server Response');
-        } else {
-          setErrorMsg('Create Account Failed')
+          setErrorMsg('no server response');
+        } else if(error.response.status == 409){
+          setErrorMsg('user already exists, please choose a different username')
+        }else{
+          setErrorMsg('create account failed')
         }
       }
     }

@@ -31,8 +31,12 @@ public class UserService implements UserDetailsService{
 		
 	}
 	
-	public User saveUser(User User) {
-		return userRepository.save(User);
+	public User saveUser(User user) {
+		if(userRepository.existsByName(user.getName())) {
+			return null;
+		}
+		
+		return userRepository.save(user);
 	}
 	
 	public List<User> saveAllUsers(List<User> Users) {
