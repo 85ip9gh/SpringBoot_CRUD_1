@@ -120,7 +120,7 @@ form{
   width: 30rem;
   padding: 1rem 2rem;
   gap: 0.5rem;
-  border: 0.2rem solid black;
+  border: 0.2rem solid rgba(241,156,111,255);
   margin: 0 auto;
 }
 
@@ -174,8 +174,8 @@ select:focus{
   overflow: scroll;
   padding-bottom: 2rem;
   margin: 0 auto;
-
   background-image: url("./images/polygon_blue_massive.svg");
+  background-color: white;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -197,12 +197,20 @@ select:focus{
 .grid-container-user{
   grid-template-columns: 1fr;
   width: 80vw;
+  background-color: rgb(36, 69, 97);
+  border: 0.2rem solid rgba(241,156,111,255);
 }
 
 .car-list{
-  display: none;
   background-color: rgb(189, 213, 234);
-  margin-left: 1rem;
+  opacity: 0; 
+  display: none;
+  grid-column: 1/8;
+}
+
+.cars-btn:focus ~ .car-list{
+  display: block;
+  opacity: 1;
 }
 
 .car-details{
@@ -212,13 +220,9 @@ select:focus{
   justify-content: space-between;
   align-items: center;
   text-align: left;
-}
+  padding: 0.5rem;
 
-.upper-card-user:hover .car-list{
-  display: flex;
-  flex-direction: column;
 }
-
 
 .card{
   margin: 0.5rem;
@@ -233,13 +237,14 @@ select:focus{
 }
 
 .card-user{
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
   justify-content: space-between;
 }
 
 .card:hover{
-  border: 0.1rem solid white;
-  box-shadow: 0 0 2rem rgba(255, 217, 0, 0.905);
+  border: 0.1rem solid rgba(241,156,111,255);
+  box-shadow: 0 0 5px 2px rgba(241,156,111,255);
 }
 
 .inner-card{
@@ -295,6 +300,11 @@ select:focus{
   height: 100%;
 }
 
+.btn-list{
+  display: flex;
+  gap: 1rem;
+}
+
 
 img{
   width: 100%;
@@ -334,7 +344,6 @@ img{
   /* color: rgba(255, 217, 0, 0.905); */
   color: rgb(145, 126, 0);
   background-color: transparent;
-  border: 0.1rem solid black;
   text-align: center;
   font-size: 4rem;
   padding: 0.1rem;

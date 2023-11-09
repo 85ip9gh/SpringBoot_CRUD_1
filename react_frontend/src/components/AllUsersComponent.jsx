@@ -29,6 +29,7 @@ export default function AllUsersComponent() {
                         <div><strong>PASSWORD</strong></div>
                         <div><strong>ROLES</strong></div>
                         <div><strong>CARS</strong></div>
+                        <div><strong>SHOW CARS</strong></div>
                         <div><strong>REMOVE</strong></div>
                     </div>
 
@@ -44,39 +45,37 @@ export default function AllUsersComponent() {
                                 <div>{user.password} </div>
                                 <div>{user.roles} </div>
                                 <div>{user.myCars?.length}</div>
-
-                                <div className="btn-list">
-                                    <button className="btn">Remove User</button>
-                                </div>
-                            </div>
-                            <div className="car-list">{
-                                user.myCars?.map(
-                                    car => (
-                                        <div key={car.id} className="car-details" tabindex="0" >
-                                            <div>{car.id}</div>
-                                            <div>{car.brand}</div>
-                                            <div className="car-color" style={{ backgroundColor: car.color }}></div>
-                                            <div>{car.type}</div>
-                                            <div>{car.age}</div>
-                                            <button className="btn btn-my-car"
-                                            // onClick={() => sellCarFunction(car.id)}
-                                            >
-                                                List for Sale
-                                            </button>
-                                            <button className="btn btn-my-car"
-                                            //onClick={() => updateCarFunction(car.id, car.brand, car.color,car.type, car.age)}
-                                            >
-                                                Update Car
-                                            </button>
-                                            <button className="btn btn-my-car"
-                                            //onClick={() => removeCarFunction(car.id)}
-                                            >
-                                                Remove Car
-                                            </button>
-                                        </div>
+                                <button className="btn cars-btn">Cars</button>
+                                <button className="btn">Remove User</button>
+                                <div className="car-list">{
+                                    user.myCars?.map(
+                                        car => (
+                                            <div key={car.id} className="car-details">
+                                                <div>{car.id}</div>
+                                                <div>{car.brand}</div>
+                                                <div className="car-color" style={{ backgroundColor: car.color }}></div>
+                                                <div>{car.type}</div>
+                                                <div>{car.age}</div>
+                                                <button className="btn btn-my-car"
+                                                // onClick={() => sellCarFunction(car.id)}
+                                                >
+                                                    List for Sale
+                                                </button>
+                                                <button className="btn btn-my-car"
+                                                //onClick={() => updateCarFunction(car.id, car.brand, car.color,car.type, car.age)}
+                                                >
+                                                    Update Car
+                                                </button>
+                                                <button className="btn btn-my-car"
+                                                //onClick={() => removeCarFunction(car.id)}
+                                                >
+                                                    Remove Car
+                                                </button>
+                                            </div>
+                                        )
                                     )
-                                )
-                            } </div>
+                                } </div>
+                                </div>
                         </div>
                     )
 
