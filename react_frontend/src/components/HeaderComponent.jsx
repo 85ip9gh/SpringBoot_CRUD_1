@@ -18,16 +18,18 @@ export default function HeaderComponent(){
           </div>   
         <div className="header-component-inner">
         {(authContext.role == "ROLE_ADMIN") ? 
+          ( <Link  to='/all-users' className="link home-link">
           <button className="btn header-btn">
-          All Users
-        </button>
+            All Users
+          </button>
+        </Link> )
         : <></>
 
         }
 
         {isAuthenticated && ( <Link  to='/home' className="link home-link">
           <button className="btn header-btn">
-            Home
+            Market
           </button>
         </Link> )}
         {!isAuthenticated && (<Link to="/login" className="link login-link">

@@ -8,6 +8,7 @@ import SellCarComponent from './components/SellCarComponent';
 import UpdateCarComponent from './components/UpdateCarComponent';
 import './App.css';
 import FooterComponent from './components/FooterComponent';
+import AllUsersComponent from './components/AllUsersComponent';
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
           <Route path='/create-user' element={<CreateAccountComponent/>} />
           <Route path='/sell-car' element={<SellCarComponent/>} />
           <Route path='/update-car' element={<UpdateCarComponent/>} />
-          < Route path='*' element={<LoginComponent/>}/>
+          <Route path='/all-users' element={<AllUsersComponent/>} />
+          <Route path='*' element={<LoginComponent/>}/>
         </Routes>
       <FooterComponent/>
     </BrowserRouter>

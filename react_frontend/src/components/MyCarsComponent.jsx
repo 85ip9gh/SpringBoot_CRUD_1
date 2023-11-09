@@ -120,8 +120,6 @@ export default function MyCarsComponent(){
                         <button className="btn btn-my-car" onClick={() => sellCarFunction(car.id)}>List for Sale</button>
                         <button className="btn btn-my-car" onClick={() => updateCarFunction(car.id, car.brand, car.color,car.type, car.age)}>Update Car</button>
                         <button className="btn btn-my-car" onClick={() => removeCarFunction(car.id)}>Remove Car</button></div>
-                      
-       
                       </div>
 
                       : <></>

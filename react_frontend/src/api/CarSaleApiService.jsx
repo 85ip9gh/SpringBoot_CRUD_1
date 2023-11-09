@@ -12,6 +12,8 @@ export const logout = () => apiClient.get('/logout');
 
 export const retrieveCars = () => apiClient.get('/cars');
 
+export const retrieveAllUsers = () => apiClient.get('/users');
+
 export const createUser = (name, password) => apiClient.post('/addUser',{
   "name": `${name}`,
     "password": `${password}`,
