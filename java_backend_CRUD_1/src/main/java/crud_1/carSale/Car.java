@@ -21,7 +21,7 @@ public class Car {
 	private String brand;
 	private String color;
 	private String type;
-	private int age;
+	private int age;	
 	private boolean selling = false;
 	
 	@ManyToOne(fetch=FetchType.LAZY)

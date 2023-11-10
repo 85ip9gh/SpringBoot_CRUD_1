@@ -4,6 +4,7 @@ import { retrieveAllUsers } from "../api/CarSaleApiService";
 export default function AllUsersComponent() {
 
     const [users, setUsers] = useState(['a', 'b', 'c', 'd', []]);
+    const [showUserCars, setShowUserCars] = useState();
 
     async function refreshAllUsers() {
         const allUsers = await retrieveAllUsers();
@@ -16,14 +17,17 @@ export default function AllUsersComponent() {
         refreshAllUsers();
     }, []);
 
+    function showCars(userId){
+        setShowUserCars(userId);
+    }
+
     return (
         <div className="container">
             <p className="container-title">
                 Users
             </p>
             <div className="grid-container-user">
-                <div className="upper-card-user">
-                    <div className="card card-user">
+                    <div className="card card-user card-user-header">
                         <div><strong>ID</strong></div>
                         <div><strong>NAME</strong></div>
                         <div><strong>PASSWORD</strong></div>
@@ -33,21 +37,21 @@ export default function AllUsersComponent() {
                         <div><strong>REMOVE</strong></div>
                     </div>
 
-                </div>
+                <div className="user-rows">
 
-                {users.map(
-                    user => (
-                        <div key={user.id} className="upper-card-user" >
+
+                    {users.map(
+                        user => (
+
                             <div className="card card-user">
-
                                 <div>{user.id} </div>
                                 <div>{user.name} </div>
                                 <div>{user.password} </div>
                                 <div>{user.roles} </div>
                                 <div>{user.myCars?.length}</div>
-                                <button className="btn cars-btn">Cars</button>
+                                <button className="btn cars-btn" onClick={()=>showCars(user.id)} >Cars</button>
                                 <button className="btn">Remove User</button>
-                                <div className="car-list">{
+                                <div className="car-list" style={showUserCars==user.id ? {display:"block"} : {display:"none"}} >{
                                     user.myCars?.map(
                                         car => (
                                             <div key={car.id} className="car-details">
@@ -75,11 +79,12 @@ export default function AllUsersComponent() {
                                         )
                                     )
                                 } </div>
-                                </div>
-                        </div>
-                    )
+                            </div>
 
-                )}
+                        )
+
+                    )}
+                </div>
             </div>
         </div>
     )
