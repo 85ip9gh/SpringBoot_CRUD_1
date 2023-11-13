@@ -15,6 +15,34 @@ export default function HomeComponent(){
                 <p>
                 Hundreds of Satisfied Customers
                 </p> 
+
+                <div className="container-home-2-card">
+                    <p className="container-home-2-card-quote">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum assumenda dolorum dolores nemo mollitia cumque eaque sunt repudiandae. Vitae sapiente nihil soluta provident rem id dolorem expedita voluptatibus sequi cum?
+                    </p>
+                    <p className="container-home-2-card-name">
+                        Samantha
+                    </p>
+                    <img src={car} alt="audi" />
+                </div>
+                <div className="container-home-2-card">
+                    <p className="container-home-2-card-quote">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum assumenda dolorum dolores nemo mollitia cumque eaque sunt repudiandae. Vitae sapiente nihil soluta provident rem id dolorem expedita voluptatibus sequi cum?
+                    </p>
+                    <p className="container-home-2-card-name">
+                        John
+                    </p>
+                    <img src={car} alt="audi" />
+                </div>
+                <div className="container-home-2-card">
+                    <p className="container-home-2-card-quote">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum assumenda dolorum dolores nemo mollitia cumque eaque sunt repudiandae. Vitae sapiente nihil soluta provident rem id dolorem expedita voluptatibus sequi cum?
+                    </p>
+                    <p className="container-home-2-card-name">
+                        Laura
+                    </p>
+                    <img src={car} alt="audi" />
+                </div>
                 
             </div>
             <div className="container-home-3">
