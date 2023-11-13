@@ -3,35 +3,43 @@ import { useAuthContext } from "./security/AuthProvider";
 import logo from "../images/logo_header.jpg"
 
 
-export default function HeaderComponent(){
+export default function HeaderComponent() {
   const authContext = useAuthContext();
   const isAuthenticated = authContext.authenticated;
 
-  function logout(){
+  function logout() {
     authContext.logoutFunction();
   }
 
   return (
-      <div className="header-component">
-          <div className="header-profile">
-              <img src={logo} className="header-logo" alt="logo for Car sale Application" />
-          </div>   
-        <div className="header-component-inner">
-        {(authContext.role == "ROLE_ADMIN") ? 
-          ( <Link  to='/all-users' className="link home-link">
+
+    <div className="header-component">
+      <div className="header-profile">
+        <img src={logo} className="logo" alt="logo for Car sale Application" />
+      </div>
+
+
+      <div className="header-component-inner">
+        <Link to='/home' className="link home-link">
           <button className="btn header-btn">
-            All Users
+            Home
           </button>
-        </Link> )
-        : <></>
+        </Link>
+        {(authContext.role == "ROLE_ADMIN") ?
+          (<Link to='/all-users' className="link home-link">
+            <button className="btn header-btn">
+              All Users
+            </button>
+          </Link>)
+          : <></>
 
         }
 
-        {isAuthenticated && ( <Link  to='/home' className="link home-link">
+        {isAuthenticated && (<Link to='/market' className="link home-link">
           <button className="btn header-btn">
             Market
           </button>
-        </Link> )}
+        </Link>)}
         {!isAuthenticated && (<Link to="/login" className="link login-link">
           <button className="btn header-btn">
             Login
@@ -56,9 +64,9 @@ export default function HeaderComponent(){
           <button className="btn header-btn">
             Log Out
           </button>
-          </Link>)}
-          </div>
+        </Link>)}
       </div>
+    </div>
 
   )
 

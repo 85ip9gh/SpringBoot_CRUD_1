@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import HeaderComponent from './components/HeaderComponent';
-import HomeComponent from './components/HomeComponent';
+import MarketComponent from './components/MarketComponent';
 import LoginComponent from './components/LoginComponent';
 import CreateAccountComponent from './components/CreateAccountComponent';
 import MyCarsComponent from './components/MyCarsComponent';
@@ -9,6 +9,7 @@ import UpdateCarComponent from './components/UpdateCarComponent';
 import './App.css';
 import FooterComponent from './components/FooterComponent';
 import AllUsersComponent from './components/AllUsersComponent';
+import HomeComponent from './components/HomeComponent';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path='/login' element={<LoginComponent/>} />
           <Route path='/home' element={<HomeComponent/>} />
+          <Route path='/market' element={<MarketComponent/>} />
           <Route path='/my-cars' element={<MyCarsComponent/>} />
           <Route path='/create-user' element={<CreateAccountComponent/>} />
           <Route path='/sell-car' element={<SellCarComponent/>} />

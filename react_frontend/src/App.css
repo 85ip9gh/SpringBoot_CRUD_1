@@ -10,7 +10,7 @@
  */
 
 *{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -22,32 +22,24 @@
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  /* background-image: url("./images/low_poly_grid_blue_1920_1080.svg"); */
   height: 4rem;
   overflow: scroll;
   background-color: rgba(0,52,102,255);
 }
 
+/* Remove Scrollbar */
+
 .header-component::-webkit-scrollbar,
 .footer-component::-webkit-scrollbar,
-.container::-webkit-scrollbar
+.container::-webkit-scrollbar,
+.container-home::-webkit-scrollbar
 {
   width: 0;
   height: 0;
 }
 
-.header-company{
-  font-size: 1.5rem;
-  
-}
-
-.header-component{
-  border-bottom: 0.2rem solid rgba(241,156,111,255);
-}
-
 .footer-component{
   justify-content: center;
-  border-top: 0.2rem solid rgba(241,156,111,255);
   color: rgba(241,156,111,255);
   background-color: rgba(0,52,102,255);
 }
@@ -108,40 +100,37 @@ label {
   width: 20rem; 
 }
 
-
-
 form{
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  background-color: rgb(54, 106, 152);
+  background-color: white;
   height: 20%;
   width: 30rem;
   padding: 1rem 2rem;
   gap: 0.5rem;
-  border: 0.2rem solid rgba(241,156,111,255);
   margin: 0 auto;
 }
 
 .input-text,
 .input-password,
 select{
-  height: 3rem;
+  height: 2rem;
   width: 100%;
   margin-top: 0.5rem;
   font-size: 1rem;
-  color: rgb(189, 213, 234);
-  background-color: rgb(36, 69, 97);
   padding-left: 0.5rem;
+  border: none;
+  border-bottom: 0.1px solid black;
 }
 
 .input-text:focus,
 .input-password:focus,
 select:focus{
-  background-color: rgb(189, 213, 234);
-  color: rgb(36, 69, 97);
   outline: none;
+  border-bottom: 0.1px solid red;
+
 }
 
 .input-color{
@@ -149,6 +138,16 @@ select:focus{
   background-color: transparent;
   height: 3rem;
   width: 3rem;
+}
+
+.forgot-password{
+  width: 100%;
+  text-align: right;
+  font-size: 0.75rem;
+}
+
+.forgot-password:hover{
+  cursor: pointer;
 }
 
 .login-label{
@@ -163,7 +162,8 @@ select:focus{
 }
 /* Home Component */
 
-.container{
+.container,
+.container-home{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -174,14 +174,17 @@ select:focus{
   overflow: scroll;
   padding-bottom: 2rem;
   margin: 0 auto;
-  background-image: url("./images/polygon_blue_massive.svg");
+  background-image: url("./images/car-login.jpg");
   background-color: white;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: rgb(189, 213, 234) ;
+
+  position: relative;
 }
+
 
 .grid-container,
 .grid-container-user{
@@ -190,14 +193,14 @@ select:focus{
 }
 
 .grid-container{
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: yellow;
 }
 
 .grid-container-user{
   grid-template-columns: 1fr;
   width: 80vw;
   background-color: rgb(36, 69, 97);
-  border: 0.2rem solid rgba(241,156,111,255);
 }
 
 .user-rows > div:nth-child(even),
@@ -227,12 +230,15 @@ select:focus{
 
 }
 
+.grid-container > div:nth-child(even){
+  background-color: red;
+}
+
 .card{
   margin: 0.5rem;
   background-color: rgb(189, 213, 234);
   padding: 0.5rem;
   box-shadow: 0.5rem 0.5rem 0.5rem rgb(1, 1, 1);
-  border: 0.1rem solid rgb(36, 69, 97);
 }
 
 .card-flex{
@@ -253,8 +259,6 @@ select:focus{
 } */
 
 .inner-card{
-  width: 15rem;
-  height: 30rem;
   flex-direction: column;
   padding: 1rem;
   display: flex;
@@ -298,7 +302,8 @@ select:focus{
 
 .btn-form{
   width: 100%;
-  height: 3rem;
+  height: 2rem;
+  font-size: 1rem;
 }
 
 .btn-home{
@@ -310,16 +315,34 @@ select:focus{
   gap: 1rem;
 }
 
+.login-car{
+  position: absolute;
+  left: 10%;
+  top: 05%;
+  width: 70rem;
+  height: 42rem;
+  z-index: 2;
+}
 
-img{
-  width: 100%;
-  height: 100%;
-  display: block;
+.login-container,
+.create-account-container{
+  position: absolute;
+  left: 70%;
+  top: 35%;
+  z-index: 3;
+  height: 15rem;
+  width: 25rem;
+  box-shadow: 0 0 1rem black;
+  opacity: 0.8;
+}
+
+.create-account-container{
+  height: 20rem;
 }
 
 .logo{
-  height: 100%;
   width: 100%;
+  height: 100%;
 }
 
 .img-box{
@@ -340,7 +363,6 @@ img{
 .my-cars-error{
   color: rgb(166, 233, 255);
   background-color: rgb(54, 106, 152);
-  border: 0.1rem solid rgb(36, 69, 97);
   font-size: 3rem;
   padding: 1rem;
 }
@@ -362,4 +384,63 @@ img{
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+img{
+  height: 100%;
+  width: 100%;
+}
+
+
+/* Home Page CSS */
+
+.container-home{
+  background-image: none;
+  padding: 0;  
+}
+
+.container-home-1,
+.container-home-2,
+.container-home-3,
+.container-home-4{
+  height: 30rem;
+  text-align: center;
+  width: 100vw;
+}
+
+.container-home-1{
+  background-color: lightgreen;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+}
+
+.container-home-1-text{
+  font-size: 5rem;
+  width: 20rem;
+  position: relative;
+  left: 10%;
+  top: 25%;
+}
+
+
+
+.container-home-2{
+  background-color: lightblue;
+}
+
+.container-home-3{
+  background-color: lightcoral;
+}
+
+.container-home-4{
+  background-color: lightgoldenrodyellow;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 20rem;
+}
+
+.container-home-4-icon{
+
 }

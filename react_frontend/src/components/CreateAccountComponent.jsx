@@ -74,11 +74,10 @@ export default function LoginComponent(){
             </div>}
 
         {!userCreated && 
-        <form method="POST" onSubmit={submit}>
-          <img src={logo} className="logo" alt="logo for Car sale Application" />
-          {/* <p className="form-title">
+        <form method="POST" onSubmit={submit} className="create-account-container" >
+          <p className="form-title">
             Create Account
-          </p> */}
+          </p>
         <div className="form-row">
           {/* <label name="username" >Username: </label> */}
           <input name="username" className="input-text"  type="text" value={username} placeholder="Username" onChange={handleUsernameChange} required></input>
@@ -93,6 +92,7 @@ export default function LoginComponent(){
           {/* <label name="password-confirm">Confirm Password: </label> */}
           <input name="password-confirm" className="input-password" type="password" placeholder="Confirm Password" value={passwordConfirm} onChange={handlePasswordConfirmChange} required></input>
         </div>
+          <p className="forgot-password">Forgot password?</p>
 
         <button type="submit" className="btn btn-form">Create Account</button>
       </form>}
