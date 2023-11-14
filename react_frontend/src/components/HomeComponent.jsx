@@ -7,9 +7,6 @@ export default function HomeComponent() {
                 <p className="container-home-1-text">
                     Login to get Started
                 </p>
-                <div className="container-home-1-img">
-                    <img src={car} alt="audi" />
-                </div>
             </div>
             <div className="container-home-2">
                 <p className="container-home-2-title">
@@ -19,34 +16,38 @@ export default function HomeComponent() {
                 <div className="container-home-2-cards">
 
                     <div className="container-home-2-card">
+                        <img src={car} alt="audi" className="container-home-2-card-img" />
                         <div className="container-home-2-card-text">
                             <p className="container-home-2-card-quote">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum assumenda dolorum dolores nemo mollitia cumque eaque sunt repudiandae. Vitae sapiente nihil soluta provident rem id dolorem expedita voluptatibus sequi cum?
+                                As I relax in the dead of night, the full moon shimmers as it's reflected upon the serene waters of lake Omen. My hair flows freely, carried by the icey wind, whipping across my face and casting a monstrous shadow across the lush grass. A tear slides down my cheek onto the supple leather seat of my Ferrari F8 Tributo as I bask in the radiant memories of a life well-lived.
                             </p>
                             <p className="container-home-2-card-name">
-                                Samantha
+                                - Samantha Tributo
                             </p>
                         </div>
+                    </div>
+                    <div className="container-home-2-card">
+                        <img src={car} alt="audi" className="container-home-2-card-img" />
+                        <div className="container-home-2-card-text">
+                            <p className="container-home-2-card-quote">
+                                The man and dog were inseparable. Even in my Lamborghini Aventador I could see the strength of their unshakeable bond. Forged in the fires of war, horrors of famine, and impending doom of death. The duo were oblivious to the world around them, the only presence in their mind was of the other as well as the blinding light at the end.
+                            </p>
+                            <p className="container-home-2-card-name">
+                                - Lily Aventador
+                            </p>
+                        </div>
+                    </div>
 
-                        <img src={car} alt="audi" />
-                    </div>
                     <div className="container-home-2-card">
-                        <p className="container-home-2-card-quote">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum assumenda dolorum dolores nemo mollitia cumque eaque sunt repudiandae. Vitae sapiente nihil soluta provident rem id dolorem expedita voluptatibus sequi cum?
-                        </p>
-                        <p className="container-home-2-card-name">
-                            John
-                        </p>
-                        <img src={car} alt="audi" />
-                    </div>
-                    <div className="container-home-2-card">
-                        <p className="container-home-2-card-quote">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum assumenda dolorum dolores nemo mollitia cumque eaque sunt repudiandae. Vitae sapiente nihil soluta provident rem id dolorem expedita voluptatibus sequi cum?
-                        </p>
-                        <p className="container-home-2-card-name">
-                            Laura
-                        </p>
-                        <img src={car} alt="audi" />
+                        <img src={car} alt="audi" className="container-home-2-card-img" />
+                        <div className="container-home-2-card-text">
+                            <p className="container-home-2-card-quote">
+                                My rage was immense. Boiling over in 
+                            </p>
+                            <p className="container-home-2-card-name">
+                                - Morgan Artura
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -173,6 +173,8 @@ select:focus{
   overflow: scroll;
   padding-bottom: 2rem;
   margin: 0 auto;
+
+
   background-image: url("./images/car-login.jpg");
   background-color: lightblue;
   background-size: cover;
@@ -181,7 +183,6 @@ select:focus{
   background-attachment: fixed;
   background-size: rgb(189, 213, 234) ;
   -webkit-transform: translate3d(0,0,0);
-  position: relative;
 }
 
 
@@ -417,20 +418,29 @@ img{
   height: 30rem;
   text-align: center;
   width: 100vw;
+  max-width: 100%;
 }
 
 .container-home-1{
   background-color: lightgreen;
   display: flex;
   justify-content: space-between;
+  height: 50rem;
+
+  background-image: url("./images/qijin-xu-JUkdNiG9w3I-unsplash.jpg");
+  background-color: lightblue;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: rgb(189, 213, 234) ;
+  -webkit-transform: translate3d(0,0,0);
 }
 
 .container-home-1-text{
   font-size: 4rem;
-  width: 20rem;
-  position: relative;
-  left: 25%;
-  top: 25%;
+  width: 100vw;
+  text-align: right;
 }
 
 .container-home-2{
@@ -446,6 +456,26 @@ img{
   display: flex;
 }
 
+.container-home-2-card{
+  display: flex;
+  margin: 2rem;
+}
+
+.container-home-2-card-img{
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%; 
+}
+
+.container-home-2-card-quote{
+  text-align: left;
+  margin-left: 0.4rem;
+}
+
+.container-home-2-card-name{
+  text-align: right;
+}
+
 .container-home-3{
   background-color: lightcoral;
 }
@@ -455,7 +485,7 @@ img{
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 20rem;
+  height: 10rem;
 }
 
 .container-home-4-icon{
