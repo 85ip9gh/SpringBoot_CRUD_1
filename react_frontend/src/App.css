@@ -181,7 +181,7 @@ select:focus{
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: rgb(189, 213, 234) ;
-
+  -webkit-transform: translate3d(0,0,0);
   position: relative;
 }
 
