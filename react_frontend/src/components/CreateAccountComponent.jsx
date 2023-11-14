@@ -1,7 +1,5 @@
 import { useState } from "react";
-import { createUser } from "../api/CarSaleApiService";
 import { useAuthContext } from "./security/AuthProvider";
-import logo from "../images/logo.jpg";
 
 
 export default function LoginComponent(){
@@ -41,7 +39,7 @@ export default function LoginComponent(){
 
 
   return(
-    <div className="container" >
+    <div className="container container-create-account" >
         {form.password !== form.confirmPassword ? 
         <div className="error-msg-box">
           <p className="error-msg">
@@ -62,7 +60,7 @@ export default function LoginComponent(){
         {userCreated && 
             <div className="success-msg-box">
                 <p className="success-msg">
-                    User {form.username} has been created!
+                    user {form.username} has been created
                 </p>
             </div>}
 

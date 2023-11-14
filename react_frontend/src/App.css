@@ -59,7 +59,6 @@
 }
 
 .error-msg{
-  font-size: 2rem;
   color: rgb(144, 0, 0);
 }
 
@@ -313,6 +312,18 @@ select:focus{
 .btn-list{
   display: flex;
   gap: 1rem;
+}
+
+/* Login Component */
+.container-login,
+.container-create-account{
+  justify-content: flex-start;
+}
+
+.error-msg-box,
+.success-msg-box{
+  margin-top: 5rem;
+  font-size: 2rem;
 }
 
 .login-car{

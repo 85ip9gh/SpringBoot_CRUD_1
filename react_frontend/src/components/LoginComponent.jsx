@@ -37,7 +37,7 @@ const navigate = useNavigate();
 
   return(
 
-    <div className="container" >
+    <div className="container container-login" >
 
       {wrongCredentials && 
       <div className="error-msg-box">
