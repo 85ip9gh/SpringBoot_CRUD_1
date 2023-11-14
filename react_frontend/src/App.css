@@ -426,6 +426,15 @@ img{
   background-color: lightblue;
 }
 
+.container-home-2-title{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.container-home-2-cards{
+  display: flex;
+}
+
 .container-home-3{
   background-color: lightcoral;
 }

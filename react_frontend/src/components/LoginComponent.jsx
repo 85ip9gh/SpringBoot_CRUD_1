@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "./security/AuthProvider";
 import { useState } from "react";
-import car from "../images/car-login.jpg"
 
 
 export default function LoginComponent(){
@@ -9,27 +8,29 @@ export default function LoginComponent(){
 const navigate = useNavigate();
   const authContext = useAuthContext();
 
+  const [form, setForm] = useState({
+    username: "sam",
+    password: "man"
+  });
 
-  const [username, setUsername] = useState("sam");
-  const [password, setPassword] = useState("man");
   const [wrongCredentials, setWrongCredentials] = useState(false);
   const [hideLogin, sethideLogin] = useState(false);
 
-  function handleUsernameChange(event){
-    setUsername(event.target.value)
-  }
-
-  function handlePasswordChange(event){
-    setPassword(event.target.value);
+  function handleFormChage(event){
+    setForm({
+      ...form,
+      [event.target.name]: event.target.value
+    })
+    console.log(form);
   }
 
    const submit = async (e) => {
     e.preventDefault();
     console.log("submit");
-    const loginReply = await authContext.login(username, password);
+    const loginReply = await authContext.login(form.username, form.password);
     if(loginReply == 200){
       sethideLogin(true);
-      navigate("/home");
+      navigate("/market");
     } else {
       setWrongCredentials(true);
     }
@@ -55,13 +56,11 @@ const navigate = useNavigate();
             Login
           </p>
           <div className="form-row">
-            {/* <label name="username" className="login-label">Username: </label> */}
-            <input name="username"  type="text" className="input-text" placeholder="Username" value={username} onChange={handleUsernameChange} required></input>
+            <input name="username"  type="text" className="input-text" placeholder="Username" value={form.username} onChange={handleFormChage} required></input>
           </div>
 
           <div className="form-row">
-            {/* <label name="password" className="login-label">Password: </label> */}
-            <input name="password" className="input-password" type="password" placeholder="Password" value={password} onChange={handlePasswordChange} required></input>
+            <input name="password" className="input-password" type="password" placeholder="Password" value={form.password} onChange={handleFormChage} required></input>
           </div>
             <p className="forgot-password">Forgot password?</p>
 

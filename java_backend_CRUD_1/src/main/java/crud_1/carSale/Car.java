@@ -24,7 +24,7 @@ public class Car {
 	private int age;	
 	private boolean selling = false;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.LAZY) 
 	@JsonIgnore
 	private User user;
 
