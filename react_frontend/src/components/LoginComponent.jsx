@@ -21,12 +21,10 @@ const navigate = useNavigate();
       ...form,
       [event.target.name]: event.target.value
     })
-    console.log(form);
   }
 
    const submit = async (e) => {
     e.preventDefault();
-    console.log("submit");
     const loginReply = await authContext.login(form.username, form.password);
     if(loginReply == 200){
       sethideLogin(true);
