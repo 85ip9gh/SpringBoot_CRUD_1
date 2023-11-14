@@ -6,33 +6,28 @@ import logo from "../images/logo.jpg";
 
 export default function LoginComponent(){
 
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordConfirm, setPasswordConfirm] = useState("");
-  const [passwordMatch, setPasswordMatch] = useState(true);
+  const [form, setForm] = useState({
+    username: "",
+    password: "",
+    confirmPassword: ""
+  });
+
   const [userCreated, setUserCreated] = useState(false);
   const [wrongCredentials, setWrongCredentials] = useState(false);
 
   const authContext = useAuthContext();
 
-  function handleUsernameChange(event){
-    setUsername(event.target.value)
-  }
-
-  function handlePasswordChange(event){
-    setPassword(event.target.value);
-  }
-
-  function handlePasswordConfirmChange(event){
-    setPasswordConfirm(event.target.value);
+  function handleFormChange(event){
+    setForm({
+      ...form,
+      [event.target.name]: event.target.value
+    });
   }
 
   const submit = async (e) => {
     e.preventDefault();
-    if(password === passwordConfirm){
-        setPasswordMatch(true);
-        const created = await authContext.createAccount(username,password);
-        
+    if(form.password === form.confirmPassword){
+        const created = await authContext.createAccount(form.username,form.password);
         if(created == 200){
           setUserCreated(true);
           setWrongCredentials(false);
@@ -40,8 +35,6 @@ export default function LoginComponent(){
           setWrongCredentials(true);
         } 
 
-    } else {
-        setPasswordMatch(false);
     }
     
   }
@@ -49,12 +42,12 @@ export default function LoginComponent(){
 
   return(
     <div className="container" >
-        {!passwordMatch && 
+        {form.password !== form.confirmPassword ? 
         <div className="error-msg-box">
           <p className="error-msg">
             passwords do not match
           </p>
-        </div>
+        </div> : <></>
         }
 
         {wrongCredentials &&
@@ -69,7 +62,7 @@ export default function LoginComponent(){
         {userCreated && 
             <div className="success-msg-box">
                 <p className="success-msg">
-                    User {username} has been created!
+                    User {form.username} has been created!
                 </p>
             </div>}
 
@@ -80,17 +73,17 @@ export default function LoginComponent(){
           </p>
         <div className="form-row">
           {/* <label name="username" >Username: </label> */}
-          <input name="username" className="input-text"  type="text" value={username} placeholder="Username" onChange={handleUsernameChange} required></input>
+          <input name="username" className="input-text"  type="text" value={form.username} placeholder="Username" onChange={handleFormChange} required></input>
         </div>
 
         <div className="form-row">
           {/* <label name="password">Password: </label> */}
-          <input name="password" className="input-password" type="password" placeholder="Password" value={password} onChange={handlePasswordChange} required></input>
+          <input name="password" className="input-password" type="password" placeholder="Password" value={form.password} onChange={handleFormChange} required></input>
         </div>
 
         <div className="form-row">
           {/* <label name="password-confirm">Confirm Password: </label> */}
-          <input name="password-confirm" className="input-password" type="password" placeholder="Confirm Password" value={passwordConfirm} onChange={handlePasswordConfirmChange} required></input>
+          <input name="confirmPassword" className="input-password" type="password" placeholder="Confirm Password" value={form.confirmPassword} onChange={handleFormChange} required></input>
         </div>
           <p className="forgot-password">Forgot password?</p>
 

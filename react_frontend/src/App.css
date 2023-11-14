@@ -175,7 +175,7 @@ select:focus{
   padding-bottom: 2rem;
   margin: 0 auto;
   background-image: url("./images/car-login.jpg");
-  background-color: white;
+  background-color: lightblue;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
