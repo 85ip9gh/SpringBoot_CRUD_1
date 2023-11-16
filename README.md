@@ -127,4 +127,4 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 ![Website V2 of Car Sale Application Website](./images/Website_V2.jpg)
 
 ### V3 - 11/15/2023
-![Website V3 of Car Sale Application Website, login page, not deployed to GCP](./images/Website_V3_login.jpg.jpg)
+![Website V3 of Car Sale Application Website, login page, not deployed to GCP](./images/Website_V3_login.jpg)
