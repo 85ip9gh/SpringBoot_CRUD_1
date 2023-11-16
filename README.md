@@ -113,6 +113,11 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 - Fix generated value for user ids incrementing by 50 when created. Had to create a table generator for User class with allocationSize of 1 and set the GeneratedValue strategy to GenerationType.TABLE and set generator to the aforementioned table generator.
 - Don't allow creation of duplicate users by checking if user exists before saving in userRepository. Also return HttpResponse of 409 if user already exists. I really like returning specific http status codes for different circumstances. Will change all controller methods to return http status codes manually.
 
+### 11/15/2023
+- Put background images in login and create-account page. 
+- Offset the login/create-account form and lower opacity a bit.
+- Add home page with reviews, sponsors, and some miscellaneous information
+
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)
 
@@ -120,3 +125,6 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 
 ### V2
 ![Website V2 of Car Sale Application Website](./images/Website_V2.jpg)
+
+### V3 - 11/15/2023
+![Website V3 of Car Sale Application Website, login page, not deployed to GCP](./images/Website_V3_login.jpg.jpg)
