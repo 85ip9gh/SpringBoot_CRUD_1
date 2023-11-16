@@ -1,4 +1,4 @@
-import car from "../images/audi.jpeg";
+import profile from "../images/default_profile_picture.jpg";
 
 export default function HomeComponent() {
     return (
@@ -16,10 +16,10 @@ export default function HomeComponent() {
                 <div className="container-home-2-cards">
 
                     <div className="container-home-2-card">
-                        <img src={car} alt="audi" className="container-home-2-card-img" />
+                        <img src={profile} alt="audi" className="container-home-2-card-img" />
                         <div className="container-home-2-card-text">
                             <p className="container-home-2-card-quote">
-                                As I relax in the dead of night, the full moon shimmers as it's reflected upon the serene waters of lake Omen. My hair flows freely, carried by the icey wind, whipping across my face and casting a monstrous shadow across the lush grass. A tear slides down my cheek onto the supple leather seat of my Ferrari F8 Tributo as I bask in the radiant memories of a life well-lived.
+                                As I relax in the dead of night, the full moon shimmers as it's reflected upon the serene waters of lake Omen. My hair flows freely, carried by the icey wind, whipping across my face and casting a monstrous shadow across the lush grass. A tear slides down my cheek onto the supple leather seat of my Ferrari F8 Tributo, as I bask in the radiant memories of a life well-lived.
                             </p>
                             <p className="container-home-2-card-name">
                                 - Samantha Tributo
@@ -27,10 +27,10 @@ export default function HomeComponent() {
                         </div>
                     </div>
                     <div className="container-home-2-card">
-                        <img src={car} alt="audi" className="container-home-2-card-img" />
+                        <img src={profile} alt="audi" className="container-home-2-card-img" />
                         <div className="container-home-2-card-text">
                             <p className="container-home-2-card-quote">
-                                The man and dog were inseparable. Even in my Lamborghini Aventador I could see the strength of their unshakeable bond. Forged in the fires of war, horrors of famine, and impending doom of death. The duo were oblivious to the world around them, the only presence in their mind was of the other as well as the blinding light at the end.
+                                The man and dog were inseparable. I could feel the strength of their unshakeable bond in my bones. Forged in the fires of war, horrors of famine, shackles of conquest and impending doom of death. The duo were oblivious to the world around them, the only presence in their mind was of the other as well as the blinding white Lamborghini Aventador at the end.
                             </p>
                             <p className="container-home-2-card-name">
                                 - Lily Aventador
@@ -39,10 +39,10 @@ export default function HomeComponent() {
                     </div>
 
                     <div className="container-home-2-card">
-                        <img src={car} alt="audi" className="container-home-2-card-img" />
+                        <img src={profile} alt="audi" className="container-home-2-card-img" />
                         <div className="container-home-2-card-text">
                             <p className="container-home-2-card-quote">
-                                My rage was immense. Boiling over in 
+                                My rage was immense. Waves of animosity bathed my mind until the world turned red. Too much for even my McLaren Artura to contain, but at the end of that seemingly unending anger, was soul-crushing fear. All encompasing, ever-present, and immeasureable; An absolute horror and antithesis to life itself stood before me. A pitch-black, stygian wraith wielding a pearly-white, magnificent scythe, warping the space around its form. I opened my mouth to scream and vision went black.
                             </p>
                             <p className="container-home-2-card-name">
                                 - Morgan Artura
