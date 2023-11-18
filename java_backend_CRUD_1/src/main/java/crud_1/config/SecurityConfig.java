@@ -34,6 +34,8 @@ import com.mysql.cj.protocol.Message;
 
 import crud_1.carSale.UserService;
 
+
+//Security Configuration for for the Car Sale Application
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig{
