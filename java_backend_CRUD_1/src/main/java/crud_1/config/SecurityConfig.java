@@ -77,7 +77,8 @@ public class SecurityConfig{
 						.requestMatchers("/addUser").permitAll()	
 						.anyRequest().authenticated())
 				.userDetailsService(userService)
-				.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
+				.oauth2ResourceServer((oauth2) -> oauth2
+					    .jwt(Customizer.withDefaults()))
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.httpBasic(Customizer.withDefaults())
 				.build();

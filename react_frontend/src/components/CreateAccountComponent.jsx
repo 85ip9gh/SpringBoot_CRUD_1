@@ -26,7 +26,7 @@ export default function LoginComponent(){
     e.preventDefault();
     if(form.password === form.confirmPassword){
         const created = await authContext.createAccount(form.username,form.password);
-        if(created == 200){
+        if(created == 201){
           setUserCreated(true);
           setWrongCredentials(false);
         } else{

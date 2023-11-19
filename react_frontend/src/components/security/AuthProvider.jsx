@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import { basicAuthentication, createUser, logout } from '../../api/CarSaleApiService';
+import { JWTAuthencation, basicAuthentication, createUser, logout } from '../../api/CarSaleApiService';
 import { apiClient } from '../../api/ApiBaseURL';
 
 const AuthContext = createContext();
@@ -22,10 +22,14 @@ export default function AuthProvider({ children }) {
      async function login(username, password){
 
       const basicAuthToken = 'Basic ' + window.btoa(username + ":" + password)
+      console.log(basicAuthToken);
       try{
-        const loginResponse = await basicAuthentication(basicAuthToken);
-        setRole(loginResponse.data);
+        const loginResponse = await JWTAuthencation(basicAuthToken);
+        const bearerToken = 'Bearer '+ loginResponse.data;
+        const basicResponse = await basicAuthentication(basicAuthToken);
+        setRole(basicResponse.data);
         console.log("LOGIN AUTH " + JSON.stringify(loginResponse.status));
+        console.log("LOGIN DETAILS " + JSON.stringify(loginResponse));
         if(loginResponse.status === 200){
           setAuthenticated(true);
           setUser(username);
@@ -33,9 +37,9 @@ export default function AuthProvider({ children }) {
           
           apiClient.interceptors.request.use(
               (config) => {
-                  console.log('intercepting')
-                  config.headers.Authorization = basicAuthToken
-                  return config
+                  console.log('intercepting');
+                  config.headers.Authorization = bearerToken;
+                  return config;
                 }
                 )
         } else{
@@ -46,6 +50,7 @@ export default function AuthProvider({ children }) {
 
        return JSON.stringify(loginResponse?.status);
       } catch(error){
+        console.log(error);
         setAuthenticated(false);
         setUser(null);
         setToken(null);

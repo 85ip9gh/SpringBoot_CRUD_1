@@ -8,6 +8,12 @@ export const basicAuthentication = (token) => apiClient.get('/basic-auth',{
   } 
 });
 
+export const JWTAuthencation = (token) =>apiClient.get('/jwt-token',{
+  headers:{
+    Authorization: token
+  }
+})
+
 export const logout = () => apiClient.get('/logout');
 
 export const retrieveCars = () => apiClient.get('/cars');
