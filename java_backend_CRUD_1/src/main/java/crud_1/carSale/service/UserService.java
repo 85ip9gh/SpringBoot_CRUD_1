@@ -1,4 +1,4 @@
-package crud_1.carSale;
+package crud_1.carSale.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +9,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import crud_1.carSale.entity.Car;
+import crud_1.carSale.entity.User;
+import crud_1.carSale.repository.UserRepository;
 
 @Service
 public class UserService implements UserDetailsService{

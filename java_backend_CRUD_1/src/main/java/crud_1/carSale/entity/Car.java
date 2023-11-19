@@ -1,4 +1,4 @@
-package crud_1.carSale;
+package crud_1.carSale.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

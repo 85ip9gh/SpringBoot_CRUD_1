@@ -17,6 +17,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import crud_1.carSale.entity.Car;
+import crud_1.carSale.entity.User;
+import crud_1.carSale.service.CarService;
+import crud_1.carSale.service.UserService;
+
 
 
 //Controller which takes in http requests from the front-end application. 

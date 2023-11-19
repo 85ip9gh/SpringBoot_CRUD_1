@@ -1,4 +1,4 @@
-package crud_1.carSale;
+package crud_1.carSale.entity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
