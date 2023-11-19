@@ -5,10 +5,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.apache.catalina.connector.Response;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 import crud_1.carSale.entity.Car;
 import crud_1.carSale.entity.User;
 import crud_1.carSale.service.CarService;
+import crud_1.carSale.service.TokenService;
 import crud_1.carSale.service.UserService;
 
 
@@ -34,6 +38,22 @@ public class CarSaleController {
 	
 	@Autowired
 	private UserService userService;
+	
+	private static final Logger LOG = LoggerFactory.getLogger(CarSaleController.class);
+	
+	private final TokenService tokenService;
+	
+	public CarSaleController(TokenService tokenService) {
+		this.tokenService = tokenService;
+	}
+	
+	@PostMapping("/jwt-token")
+	public String jwtToken(Authentication authentication){
+		LOG.debug("user {} asking for jwt token",authentication.getName());
+		String token = tokenService.generateToken(authentication);
+		LOG.debug("Token given to user: {}", token);
+		return token;
+	}
 	
 	@GetMapping("/basic-auth")
 	public String basicAuthentication(Principal principal) {
@@ -60,7 +80,7 @@ public class CarSaleController {
 	
 	@PostMapping("/addUser")
 	public ResponseEntity<User> addUser(@RequestBody User user) {
-		User addedUser = userService.saveUser(user);
+		User addedUser = userService.saveUser(user);										
 		
 		if(addedUser == null) {
 			return new ResponseEntity<User>(addedUser,HttpStatus.CONFLICT);
