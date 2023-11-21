@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes} from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate} from 'react-router-dom';
 import HeaderComponent from './components/HeaderComponent';
 import MarketComponent from './components/MarketComponent';
 import LoginComponent from './components/LoginComponent';
@@ -24,7 +24,7 @@ function App() {
           <Route path='/sell-car' element={<SellCarComponent/>} />
           <Route path='/update-car' element={<UpdateCarComponent/>} />
           <Route path='/all-users' element={<AllUsersComponent/>} />
-          <Route path='*' element={<LoginComponent/>}/>
+          <Route path='*' element={<Navigate replace to="/home" />} />
         </Routes>
       <FooterComponent/>
     </BrowserRouter>

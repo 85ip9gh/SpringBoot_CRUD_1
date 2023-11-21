@@ -11,7 +11,7 @@ http://34.148.248.82:3000/
 - Java Spring Boot as back-end api
     - REST api
     - Basic Spring Security Authentication 
-    - Basic Authorization Token(Will be Updated to JWT Authorization in the future)
+    - JWT Token and Oauth for authentication and Authorization
     - Authenticates and authorizes users based on user details obtained from mysql database.
     - JPA and hibernate to send SQL queries to database in response to user interaction
     - Datasource setup in application.properties file depending on localhost machine or docker container
@@ -31,6 +31,7 @@ http://34.148.248.82:3000/
     - fixed on 10/22/2023, kept httpBasic but logout button works now
 
 - Add JWT and/or OAuth Authorization for extra security in spring boot.
+    - fixed on 10/22/2023, added JWT authorization
 - Convert the hex color value in the "update-car" page on front-end to show color names using the color hex values stored in the database. Use hex color code to tint the image of car to add individuality.
     - fixed on 10/28/2023, color in card now has square next to it with color(implementing tint on an image seems complicated for what would ultimately be an ugly feature)
 
@@ -117,6 +118,10 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 - Put background images in login and create-account page. 
 - Offset the login/create-account form and lower opacity a bit.
 - Add home page with reviews, sponsors, and some miscellaneous information
+
+### 11/19/2023
+- Add JWT token and Oauth2 to Car Sale Application
+    - use https://www.youtube.com/watch?v=KYNR5js2cXE for reference to implement jwt tokens in the backend
 
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)

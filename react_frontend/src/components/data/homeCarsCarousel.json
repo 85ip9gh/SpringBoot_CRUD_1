@@ -1,0 +1,32 @@
+{
+    "cars":[
+        {
+            "brand": "Toyota",
+            "color": "black",
+            "type": "Sedan",
+            "age": 10
+
+        },
+        {
+            "brand": "Ferrai",
+            "color": "red",
+            "type": "SUV",
+            "age": 5
+
+        },
+        {
+            "brand": "Lamborghini",
+            "color": "green",
+            "type": "Hatchback",
+            "age": 10
+
+        },
+        {
+            "brand": "Toyota",
+            "color": "black",
+            "type": "Sedan",
+            "age": 10
+
+        },
+    ]
+}

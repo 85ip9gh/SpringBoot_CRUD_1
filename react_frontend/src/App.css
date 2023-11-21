@@ -187,7 +187,8 @@ select:focus{
 
 
 .grid-container,
-.grid-container-user{
+.grid-container-user,
+.grid-container-home{
   display: grid;
   margin: 0 auto;
 }
@@ -409,16 +410,17 @@ img{
 .container-home{
   background-image: none;
   padding: 0;  
+  background-color: blueviolet;
 }
 
 .container-home-1,
 .container-home-2,
 .container-home-3,
 .container-home-4{
-  height: 30rem;
   text-align: center;
   width: 100vw;
   max-width: 100%;
+  clear: both;
 }
 
 .container-home-1{
@@ -447,8 +449,9 @@ img{
   background-color: lightblue;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 25rem;
+  justify-content: space-between;
+  height: auto;
+  padding: 1rem;
 }
 
 .container-home-2-title{
@@ -457,6 +460,7 @@ img{
 }
 
 .container-home-2-cards{
+  word-wrap: normal;
   display: flex;
 }
 
@@ -487,6 +491,13 @@ img{
 
 .container-home-3{
   background-color: lightcoral;
+}
+
+.grid-container-home{
+  grid-template-columns: repeat(20, 1fr);
+  gap: 1rem;
+  overflow: scroll;
+  margin-bottom: 1rem;
 }
 
 .container-home-4{

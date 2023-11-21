@@ -1,6 +1,11 @@
 import profile from "../images/default_profile_picture.jpg";
+import toyota from '../images/toyota.jpg';
+import audi from '../images/audi_new.jpg';
+import ferrari from '../images/ferrari.jpg';
+import lamborghini from '../images/lamborghini.jpg';
 
 export default function HomeComponent() {
+
     return (
         <div className="container-home">
             <div className="container-home-1">
@@ -14,7 +19,6 @@ export default function HomeComponent() {
                 </p>
 
                 <div className="container-home-2-cards">
-
                     <div className="container-home-2-card">
                         <img src={profile} alt="audi" className="container-home-2-card-img" />
                         <div className="container-home-2-card-text">
@@ -42,7 +46,7 @@ export default function HomeComponent() {
                         <img src={profile} alt="audi" className="container-home-2-card-img" />
                         <div className="container-home-2-card-text">
                             <p className="container-home-2-card-quote">
-                                My rage was immense. Waves of animosity bathed my mind until the world turned red. Too much for even my McLaren Artura to contain, but at the end of that seemingly unending anger, was soul-crushing fear. All encompasing, ever-present, and immeasureable; An absolute horror and antithesis to life itself stood before me. A pitch-black, stygian wraith wielding a pearly-white, magnificent scythe, warping the space around its form. I opened my mouth to scream and vision went black.
+                                My rage was immense. Waves of animosity bathed my mind until the world turned red. Too much for even my McLaren Artura to contain, but at the end of that seemingly unending anger, was soul-crushing fear. All encompasing, ever-present, and immeasureable; An absolute horror and antithesis to life itself stood before me. A pitch-black, stygian wraith wielding a pearly-white, magnificent scythe, warping the space around its form. I opened my mouth to scream and my vision went black.
                             </p>
                             <p className="container-home-2-card-name">
                                 - Morgan Artura
@@ -50,10 +54,106 @@ export default function HomeComponent() {
                         </div>
                     </div>
                 </div>
+        
             </div>
 
             <div className="container-home-3">
+                <p>
                 Thousands of Cars Sold
+                </p>
+            <div className="grid-container-home">
+                <div key={1} className="card car-card">
+                    <div className="img-box">
+                      <img src={toyota} alt="Grey Toyota Sedan" />
+                    </div>
+                    
+                    <div className="card-flex">
+                    <div className="inner-card">
+                        <div><strong>Brand:</strong> Toyota</div>
+                        <div className="color-row"><strong>Color:</strong><div className="car-color" style={{backgroundColor: "green"}} ></div></div>
+                        <div><strong>Type:</strong> Sedan</div>
+                        <div><strong>Age:</strong> 10</div>
+                    </div>
+                    </div>
+                </div>
+                <div key={2} className="card car-card">
+                    <div className="img-box">
+                      <img src={toyota} alt="Grey Toyota Sedan" />
+                    </div>
+                    
+                    <div className="card-flex">
+                    <div className="inner-card">
+                        <div><strong>Brand:</strong> Toyota</div>
+                        <div className="color-row"><strong>Color:</strong><div className="car-color" style={{backgroundColor: "green"}} ></div></div>
+                        <div><strong>Type:</strong> Sedan</div>
+                        <div><strong>Age:</strong> 10</div>
+                        <div><strong>Seller:</strong> Sam</div>
+                    </div>
+                    </div>
+                </div>
+                <div key={3} className="card car-card">
+                    <div className="img-box">
+                      <img src={toyota} alt="Grey Toyota Sedan" />
+                    </div>
+                    
+                    <div className="card-flex">
+                    <div className="inner-card">
+                        <div><strong>Brand:</strong> Toyota</div>
+                        <div className="color-row"><strong>Color:</strong><div className="car-color" style={{backgroundColor: "green"}} ></div></div>
+                        <div><strong>Type:</strong> Sedan</div>
+                        <div><strong>Age:</strong> 10</div>
+                        <div><strong>Seller:</strong> Sam</div>
+                    </div>
+                    </div>
+                </div>
+                <div key={1} className="card car-card">
+                    <div className="img-box">
+                      <img src={toyota} alt="Grey Toyota Sedan" />
+                    </div>
+                    
+                    <div className="card-flex">
+                    <div className="inner-card">
+                        <div><strong>Brand:</strong> Toyota</div>
+                        <div className="color-row"><strong>Color:</strong><div className="car-color" style={{backgroundColor: "green"}} ></div></div>
+                        <div><strong>Type:</strong> Sedan</div>
+                        <div><strong>Age:</strong> 10</div>
+                        <div><strong>Seller:</strong> Sam</div>
+                    </div>
+                    </div>
+                </div>
+                <div key={2} className="card car-card">
+                    <div className="img-box">
+                      <img src={toyota} alt="Grey Toyota Sedan" />
+                    </div>
+                    
+                    <div className="card-flex">
+                    <div className="inner-card">
+                        <div><strong>Brand:</strong> Toyota</div>
+                        <div className="color-row"><strong>Color:</strong><div className="car-color" style={{backgroundColor: "green"}} ></div></div>
+                        <div><strong>Type:</strong> Sedan</div>
+                        <div><strong>Age:</strong> 10</div>
+                        <div><strong>Seller:</strong> Sam</div>
+                    </div>
+                    </div>
+                </div>
+                <div key={3} className="card car-card">
+                    <div className="img-box">
+                      <img src={toyota} alt="Grey Toyota Sedan" />
+                    </div>
+                    
+                    <div className="card-flex">
+                    <div className="inner-card">
+                        <div><strong>Brand:</strong> Toyota</div>
+                        <div className="color-row"><strong>Color:</strong><div className="car-color" style={{backgroundColor: "green"}} ></div></div>
+                        <div><strong>Type:</strong> Sedan</div>
+                        <div><strong>Age:</strong> 10</div>
+                        <div><strong>Seller:</strong> Sam</div>
+                    </div>
+                    </div>
+                </div>
+                
+            </div>
+                 
             </div>
             <div className="container-home-4" >
 
