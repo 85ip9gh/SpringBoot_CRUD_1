@@ -17,7 +17,7 @@ function App() {
       <HeaderComponent/>
         <Routes>
           <Route path='/login' element={<LoginComponent/>} />
-          <Route path='/home' element={<HomeComponent/>} />
+          <Route path='/home' element={<HomeComponent />} />
           <Route path='/market' element={<MarketComponent/>} />
           <Route path='/my-cars' element={<MyCarsComponent/>} />
           <Route path='/create-user' element={<CreateAccountComponent/>} />

@@ -3,13 +3,19 @@ import toyota from '../images/toyota.jpg';
 import audi from '../images/audi_new.jpg';
 import ferrari from '../images/ferrari.jpg';
 import lamborghini from '../images/lamborghini.jpg';
+import chevrolet from '../images/chevrolet.jpg';
+import honda from '../images/honda.jpg';
+import mitsubishi from '../images/mitsubishi.jpg';
+import BMW from '../images/BMW.jpg';
+import carData from './data/homeCarsCarousel.json';
+
 
 export default function HomeComponent() {
-
+    console.log(carData);
     return (
         <div className="container-home">
             <div className="container-home-1">
-                <p className="container-home-1-text">
+                <p className="continer-home-1-text">
                     Login to get Started
                 </p>
             </div>
@@ -19,6 +25,7 @@ export default function HomeComponent() {
                 </p>
 
                 <div className="container-home-2-cards">
+                    
                     <div className="container-home-2-card">
                         <img src={profile} alt="audi" className="container-home-2-card-img" />
                         <div className="container-home-2-card-text">
@@ -31,6 +38,8 @@ export default function HomeComponent() {
                         </div>
                     </div>
                     <div className="container-home-2-card">
+
+
                         <img src={profile} alt="audi" className="container-home-2-card-img" />
                         <div className="container-home-2-card-text">
                             <p className="container-home-2-card-quote">
@@ -62,95 +71,50 @@ export default function HomeComponent() {
                 Thousands of Cars Sold
                 </p>
             <div className="grid-container-home">
-                <div key={1} className="card car-card">
-                    <div className="img-box">
-                      <img src={toyota} alt="Grey Toyota Sedan" />
-                    </div>
-                    
-                    <div className="card-flex">
-                    <div className="inner-card">
-                        <div><strong>Brand:</strong> Toyota</div>
-                        <div className="color-row"><strong>Color:</strong><div className="car-color" style={{backgroundColor: "green"}} ></div></div>
-                        <div><strong>Type:</strong> Sedan</div>
-                        <div><strong>Age:</strong> 10</div>
-                    </div>
-                    </div>
-                </div>
-                <div key={2} className="card car-card">
-                    <div className="img-box">
-                      <img src={toyota} alt="Grey Toyota Sedan" />
-                    </div>
-                    
-                    <div className="card-flex">
-                    <div className="inner-card">
-                        <div><strong>Brand:</strong> Toyota</div>
-                        <div className="color-row"><strong>Color:</strong><div className="car-color" style={{backgroundColor: "green"}} ></div></div>
-                        <div><strong>Type:</strong> Sedan</div>
-                        <div><strong>Age:</strong> 10</div>
-                        <div><strong>Seller:</strong> Sam</div>
-                    </div>
-                    </div>
-                </div>
-                <div key={3} className="card car-card">
-                    <div className="img-box">
-                      <img src={toyota} alt="Grey Toyota Sedan" />
-                    </div>
-                    
-                    <div className="card-flex">
-                    <div className="inner-card">
-                        <div><strong>Brand:</strong> Toyota</div>
-                        <div className="color-row"><strong>Color:</strong><div className="car-color" style={{backgroundColor: "green"}} ></div></div>
-                        <div><strong>Type:</strong> Sedan</div>
-                        <div><strong>Age:</strong> 10</div>
-                        <div><strong>Seller:</strong> Sam</div>
-                    </div>
-                    </div>
-                </div>
-                <div key={1} className="card car-card">
-                    <div className="img-box">
-                      <img src={toyota} alt="Grey Toyota Sedan" />
-                    </div>
-                    
-                    <div className="card-flex">
-                    <div className="inner-card">
-                        <div><strong>Brand:</strong> Toyota</div>
-                        <div className="color-row"><strong>Color:</strong><div className="car-color" style={{backgroundColor: "green"}} ></div></div>
-                        <div><strong>Type:</strong> Sedan</div>
-                        <div><strong>Age:</strong> 10</div>
-                        <div><strong>Seller:</strong> Sam</div>
-                    </div>
-                    </div>
-                </div>
-                <div key={2} className="card car-card">
-                    <div className="img-box">
-                      <img src={toyota} alt="Grey Toyota Sedan" />
-                    </div>
-                    
-                    <div className="card-flex">
-                    <div className="inner-card">
-                        <div><strong>Brand:</strong> Toyota</div>
-                        <div className="color-row"><strong>Color:</strong><div className="car-color" style={{backgroundColor: "green"}} ></div></div>
-                        <div><strong>Type:</strong> Sedan</div>
-                        <div><strong>Age:</strong> 10</div>
-                        <div><strong>Seller:</strong> Sam</div>
-                    </div>
-                    </div>
-                </div>
-                <div key={3} className="card car-card">
-                    <div className="img-box">
-                      <img src={toyota} alt="Grey Toyota Sedan" />
-                    </div>
-                    
-                    <div className="card-flex">
-                    <div className="inner-card">
-                        <div><strong>Brand:</strong> Toyota</div>
-                        <div className="color-row"><strong>Color:</strong><div className="car-color" style={{backgroundColor: "green"}} ></div></div>
-                        <div><strong>Type:</strong> Sedan</div>
-                        <div><strong>Age:</strong> 10</div>
-                        <div><strong>Seller:</strong> Sam</div>
-                    </div>
-                    </div>
-                </div>
+                    {
+                        carData.cars.map((car, index)=>(
+                                <div key={index} className="card car-card">
+                                    <div className="img-box">
+                                        {
+                                            (car.brand == "toyota")?
+                                                <img src={toyota} alt="Toyota Car" />
+                                            :
+                                            (car.brand == "ferrari")?
+                                                <img src={ferrari} alt="Ferrari Car" />
+                                            :
+                                            (car.brand == "lamborghini")?
+                                                <img src={lamborghini} alt="Lamborghini Car" />
+                                            :
+                                            (car.brand == "honda")?
+                                                <img src={honda} alt="Honda Car" />
+                                            :
+                                            (car.brand == "mitsubishi")?
+                                                <img src={mitsubishi} alt="Mitsubishi Car" />
+                                            :
+                                            (car.brand == "BMW")?
+                                                <img src={BMW} alt="BMW Car" />
+                                            :
+                                            (car.brand == "chevrolet")?
+                                                <img src={chevrolet} alt="Chevrolet Car" />
+                                            :
+                                                <img src={audi} alt="Grey Toyota Sedan" />
+                                            
+                                        }
+                                    
+                                    </div>
+                                    
+                                    <div className="card-flex">
+                                    <div className="inner-card">
+                                        <div><strong>Brand:</strong> {car.brand}</div>
+                                        <div className="color-row"><strong>Color:</strong><div className="car-color" style={{backgroundColor: car.color}} ></div></div>
+                                        <div><strong>Type:</strong> {car.type}</div>
+                                        <div><strong>Age:</strong> {car.age}</div>
+                                    </div>
+                                    </div>
+                                </div>
+                            )
+                        )
+                    }
                 
             </div>
                  

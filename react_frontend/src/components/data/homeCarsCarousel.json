@@ -1,32 +1,60 @@
 {
     "cars":[
         {
-            "brand": "Toyota",
+            "brand": "toyota",
             "color": "black",
             "type": "Sedan",
             "age": 10
 
         },
         {
-            "brand": "Ferrai",
+            "brand": "ferrari",
             "color": "red",
             "type": "SUV",
             "age": 5
 
         },
         {
-            "brand": "Lamborghini",
-            "color": "green",
+            "brand": "lamborghini",
+            "color": "orange",
             "type": "Hatchback",
             "age": 10
 
         },
         {
-            "brand": "Toyota",
-            "color": "black",
-            "type": "Sedan",
-            "age": 10
+            "brand": "audi",
+            "color": "grey",
+            "type": "Sports Car",
+            "age": 14
 
         },
+        {
+            "brand": "BMW",
+            "color": "blue",
+            "type": "Sedan",
+            "age": 23
+
+        },
+        {
+            "brand": "honda",
+            "color": "green",
+            "type": "SUV",
+            "age": 51
+
+        },
+        {
+            "brand": "mitsubishi",
+            "color": "black",
+            "type": "Hatchback",
+            "age": 103
+
+        },
+        {
+            "brand": "chevrolet",
+            "color": "yellow",
+            "type": "Sports Car",
+            "age": 2
+
+        }
     ]
 }
