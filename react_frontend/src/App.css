@@ -447,7 +447,7 @@ img{
 }
 
 .container-home-2{
-  background-color: lightblue;
+  background-color: lightgoldenrodyellow;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -473,32 +473,46 @@ img{
 
 .container-home-2-card{
   margin: 2rem;
-  background-color: green;
-  padding: 1rem;
+  background-color: rgb(54, 106, 152);
+  border: 1px solid green;
+  padding: 1.5rem;
   border-radius: 1rem;
   height: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .container-home-2-card-img{
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
   float: left; 
 }
 
 .container-home-2-card-quote{
   text-align: left;
   display: block;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .container-home-2-card-name{
+  font-style: italic;
   text-align: right;
+  font-weight: bold;
+  position: relative;
 }
 
 .container-home-3{
-  background-color: lightcoral;
+  background-color: lightblue;
+  min-height: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 0;
+  gap: 1rem;
 }
 
 @keyframes slide {

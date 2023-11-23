@@ -27,52 +27,52 @@ export default function HomeComponent() {
                 <div className="container-home-2-cards">
 
                     <div className="container-home-2-card">
-                        <img src={profile} alt="audi" className="container-home-2-card-img" />
                         <div className="container-home-2-card-text">
+                            <img src={profile} alt="audi" className="container-home-2-card-img" />
                             <p className="container-home-2-card-quote">
                                 As I relax in the dead of night, the full moon shimmers as it's reflected upon the serene waters of lake Omen. My hair flows freely, carried by the icey wind, whipping across my face and casting a monstrous shadow across the lush grass. A tear slides down my cheek onto the supple leather seat of my Ferrari F8 Tributo, as I bask in the radiant memories of a life well-lived.
                             </p>
+                        </div>
                             <p className="container-home-2-card-name">
                                 - Samantha Tributo
                             </p>
-                        </div>
                     </div>
                     <div className="container-home-2-card">
 
 
-                        <img src={profile} alt="audi" className="container-home-2-card-img" />
                         <div className="container-home-2-card-text">
+                            <img src={profile} alt="audi" className="container-home-2-card-img" />
                             <p className="container-home-2-card-quote">
                                 The man and dog were inseparable. I could feel the strength of their unshakeable bond in my bones. Forged in the fires of war, horrors of famine, shackles of conquest and impending doom of death. The duo were oblivious to the world around them, the only presence in their mind was of the other as well as the blinding white Lamborghini Aventador at the end.
                             </p>
-                            <p className="container-home-2-card-name">
-                                - Lily Aventador
-                            </p>
                         </div>
+                        <p className="container-home-2-card-name">
+                            - Lily Aventador
+                        </p>
                     </div>
 
                     <div className="container-home-2-card">
-                        <img src={profile} alt="audi" className="container-home-2-card-img" />
                         <div className="container-home-2-card-text">
+                            <img src={profile} alt="audi" className="container-home-2-card-img" />
                             <p className="container-home-2-card-quote">
                                 My rage was immense. Waves of animosity bathed my mind until the world turned red. Too much for even my McLaren Artura to contain, but at the end of that seemingly unending anger, was soul-crushing fear. All encompasing, ever-present, and immeasureable; An absolute horror and antithesis to life itself stood before me. A pitch-black, stygian wraith wielding a pearly-white, magnificent scythe, warping the space around its form. I opened my mouth to scream and my vision went black.
                             </p>
+                        </div>
                             <p className="container-home-2-card-name">
                                 - Morgan Artura
                             </p>
-                        </div>
                     </div>
 
                     <div className="container-home-2-card">
-                        <img src={profile} alt="audi" className="container-home-2-card-img" />
                         <div className="container-home-2-card-text">
+                            <img src={profile} alt="audi" className="container-home-2-card-img" />
                             <p className="container-home-2-card-quote">
-                            Can you even imagine it? A behemoth towering above the mightiest mountain, its sheer enormity rendering everything else insignificant.An absolute being whose mere presence causes your very soul to shake in fear. It's like staring into the face of God; Unbreakable, unstoppable, unyielding. My Bugatti Veyron saved me that day, but that almighty presence is still seared into the back of my mind. I pray I do not waver when it finds me again.      
+                                Can you even imagine it? A behemoth towering above the mightiest mountain, its sheer enormity rendering everything else insignificant.An absolute being whose mere presence causes your very soul to shake in fear. It's like staring into the face of God; Unbreakable, unstoppable, unyielding. My Bugatti Veyron saved me that day, but that almighty presence is still seared into the back of my mind. I pray I do not waver when it finds me again.
                             </p>
+                        </div>
                             <p className="container-home-2-card-name">
                                 - Alice Bugatti
                             </p>
-                        </div>
                     </div>
                 </div>
 
