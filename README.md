@@ -123,6 +123,10 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 - Add JWT token and Oauth2 to Car Sale Application
     - use https://www.youtube.com/watch?v=KYNR5js2cXE for reference to implement jwt tokens in the backend
 
+### 11/22/2023
+- Add infinite horizontal scroll via css to cars on homepage
+- Add one more review to homepage
+
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)
 

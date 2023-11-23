@@ -67,7 +67,7 @@ export default function HomeComponent() {
                         <img src={profile} alt="audi" className="container-home-2-card-img" />
                         <div className="container-home-2-card-text">
                             <p className="container-home-2-card-quote">
-                                Can you even imagine it? 
+                            Can you even imagine it? A behemoth towering above the mightiest mountain, its sheer enormity rendering everything else insignificant.An absolute being whose mere presence causes your very soul to shake in fear. It's like staring into the face of God; Unbreakable, unstoppable, unyielding. My Bugatti Veyron saved me that day, but that almighty presence is still seared into the back of my mind. I pray I do not waver when it finds me again.      
                             </p>
                             <p className="container-home-2-card-name">
                                 - Alice Bugatti
