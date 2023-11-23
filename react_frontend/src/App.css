@@ -515,6 +515,30 @@ img{
   gap: 1rem;
 }
 
+.container-home-3-car-card{
+  background-color: red;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.container-home-3-car-card .card-flex{
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background-color: rgba(0,52,102,255);
+  color: rgba(241,156,111,255);
+}
+
+.container-home-3-car-card .inner-card{
+  border-bottom-left-radius: 1rem;
+  text-align: left;
+  width: 100%;
+}
+
+.car-card-cost{
+  font-size: 1.25rem;
+  padding: 1rem;
+}
+
 @keyframes slide {
   from{
     transform: translateX(0);

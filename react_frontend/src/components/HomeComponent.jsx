@@ -87,7 +87,7 @@ export default function HomeComponent() {
                     <div className="grid-container-home">
                         {
                             carData.cars.map((car, index) => (
-                                <div key={index} className="card car-card">
+                                <div key={index} className="card car-card container-home-3-car-card">
                                     <div className="img-box">
                                         {
                                             (car.brand == "toyota") ?
@@ -124,6 +124,9 @@ export default function HomeComponent() {
                                             <div><strong>Type:</strong> {car.type}</div>
                                             <div><strong>Age:</strong> {car.age}</div>
                                         </div>
+                                        <div className="car-card-cost">
+                                            <h3>Starting at {car.cost}</h3>
+                                        </div>
                                     </div>
                                 </div>
                             )
@@ -134,7 +137,7 @@ export default function HomeComponent() {
                     <div className="grid-container-home">
                         {
                             carData.cars.map((car, index) => (
-                                <div key={index} className="card car-card">
+                                <div key={index} className="card car-card container-home-3-car-card">
                                     <div className="img-box">
                                         {
                                             (car.brand == "toyota") ?
@@ -166,10 +169,13 @@ export default function HomeComponent() {
 
                                     <div className="card-flex">
                                         <div className="inner-card">
-                                            <div><strong>Brand:</strong> {car.brand}</div>
-                                            <div className="color-row"><strong>Color:</strong><div className="car-color" style={{ backgroundColor: car.color }} ></div></div>
-                                            <div><strong>Type:</strong> {car.type}</div>
-                                            <div><strong>Age:</strong> {car.age}</div>
+                                            <div className="inner-card-field"><strong>Brand:</strong> {car.brand} </div>
+                                            <div className="color-row inner-card-field"><strong>Color:</strong><div className="car-color" style={{ backgroundColor: car.color }} ></div></div>
+                                            <div className="inner-card-field"><strong>Type:</strong> {car.type}</div>
+                                            <div className="inner-card-field"><strong>Age:</strong> {car.age}</div>
+                                        </div>
+                                        <div className="car-card-cost">
+                                            <h3>Starting at {car.cost}</h3>
                                         </div>
                                     </div>
                                 </div>

@@ -4,56 +4,64 @@
             "brand": "toyota",
             "color": "black",
             "type": "Sedan",
-            "age": 10
+            "age": 10,
+            "cost": "$25,000"
 
         },
         {
             "brand": "ferrari",
             "color": "red",
             "type": "SUV",
-            "age": 5
+            "age": 5,
+            "cost": "$45,000"
 
         },
         {
             "brand": "lamborghini",
             "color": "orange",
             "type": "Hatchback",
-            "age": 10
+            "age": 10,
+            "cost": "$70,000"
 
         },
         {
             "brand": "audi",
             "color": "grey",
             "type": "Sports Car",
-            "age": 14
+            "age": 14,
+            "cost": "$13,000"
 
         },
         {
             "brand": "BMW",
             "color": "blue",
             "type": "Sedan",
-            "age": 23
+            "age": 23,
+            "cost": "$32,000"
 
         },
         {
             "brand": "honda",
             "color": "green",
             "type": "SUV",
-            "age": 51
+            "age": 51,
+            "cost": "$102,000"
 
         },
         {
             "brand": "mitsubishi",
             "color": "black",
             "type": "Hatchback",
-            "age": 103
+            "age": 103,
+            "cost": "$47,000"
 
         },
         {
             "brand": "chevrolet",
             "color": "yellow",
             "type": "Sports Car",
-            "age": 2
+            "age": 2,
+            "cost": "$68,000"
 
         }
     ]
