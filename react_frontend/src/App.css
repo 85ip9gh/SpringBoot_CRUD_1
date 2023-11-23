@@ -32,7 +32,9 @@
 .header-component::-webkit-scrollbar,
 .footer-component::-webkit-scrollbar,
 .container::-webkit-scrollbar,
-.container-home::-webkit-scrollbar
+.container-home::-webkit-scrollbar,
+.grid-container-home::-webkit-scrollbar,
+.container-home-2::-webkit-scrollbar
 {
   width: 0;
   height: 0;
@@ -187,8 +189,7 @@ select:focus{
 
 
 .grid-container,
-.grid-container-user,
-.grid-container-home{
+.grid-container-user{
   display: grid;
   margin: 0 auto;
 }
@@ -450,18 +451,24 @@ img{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 25rem;
   height: auto;
   padding: 1rem;
+  overflow: scroll;
 }
 
-.container-home-2-title{
+.container-home-title{
   font-size: 2rem;
   font-weight: bold;
 }
 
 .container-home-2-cards{
   word-wrap: normal;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 100%;
+  width: 100%;
+  min-height: 20rem;
 }
 
 .container-home-2-card{
@@ -493,19 +500,36 @@ img{
   background-color: lightcoral;
 }
 
-.grid-container-home{
-  grid-template-columns: repeat(20, 1fr);
-  gap: 1rem;
-  overflow: scroll;
-  margin-bottom: 1rem;
+@keyframes slide {
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-100%);
+  }
 }
+
+.grid-container-home{
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  animation: slide 30s infinite linear;
+}
+
+.cars-slide{
+  display: flex;
+  gap: 1rem;
+  overflow: hidden;
+}
+
 
 .container-home-4{
   background-color: lightgoldenrodyellow;
-  display: flex;
   align-items: center;
   justify-content: space-around;
   height: 10rem;
+  
+  display: flex;
 }
 
 .container-home-4-icon{

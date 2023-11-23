@@ -20,12 +20,12 @@ export default function HomeComponent() {
                 </p>
             </div>
             <div className="container-home-2">
-                <p className="container-home-2-title">
+                <p className="container-home-title">
                     Hundreds of Satisfied Customers
                 </p>
 
                 <div className="container-home-2-cards">
-                    
+
                     <div className="container-home-2-card">
                         <img src={profile} alt="audi" className="container-home-2-card-img" />
                         <div className="container-home-2-card-text">
@@ -62,62 +62,124 @@ export default function HomeComponent() {
                             </p>
                         </div>
                     </div>
+
+                    <div className="container-home-2-card">
+                        <img src={profile} alt="audi" className="container-home-2-card-img" />
+                        <div className="container-home-2-card-text">
+                            <p className="container-home-2-card-quote">
+                                Can you even imagine it? 
+                            </p>
+                            <p className="container-home-2-card-name">
+                                - Alice Bugatti
+                            </p>
+                        </div>
+                    </div>
                 </div>
-        
+
             </div>
 
             <div className="container-home-3">
-                <p>
-                Thousands of Cars Sold
+                <p className="container-home-title" >
+                    Thousands of Cars Sold
                 </p>
-            <div className="grid-container-home">
-                    {
-                        carData.cars.map((car, index)=>(
+
+                <div className="cars-slide" >
+                    <div className="grid-container-home">
+                        {
+                            carData.cars.map((car, index) => (
                                 <div key={index} className="card car-card">
                                     <div className="img-box">
                                         {
-                                            (car.brand == "toyota")?
+                                            (car.brand == "toyota") ?
                                                 <img src={toyota} alt="Toyota Car" />
-                                            :
-                                            (car.brand == "ferrari")?
-                                                <img src={ferrari} alt="Ferrari Car" />
-                                            :
-                                            (car.brand == "lamborghini")?
-                                                <img src={lamborghini} alt="Lamborghini Car" />
-                                            :
-                                            (car.brand == "honda")?
-                                                <img src={honda} alt="Honda Car" />
-                                            :
-                                            (car.brand == "mitsubishi")?
-                                                <img src={mitsubishi} alt="Mitsubishi Car" />
-                                            :
-                                            (car.brand == "BMW")?
-                                                <img src={BMW} alt="BMW Car" />
-                                            :
-                                            (car.brand == "chevrolet")?
-                                                <img src={chevrolet} alt="Chevrolet Car" />
-                                            :
-                                                <img src={audi} alt="Grey Toyota Sedan" />
-                                            
+                                                :
+                                                (car.brand == "ferrari") ?
+                                                    <img src={ferrari} alt="Ferrari Car" />
+                                                    :
+                                                    (car.brand == "lamborghini") ?
+                                                        <img src={lamborghini} alt="Lamborghini Car" />
+                                                        :
+                                                        (car.brand == "honda") ?
+                                                            <img src={honda} alt="Honda Car" />
+                                                            :
+                                                            (car.brand == "mitsubishi") ?
+                                                                <img src={mitsubishi} alt="Mitsubishi Car" />
+                                                                :
+                                                                (car.brand == "BMW") ?
+                                                                    <img src={BMW} alt="BMW Car" />
+                                                                    :
+                                                                    (car.brand == "chevrolet") ?
+                                                                        <img src={chevrolet} alt="Chevrolet Car" />
+                                                                        :
+                                                                        <img src={audi} alt="Grey Toyota Sedan" />
+
                                         }
-                                    
+
                                     </div>
-                                    
+
                                     <div className="card-flex">
-                                    <div className="inner-card">
-                                        <div><strong>Brand:</strong> {car.brand}</div>
-                                        <div className="color-row"><strong>Color:</strong><div className="car-color" style={{backgroundColor: car.color}} ></div></div>
-                                        <div><strong>Type:</strong> {car.type}</div>
-                                        <div><strong>Age:</strong> {car.age}</div>
-                                    </div>
+                                        <div className="inner-card">
+                                            <div><strong>Brand:</strong> {car.brand}</div>
+                                            <div className="color-row"><strong>Color:</strong><div className="car-color" style={{ backgroundColor: car.color }} ></div></div>
+                                            <div><strong>Type:</strong> {car.type}</div>
+                                            <div><strong>Age:</strong> {car.age}</div>
+                                        </div>
                                     </div>
                                 </div>
                             )
-                        )
-                    }
-                
-            </div>
-                 
+                            )
+                        }
+
+                    </div>
+                    <div className="grid-container-home">
+                        {
+                            carData.cars.map((car, index) => (
+                                <div key={index} className="card car-card">
+                                    <div className="img-box">
+                                        {
+                                            (car.brand == "toyota") ?
+                                                <img src={toyota} alt="Toyota Car" />
+                                                :
+                                                (car.brand == "ferrari") ?
+                                                    <img src={ferrari} alt="Ferrari Car" />
+                                                    :
+                                                    (car.brand == "lamborghini") ?
+                                                        <img src={lamborghini} alt="Lamborghini Car" />
+                                                        :
+                                                        (car.brand == "honda") ?
+                                                            <img src={honda} alt="Honda Car" />
+                                                            :
+                                                            (car.brand == "mitsubishi") ?
+                                                                <img src={mitsubishi} alt="Mitsubishi Car" />
+                                                                :
+                                                                (car.brand == "BMW") ?
+                                                                    <img src={BMW} alt="BMW Car" />
+                                                                    :
+                                                                    (car.brand == "chevrolet") ?
+                                                                        <img src={chevrolet} alt="Chevrolet Car" />
+                                                                        :
+                                                                        <img src={audi} alt="Grey Toyota Sedan" />
+
+                                        }
+
+                                    </div>
+
+                                    <div className="card-flex">
+                                        <div className="inner-card">
+                                            <div><strong>Brand:</strong> {car.brand}</div>
+                                            <div className="color-row"><strong>Color:</strong><div className="car-color" style={{ backgroundColor: car.color }} ></div></div>
+                                            <div><strong>Type:</strong> {car.type}</div>
+                                            <div><strong>Age:</strong> {car.age}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                            )
+                        }
+
+                    </div>
+                </div>
+
             </div>
             <div className="container-home-4" >
 
