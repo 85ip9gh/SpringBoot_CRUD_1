@@ -44,7 +44,7 @@ export default function HomeComponent(){
     }
 
     return(
-    <div className="container">
+    <div className="container market-container">
       <div className="home-container-inner">
         <p className="container-title">
           Market
@@ -56,7 +56,7 @@ export default function HomeComponent(){
             cars.map(
               car => (
               (car.selling === true) ?
-                <div key={car.id} className="card car-card">
+                <div key={car.id} className="card market-car-card">
                    {
                     (car.brand === 'Toyota') ?
                     <div className="img-box">
@@ -95,12 +95,21 @@ export default function HomeComponent(){
                     <div><strong>Seller:</strong> {car.seller}</div>
                   </div>
                     
+                    <div className="market-card-right">
+                      <div className="market-card-price-wrapper">
+                        <p className="market-card-price">
+                          $25,000
+                        </p>
+                      </div>
+        
+                      {(car.seller.toLowerCase() == authContext.user.toLowerCase()) ? 
+                        <div> <button className="btn market-btn car-unlist-btn " onClick={() => unlistCarFunction(car.id)}>Unlist</button> </div>
+                        : 
+                        <div> <button className="btn market-btn car-buy-btn" onClick={() => buyCarFunction(car.id)} >Buy</button> </div>                 
+                      }
 
-                    {(car.seller.toLowerCase() == authContext.user.toLowerCase()) ? 
-                      <div> <button className="btn btn-home car-unlist-btn " onClick={() => unlistCarFunction(car.id)}>Unlist</button> </div>
-                      : 
-                      <div> <button className="btn btn-home car-buy-btn" onClick={() => buyCarFunction(car.id)} >Buy</button> </div>                 
-                    }
+                    </div>
+
    
                   </div>
                 </div>
