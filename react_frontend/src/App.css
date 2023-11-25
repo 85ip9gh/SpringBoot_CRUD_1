@@ -362,6 +362,8 @@ select:focus{
 .img-box{
   width: 20rem;
   height: 10rem;
+  border: 2px solid rgba(241,156,111,255);
+  border-bottom: none;
 }
 
 .my-cars-btns{
@@ -421,13 +423,10 @@ img{
   text-align: center;
   width: 100vw;
   max-width: 100%;
-  clear: both;
 }
 
 .container-home-1{
   background-color: lightgreen;
-  display: flex;
-  justify-content: space-between;
   height: 50rem;
 
   background-image: url("./images/qijin-xu-JUkdNiG9w3I-unsplash.jpg");
@@ -441,9 +440,11 @@ img{
 }
 
 .container-home-1-text{
+  padding: 2rem 5rem;
   font-size: 4rem;
-  width: 100vw;
   text-align: right;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .container-home-2{
@@ -516,7 +517,7 @@ img{
 }
 
 .container-home-3-car-card{
-  background-color: red;
+  background-color: rgba(0,52,102,255);
   padding: 1rem;
   border-radius: 1rem;
 }
@@ -525,13 +526,24 @@ img{
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   background-color: rgba(0,52,102,255);
-  color: rgba(241,156,111,255);
+  color: white;
+  border: 2px solid rgba(241,156,111,255);
+  border-top: none;
 }
+
 
 .container-home-3-car-card .inner-card{
   border-bottom-left-radius: 1rem;
   text-align: left;
   width: 100%;
+}
+
+.container-home-3-car-card .inner-card-field{
+  color: white;
+}
+
+strong{
+  color: rgba(241,156,111,255);
 }
 
 .car-card-cost{
@@ -552,7 +564,7 @@ img{
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
-  animation: slide 30s infinite linear;
+  animation: slide 60s infinite linear;
 }
 
 .cars-slide{

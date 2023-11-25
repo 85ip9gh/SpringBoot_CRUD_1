@@ -15,7 +15,7 @@ export default function HomeComponent() {
     return (
         <div className="container-home">
             <div className="container-home-1">
-                <p className="continer-home-1-text">
+                <p className="container-home-1-text">
                     Login to get Started
                 </p>
             </div>
@@ -67,7 +67,7 @@ export default function HomeComponent() {
                         <div className="container-home-2-card-text">
                             <img src={profile} alt="audi" className="container-home-2-card-img" />
                             <p className="container-home-2-card-quote">
-                                Can you even imagine it? A behemoth towering above the mightiest mountain, its sheer enormity rendering everything else insignificant.An absolute being whose mere presence causes your very soul to shake in fear. It's like staring into the face of God; Unbreakable, unstoppable, unyielding. My Bugatti Veyron saved me that day, but that almighty presence is still seared into the back of my mind. I pray I do not waver when it finds me again.
+                                Can you even imagine it? A behemoth towering above the mightiest mountain, its sheer enormity rendering everything else insignificant. An absolute being whose mere presence causes your inner soul to shake in fear. It's like staring into the face of God: Unbreakable, unstoppable, unyielding. My Bugatti Veyron saved me, but that almighty presence is still seared into the back of my mind. I pray I do not waver when it finds me once more.
                             </p>
                         </div>
                             <p className="container-home-2-card-name">
@@ -119,10 +119,10 @@ export default function HomeComponent() {
 
                                     <div className="card-flex">
                                         <div className="inner-card">
-                                            <div><strong>Brand:</strong> {car.brand}</div>
-                                            <div className="color-row"><strong>Color:</strong><div className="car-color" style={{ backgroundColor: car.color }} ></div></div>
-                                            <div><strong>Type:</strong> {car.type}</div>
-                                            <div><strong>Age:</strong> {car.age}</div>
+                                            <div className="inner-card-field"><strong>Brand:</strong> {car.brand}</div>
+                                            <div className="color-row inner-card-field"><strong>Color:</strong><div className="car-color" style={{ backgroundColor: car.color }} ></div></div>
+                                            <div className="inner-card-field"><strong>Type:</strong> {car.type}</div>
+                                            <div className="inner-card-field"><strong>Age:</strong> {car.age}</div>
                                         </div>
                                         <div className="car-card-cost">
                                             <h3>Starting at {car.cost}</h3>
