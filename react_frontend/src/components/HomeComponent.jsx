@@ -30,7 +30,7 @@ export default function HomeComponent() {
                         <div className="container-home-2-card-text">
                             <img src={profile} alt="audi" className="container-home-2-card-img" />
                             <p className="container-home-2-card-quote">
-                                As I relax in the dead of night, the full moon shimmers as it's reflected upon the serene waters of lake Omen. My hair flows freely, carried by the icey wind, whipping across my face and casting a monstrous shadow across the lush grass. A tear slides down my cheek onto the supple leather seat of my Ferrari F8 Tributo, as I bask in the radiant memories of a life well-lived.
+                                In the tranquil embrace of darkness, I find solace as I recline. The full moon graces the heavens, its ethereal glow casting a mesmerizing reflection upon the undisturbed surface of Lake Omen. My hair dances in harmony with the icy wind, flowing freely and creating a poetic symphony of movement against the canvas of the night sky. Each strand becomes a brushstroke, casting a formidable shadow across the lush grass beneath. A single tear slides down my cheek onto the supple leather seat of my Ferrari F8 Tributo, as I bask in the beautiful, nostalgic memories of a life well-lived.
                             </p>
                         </div>
                             <p className="container-home-2-card-name">
@@ -43,7 +43,7 @@ export default function HomeComponent() {
                         <div className="container-home-2-card-text">
                             <img src={profile} alt="audi" className="container-home-2-card-img" />
                             <p className="container-home-2-card-quote">
-                                The man and dog were inseparable. I could feel the strength of their unshakeable bond in my bones. Forged in the fires of war, horrors of famine, shackles of conquest and impending doom of death. The duo were oblivious to the world around them, the only presence in their mind was of the other as well as the blinding white Lamborghini Aventador at the end.
+                                The man and dog were inseparable. I could feel the strength of their unshakeable bond in my bones. Forged in the fires of war, horrors of famine, shackles of conquest and impending doom of death.The three heavenly stars cast their radiant light upon the two, lighting their way towards salvation.The pair resolutely marched through a realm fractured by the consequences of the Great Planetary War, a shadow of its former self. But the duo were oblivious to the world around them, the only presence in their mind was of the other as well as the blinding white Lamborghini Aventador at their journey's end.
                             </p>
                         </div>
                         <p className="container-home-2-card-name">
@@ -55,7 +55,7 @@ export default function HomeComponent() {
                         <div className="container-home-2-card-text">
                             <img src={profile} alt="audi" className="container-home-2-card-img" />
                             <p className="container-home-2-card-quote">
-                                My rage was immense. Waves of animosity bathed my mind until the world turned red. Too much for even my McLaren Artura to contain, but at the end of that seemingly unending anger, was soul-crushing fear. All encompasing, ever-present, and immeasureable; An absolute horror and antithesis to life itself stood before me. A pitch-black, stygian wraith wielding a pearly-white, magnificent scythe, warping the space around its form. I opened my mouth to scream and my vision went black.
+                                My rage was immense. Waves of animosity bathed my mind until the world turned red. Too much for even my McLaren Artura to contain, but at the end of that seemingly unending anger, was soul-crushing fear. All encompasing, ever-present, and immeasureable; An absolute horror and antithesis to life itself stood before me. A pitch-black, stygian wraith wielding a pearly-white, magnificent scythe. Space bent itself around the figure as if the world rejected its existence. I opened my mouth to scream and my vision went black.
                             </p>
                         </div>
                             <p className="container-home-2-card-name">
@@ -67,7 +67,7 @@ export default function HomeComponent() {
                         <div className="container-home-2-card-text">
                             <img src={profile} alt="audi" className="container-home-2-card-img" />
                             <p className="container-home-2-card-quote">
-                                Can you even imagine it? A behemoth towering above the mightiest mountain, its sheer enormity rendering everything else insignificant. An absolute being whose mere presence causes your inner soul to shake in fear. It's like staring into the face of God: Unbreakable, unstoppable, unyielding. My Bugatti Veyron saved me, but that almighty presence is still seared into the back of my mind. I pray I do not waver when it finds me once more.
+                                Can you even imagine it? A behemoth towering above the tallest mountain, its sheer enormity rendering everything else insignificant. An absolute being whose mere presence causes your inner soul to tremble in fear. It's like staring into the face of God: Unbreakable, unstoppable, unyielding. My Bugatti Veyron saved me, but that almighty presence is still seared into the back of my mind. I pray I do not waver when it finds me once more.
                             </p>
                         </div>
                             <p className="container-home-2-card-name">

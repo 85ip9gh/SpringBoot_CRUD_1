@@ -407,6 +407,8 @@ img{
   width: 100%;
 }
 
+/* Market Page CSS */
+
 
 /* Home Page CSS */
 
@@ -479,6 +481,7 @@ img{
   padding: 1.5rem;
   border-radius: 1rem;
   height: auto;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgb(1, 1, 1);
 
   display: flex;
   flex-direction: column;
@@ -496,7 +499,8 @@ img{
 .container-home-2-card-quote{
   text-align: left;
   display: block;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  color: rgb(255, 246, 193);
 }
 
 .container-home-2-card-name{
