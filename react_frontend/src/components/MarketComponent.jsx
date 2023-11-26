@@ -44,7 +44,10 @@ export default function HomeComponent(){
     }
 
     return(
-    <div className="container market-container">
+    <div className="container ">
+      <div className="market-container">
+
+      
       <div className="home-container-inner">
         <p className="container-title">
           Market
@@ -118,7 +121,7 @@ export default function HomeComponent(){
             ) 
           }
       </div>
-      
+      </div>
     </div>
     )
 }

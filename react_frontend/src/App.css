@@ -197,7 +197,6 @@ select:focus{
 .grid-container{
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  background-color: yellow;
 }
 
 .grid-container-user{
@@ -208,7 +207,7 @@ select:focus{
 
 .user-rows > div:nth-child(even),
 .user-rows > .card-list div:nth-child(even){
-  background-color: rgb(119, 192, 255);
+  background-color: ba(0,52,102,255);
 }
 
 .grid-container-user > .card-user{
@@ -231,10 +230,6 @@ select:focus{
   text-align: left;
   padding: 0.5rem;
 
-}
-
-.grid-container > div:nth-child(even){
-  background-color: rgb(77, 210, 255);
 }
 
 .card{
@@ -273,10 +268,9 @@ select:focus{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background-color: rgba(0,52,102,255);
   color: rgba(241,156,111,255);
   border-bottom-left-radius: 1rem;
-  
+  width: 100%;
 }
 
 .color-row{
@@ -396,8 +390,10 @@ select:focus{
   font-size: 4rem;
   padding: 0.1rem;
   width: 100%;
-  margin: 0.2rem;
+  margin-bottom: 1rem;
   font-weight: bold;
+
+  border-bottom: 0.3rem solid rgb(145, 126, 0);
 }
 
 .home-container-inner{
@@ -413,6 +409,26 @@ img{
 }
 
 /* Market Page CSS */
+
+.market-container{
+  padding: 2rem;
+  background-color: white;
+}
+
+.market-car-card{
+  background-color: rgb(0, 75, 145);
+}
+
+.market-btn{
+  height: 3rem;
+  border-bottom-right-radius: 1rem;
+  background-color: rgb(0, 75, 145);
+}
+
+.grid-container > div:nth-child(even),
+.grid-container > div:nth-child(even) .market-btn{
+  background-color: rgba(0,52,102,255);
+}
 
 .market-card-right{
   display: flex;
@@ -433,10 +449,6 @@ img{
   font-size: 1.5rem;
 }
 
-.market-btn{
-  height: 3rem;
-  border-bottom-right-radius: 1rem;
-}
 
 /* Home Page CSS */
 
