@@ -12,7 +12,6 @@ import BMW from '../images/BMW.jpg';
 
 export default function HomeComponent(){
 
-
   const authContext = useAuthContext();
   const [cars, setCars] = useState([]);
   
@@ -103,7 +102,7 @@ export default function HomeComponent(){
                   </div>
                     
                     <div className="market-card-right">
-                      <div className="market-card-price-wrapper">
+                      <div className="price-wrapper">
                         <p className="market-card-price">
                           $25,000
                         </p>

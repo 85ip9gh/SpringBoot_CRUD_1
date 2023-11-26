@@ -68,74 +68,86 @@ export default function MyCarsComponent() {
 
   return (
     <div className="container">
-      {(numberOfCars != 0) ?
-        <div className="home-container-inner">
-          <p className="container-title">
-            {authContext.user}'s cars
-          </p>
-        </div>
-        : <></>
-      }
+      <div className="my-cars-container">
 
-      <div className="grid-container">
-        {
-          cars.map(
-            car => (
-              (car.selling === false) ?
-                <div key={car.id} className="card">
-                  <div className="img-box">
-                  {
-                      (car.brand === 'Toyota') ?
-                      <img src={toyota} alt="Grey Toyota Sedan" />
-                      :
-                      ((car.brand === 'Audi')) ?
-                      <img src={audi} alt="Black Audi SUV" />
-                      :
-                      ((car.brand === 'Lamborghini')) ?
-                      <img src={lamborghini} alt="Orange Lamborghini Supercar" />
-                      :
-                      (car.brand == "Honda") ?
-                      <img src={honda} alt="Honda Car" />
-                      :
-                      (car.brand == "Mitsubishi") ?
-                      <img src={mitsubishi} alt="Mitsubishi Car" />
-                      :
-                      (car.brand == "BMW") ?
-                      <img src={BMW} alt="BMW Car" />
-                      :
-                      (car.brand == "Chevrolet") ?
-                      <img src={chevrolet} alt="Chevrolet Car" />
-                      :
-                      <img src={ferrari} alt="Red Ferrari Sportscar" />
-                    }
+
+        {(numberOfCars != 0) ?
+          <div className="home-container-inner">
+            <p className="container-title">
+              {authContext.user}'s cars
+            </p>
+          </div>
+          : <></>
+        }
+
+        <div className="grid-container">
+          {
+            cars.map(
+              car => (
+                (car.selling === false) ?
+                  <div key={car.id} className="card">
+                    <div className="img-box">
+                      {
+                        (car.brand === 'Toyota') ?
+                          <img src={toyota} alt="Grey Toyota Sedan" />
+                          :
+                          ((car.brand === 'Audi')) ?
+                            <img src={audi} alt="Black Audi SUV" />
+                            :
+                            ((car.brand === 'Lamborghini')) ?
+                              <img src={lamborghini} alt="Orange Lamborghini Supercar" />
+                              :
+                              (car.brand == "Honda") ?
+                                <img src={honda} alt="Honda Car" />
+                                :
+                                (car.brand == "Mitsubishi") ?
+                                  <img src={mitsubishi} alt="Mitsubishi Car" />
+                                  :
+                                  (car.brand == "BMW") ?
+                                    <img src={BMW} alt="BMW Car" />
+                                    :
+                                    (car.brand == "Chevrolet") ?
+                                      <img src={chevrolet} alt="Chevrolet Car" />
+                                      :
+                                      <img src={ferrari} alt="Red Ferrari Sportscar" />
+                      }
                     </div>
 
-                  <div className="inner-card">
-                    <div><strong>ID:</strong> {car.id}</div>
-                    <div><strong>Brand:</strong>  {car.brand}</div>
-                    <div className="color-row"><strong>Color:</strong> <div className="car-color" style={{ backgroundColor: car.color }} ></div></div>
-                    <div><strong>Type:</strong> {car.type}</div>
-                    <div><strong>Age:</strong> {car.age}</div>
-                    <div><strong>Seller:</strong> {car.seller}</div>
+                    <div className="card-flex">
+
+
+                      <div className="inner-card">
+                        <div><strong>ID:</strong> {car.id}</div>
+                        <div><strong>Brand:</strong>  {car.brand}</div>
+                        <div className="color-row"><strong>Color:</strong> <div className="car-color" style={{ backgroundColor: car.color }} ></div></div>
+                        <div><strong>Type:</strong> {car.type}</div>
+                        <div><strong>Age:</strong> {car.age}</div>
+                        <div><strong>Seller:</strong> {car.seller}</div>
+                      </div>
+
+                      <div className="my-cars-inner-card-right">
+                        <div className="price-wrapper">
+                          <p className="my-cars-price">$25,000</p>
+                        </div>
+                        <div className="my-cars-btn-wrapper">
+                          <button className="btn my-cars-btn my-cars-btn-remove-list-for-sale" onClick={() => sellCarFunction(car.id)}>List for Sale</button>
+                          <button className="btn my-cars-btn" onClick={() => updateCarFunction(car.id, car.brand, car.color, car.type, car.age)}>Update Car</button>
+                          <button className="btn my-cars-btn my-cars-btn-remove" onClick={() => removeCarFunction(car.id)}>Remove Car</button></div>
+                        </div>
+                    </div>
                   </div>
 
-                  <div className="my-cars-btns">
-                    <button className="btn btn-my-car" onClick={() => sellCarFunction(car.id)}>List for Sale</button>
-                    <button className="btn btn-my-car" onClick={() => updateCarFunction(car.id, car.brand, car.color, car.type, car.age)}>Update Car</button>
-                    <button className="btn btn-my-car" onClick={() => removeCarFunction(car.id)}>Remove Car</button></div>
-                </div>
-
-                : <></>
+                  : <></>
+              )
             )
-          )
-        }
+          }
+        </div>
+        {(numberOfCars == 0) ?
+          <h1 className="my-cars-error">
+            You Have No Cars!
+          </h1>
+          : <></>}
       </div>
-      {(numberOfCars == 0) ?
-        <h1 className="my-cars-error">
-          You Have No Cars!
-        </h1>
-        : <></>}
-
     </div>
   )
 }

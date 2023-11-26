@@ -234,7 +234,7 @@ select:focus{
 
 .card{
   margin: 0.5rem;
-  background-color: rgb(189, 213, 234);
+  background-color: rgb(0, 75, 145);
   padding: 1rem;
   box-shadow: 0.5rem 0.5rem 0.5rem rgb(1, 1, 1);
   border-radius: 1rem;
@@ -246,7 +246,7 @@ select:focus{
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   border: 2px solid rgba(241,156,111,255);
-  border-top: none;
+  border-top: none; 
 }
 
 .card-user{
@@ -298,7 +298,7 @@ select:focus{
 .btn:hover{
   cursor: pointer;
   background-color: rgb(189, 213, 234);
-  color: rgb(145, 126, 0);
+  color: black;
 }
 
 .header-btn{
@@ -365,16 +365,6 @@ select:focus{
   border-bottom: none;
 }
 
-.my-cars-btns{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.btn-my-car{
-  height: 100%;
-}
-
 .my-cars-error{
   color: rgb(166, 233, 255);
   background-color: rgb(54, 106, 152);
@@ -408,26 +398,57 @@ img{
   width: 100%;
 }
 
-/* Market Page CSS */
+/* My Cars Page CSS */
 
-.market-container{
-  padding: 2rem;
-  background-color: white;
+.my-cars-btn-remove{
+  border-bottom-right-radius: 1rem;
 }
 
-.market-car-card{
+.my-cars-btn-remove-list-for-sale{
+  border-top-left-radius: 1rem;
+}
+
+.my-cars-inner-card-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.my-cars-btn-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.my-cars-btn{
   background-color: rgb(0, 75, 145);
+}
+
+/* Market Page CSS */
+
+.market-container,
+.my-cars-container{
+  padding: 2rem;
+  background-color: white;
 }
 
 .market-btn{
   height: 3rem;
   border-bottom-right-radius: 1rem;
   background-color: rgb(0, 75, 145);
+  border-top-left-radius: 1rem;
 }
 
 .grid-container > div:nth-child(even),
-.grid-container > div:nth-child(even) .market-btn{
+.grid-container > div:nth-child(even) .btn{
   background-color: rgba(0,52,102,255);
+}
+
+.grid-container > div:nth-child(even) .btn:hover{
+  cursor: pointer;
+  background-color: rgb(189, 213, 234);
+  color: black;
 }
 
 .market-card-right{
@@ -436,14 +457,16 @@ img{
   justify-content: space-between;
 }
 
-.market-card-price-wrapper{
+.price-wrapper{
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.market-card-price{
+.market-card-price,
+.my-cars-price{
+  color: white;
   text-align: center;
   font-weight: bold;
   font-size: 1.5rem;
