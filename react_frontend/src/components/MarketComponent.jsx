@@ -64,33 +64,33 @@ export default function HomeComponent(){
               car => (
               (car.selling === true) ?
                 <div key={car.id} className="card market-car-card">
+                  <div className="img-box">
                    {
                     (car.brand === 'Toyota') ?
-                    <div className="img-box">
                       <img src={toyota} alt="Grey Toyota Sedan" />
-                    </div>
                       :
                       ((car.brand === 'Audi')) ?
-
-                    <div className="img-box">
                       <img src={audi} alt="Black Audi SUV"/>
-                    </div>
-
                     :
-
                     ((car.brand === 'Lamborghini')) ?
-
-                    <div className="img-box">
                       <img src={lamborghini} alt="Orange Lamborghini Supercar" />
-                    </div>
-
                     :
-
-                    <div className="img-box">
-                      <img src={ferrari} alt="Red Ferrari Sportscar" style={{ }} />
-                    </div>
+                    (car.brand == "Honda") ?
+                    <img src={honda} alt="Honda Car" />
+                    :
+                    (car.brand == "Mitsubishi") ?
+                    <img src={mitsubishi} alt="Mitsubishi Car" />
+                    :
+                    (car.brand == "BMW") ?
+                    <img src={BMW} alt="BMW Car" />
+                    :
+                    (car.brand == "Chevrolet") ?
+                    <img src={chevrolet} alt="Chevrolet Car" />
+                    :
+                    <img src={ferrari} alt="Red Ferrari Sportscar" style={{ }} />
 
                     }
+                    </div>
                 <div className="card-flex">
 
                   <div className="inner-card">
