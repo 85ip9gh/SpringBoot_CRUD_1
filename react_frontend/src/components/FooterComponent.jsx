@@ -2,7 +2,7 @@ export default function FooterComponent(){
     return(
         <div className="footer-component">
            <p className="footer-copyright">
-            Copyright &copy; Pesanth Janaseth Rangaswamy Anitha - All Rights Reserved
+             &copy; 2023 All Rights Reserved - Pesanth Janaseth Rangaswamy Anitha 
            </p>
         </div>
 

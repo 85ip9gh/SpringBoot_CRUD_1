@@ -125,7 +125,11 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 
 ### 11/22/2023
 - Add infinite horizontal scroll via css to cars on homepage
+    - use https://www.youtube.com/watch?v=nAjR0Oj0J8E&t=413s for reference
 - Add one more review to homepage
+
+### 11/26/2023
+- Move reviews to json file and map through them to take up less space in home component. Maybe do the same with the svg images somehow
 
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)

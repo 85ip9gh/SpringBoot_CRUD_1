@@ -493,15 +493,15 @@ img{
   background-color: lightgoldenrodyellow;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 25rem;
+  justify-content: center;
+  min-height: 45rem;
   height: auto;
   padding: 1rem;
   overflow: scroll;
 }
 
 .container-home-title{
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
 }
 
@@ -552,11 +552,10 @@ img{
 
 .container-home-3{
   background-color: lightblue;
-  min-height: 25rem;
+  min-height: 45rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 2rem 0;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -622,7 +621,7 @@ strong{
   background-color: lightgoldenrodyellow;
   align-items: center;
   justify-content: space-around;
-  height: 10rem;
+  height: 20rem;
   
   display: flex;
 }
