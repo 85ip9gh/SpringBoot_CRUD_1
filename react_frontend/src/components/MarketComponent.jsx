@@ -5,6 +5,10 @@ import toyota from '../images/toyota.jpg';
 import audi from '../images/audi_new.jpg';
 import ferrari from '../images/ferrari.jpg';
 import lamborghini from '../images/lamborghini.jpg';
+import chevrolet from '../images/chevrolet.jpg';
+import honda from '../images/honda.jpg';
+import mitsubishi from '../images/mitsubishi.jpg';
+import BMW from '../images/BMW.jpg';
 
 export default function HomeComponent(){
 
