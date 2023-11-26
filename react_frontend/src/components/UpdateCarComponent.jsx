@@ -52,6 +52,10 @@ export default function UpdateCarComponent(){
             <option value="Audi">Audi</option>
             <option value="Ferrari">Ferrari</option>
             <option value="Lamborghini">Lamborghini</option>
+            <option value="Honda">Honda</option>
+            <option value="Mitsubishi">Mitsubishi</option>
+            <option value="BMW">BMW</option>
+            <option value="Chevrolet">Chevrolet</option>
           </select>
         </div>
 
