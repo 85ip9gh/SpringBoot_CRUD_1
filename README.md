@@ -132,6 +132,7 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 - Move reviews to json file and map through them to take up less space in home component. Maybe do the same with the svg images somehow
 - Add and implement price to car
 - add info icon in login page that lets you know to login as admin to have access to users
+- Deploy V4 of Car Sale Application to GCP
 
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)
@@ -143,3 +144,6 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 
 ### V3 - 11/15/2023
 ![Website V3 of Car Sale Application Website, login page, not deployed to GCP](./images/Website_V3_login.jpg)
+
+### V4 - 11/26/2023
+![Website V4 of Car Sale Application Website, home page, deployed to GCP](./images/Website_V4_home.jpg)
