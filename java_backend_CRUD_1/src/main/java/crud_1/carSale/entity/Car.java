@@ -21,7 +21,8 @@ public class Car {
 	private String brand;
 	private String color;
 	private String type;
-	private int age;	
+	private int age;
+	private int price;
 	private boolean selling = false;
 	
 	@ManyToOne(fetch=FetchType.LAZY) 
@@ -36,6 +37,14 @@ public class Car {
 	
 	public void setSelling(boolean bool) {
 		this.selling = bool;
+	}
+	
+	public int getPrice() {
+		return price;
+	}
+	
+	public void setPride(int price) {
+		this.price = price;
 	}
 	
 	public String getSeller() {
