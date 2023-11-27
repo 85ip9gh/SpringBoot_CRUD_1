@@ -4,7 +4,7 @@ import { useState } from "react";
 import { listCarForSale } from "../api/CarSaleApiService";
 
 
-export default function SellCarComponent(){
+export default function AddCarComponent(){
 
   const navigate = useNavigate();
 
@@ -15,6 +15,7 @@ export default function SellCarComponent(){
     color: "#000000",
     type: "SUV",
     age: 0,
+    price: 0
   });
 
   function handleFormChange(event){
@@ -26,7 +27,7 @@ export default function SellCarComponent(){
 
   const submit = async (e) => {
     e.preventDefault();
-     await listCarForSale(form.brand, form.color, form.type, form.age)
+     await listCarForSale(form.brand, form.color, form.type, form.age, form.price)
      .then(() => {
       navigate("/my-cars")
      })
@@ -73,8 +74,10 @@ export default function SellCarComponent(){
         </div>
 
         <div className="form-row">
-            {/* <label name="age" className="label-add-car">Age: </label> */}
             <input name="age" type="number" placeholder="Age of Car in Years" value={form.age} min={0} onChange={handleFormChange} className="input-text input-number"></input>
+        </div>
+        <div className="form-row">
+            <input name="price" type="number" placeholder="Price of Car" value={form.price} min={0} onChange={handleFormChange} className="input-text input-number"></input>
         </div>
 
         <button type="submit" className="btn" >Add Car</button>

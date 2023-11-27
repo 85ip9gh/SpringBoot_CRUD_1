@@ -4,7 +4,7 @@ import MarketComponent from './components/MarketComponent';
 import LoginComponent from './components/LoginComponent';
 import CreateAccountComponent from './components/CreateAccountComponent';
 import MyCarsComponent from './components/MyCarsComponent';
-import SellCarComponent from './components/SellCarComponent';
+import AddCarComponent from './components/AddCarComponent';
 import UpdateCarComponent from './components/UpdateCarComponent';
 import './App.css';
 import FooterComponent from './components/FooterComponent';
@@ -21,7 +21,7 @@ function App() {
           <Route path='/market' element={<MarketComponent/>} />
           <Route path='/my-cars' element={<MyCarsComponent/>} />
           <Route path='/create-user' element={<CreateAccountComponent/>} />
-          <Route path='/sell-car' element={<SellCarComponent/>} />
+          <Route path='/sell-car' element={<AddCarComponent/>} />
           <Route path='/update-car' element={<UpdateCarComponent/>} />
           <Route path='/all-users' element={<AllUsersComponent/>} />
           <Route path='*' element={<Navigate replace to="/home" />} />

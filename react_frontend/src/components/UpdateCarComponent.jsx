@@ -16,6 +16,7 @@ export default function UpdateCarComponent(){
     color: authContext.color,
     type: authContext.type,
     age: authContext.age,
+    price: authContext.price
   });
 
   const carID = authContext.carID;
@@ -29,7 +30,7 @@ export default function UpdateCarComponent(){
 
   const submit = async (e) => {
     e.preventDefault();
-     await updateCar(carID, form.brand, form.color, form.type, form.age)
+     await updateCar(carID, form.brand, form.color, form.type, form.age, form.price)
      .then(() => {
       navigate("/my-cars")
      })
@@ -81,6 +82,10 @@ export default function UpdateCarComponent(){
         <div className="form-row">
             <label name="age" className="update-label">Age: </label>
             <input name="age" type="number" className="input-text input-number" min={0} value={form.age} onChange={handleFormChange} required></input>
+        </div>
+
+        <div className="form-row">
+            <input name="price" type="number" placeholder="Price of Car" value={form.price} min={0} onChange={handleFormChange} className="input-text input-number"></input>
         </div>
 
         <button type="submit" className="btn" >Update</button>

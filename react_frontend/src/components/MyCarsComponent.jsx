@@ -127,7 +127,7 @@ export default function MyCarsComponent() {
 
                       <div className="my-cars-inner-card-right">
                         <div className="price-wrapper">
-                          <p className="my-cars-price">$25,000</p>
+                          <p className="my-cars-price">${car.price.toLocaleString()}</p>
                         </div>
                         <div className="my-cars-btn-wrapper">
                           <button className="btn my-cars-btn my-cars-btn-remove-list-for-sale" onClick={() => sellCarFunction(car.id)}>List for Sale</button>

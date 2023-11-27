@@ -25,12 +25,13 @@ export const createUser = (name, password) => apiClient.post('/addUser',{
     "password": `${password}`,
 });
 
-export const updateCar = (id, brand, color, type, age) => apiClient.put(`/updateCar`,{
+export const updateCar = (id, brand, color, type, age, price) => apiClient.put(`/updateCar`,{
     "id": `${id}`,
     "brand": `${brand}`,
     "color": `${color}`,
     "type": `${type}`,
-    "age": `${age}`
+    "age": `${age}`,
+    "price": `${price}`
 });
 
 export const buyCar = (id) => apiClient.put(`/cars/${id}/buy`)
@@ -45,11 +46,12 @@ export const removeCar = (carID) => apiClient.delete(`/deleteCar/${carID}`);
 
 export const searchCarByBrand = (carBrand) => apiClient.get(`/cars/${carBrand}`);
 
-export const listCarForSale = (brand, color, type, age) => apiClient.post('/addCar',{
+export const listCarForSale = (brand, color, type, age, price) => apiClient.post('/addCar',{
     "brand": `${brand}`,
     "color": `${color}`,
     "type": `${type}`,
-    "age": `${age}`
+    "age": `${age}`,
+    "price": `${price}`
   }
 );
 

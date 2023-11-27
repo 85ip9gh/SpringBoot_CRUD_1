@@ -43,7 +43,7 @@ public class Car {
 		return price;
 	}
 	
-	public void setPride(int price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 	

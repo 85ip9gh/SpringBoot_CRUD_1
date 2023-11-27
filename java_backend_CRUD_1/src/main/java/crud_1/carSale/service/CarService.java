@@ -75,7 +75,7 @@ public class CarService {
 		currentCar.setBrand(car.getBrand());
 		currentCar.setColor(car.getColor());
 		currentCar.setType(car.getType());
-
+		currentCar.setPrice(car.getPrice());		
 		return carRepository.save(currentCar);
 	}
 	
