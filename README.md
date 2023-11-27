@@ -142,8 +142,8 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 ### V2
 ![Website V2 of Car Sale Application Website](./images/Website_V2.jpg)
 
-### V3 - 11/15/2023
+### V3 Login Page - 11/15/2023
 ![Website V3 of Car Sale Application Website, login page, not deployed to GCP](./images/Website_V3_login.jpg)
 
-### V4 - 11/26/2023
+### V4 Home Page - 11/26/2023
 ![Website V4 of Car Sale Application Website, home page, deployed to GCP](./images/Website_V4_home.jpg)
