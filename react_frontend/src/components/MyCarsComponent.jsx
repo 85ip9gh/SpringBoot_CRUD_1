@@ -50,12 +50,13 @@ export default function MyCarsComponent() {
       .catch(console.log('error'))
   }
 
-  function updateCarFunction(carID, brand, color, type, age) {
+  function updateCarFunction(carID, brand, color, type, age, price) {
     authContext.setCarID(carID);
     authContext.setBrand(brand);
     authContext.setColor(color);
     authContext.setType(type);
     authContext.setAge(age);
+    authContext.setPrice(price);
     navigate("/update-car")
   }
 
@@ -131,7 +132,7 @@ export default function MyCarsComponent() {
                         </div>
                         <div className="my-cars-btn-wrapper">
                           <button className="btn my-cars-btn my-cars-btn-remove-list-for-sale" onClick={() => sellCarFunction(car.id)}>List for Sale</button>
-                          <button className="btn my-cars-btn" onClick={() => updateCarFunction(car.id, car.brand, car.color, car.type, car.age)}>Update Car</button>
+                          <button className="btn my-cars-btn" onClick={() => updateCarFunction(car.id, car.brand, car.color, car.type, car.age, car.price)}>Update Car</button>
                           <button className="btn my-cars-btn my-cars-btn-remove" onClick={() => removeCarFunction(car.id)}>Remove Car</button></div>
                         </div>
                     </div>

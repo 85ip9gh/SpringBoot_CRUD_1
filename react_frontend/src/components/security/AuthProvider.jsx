@@ -15,6 +15,7 @@ export default function AuthProvider({ children }) {
     const [brand, setBrand] = useState();
     const [color, setColor] = useState();
     const [age, setAge] = useState();
+    const [price, setPrice] = useState();
     const [carID, setCarID] = useState();
     const [errorMsg, setErrorMsg] = useState();
     const [role, setRole] = useState();
@@ -91,7 +92,7 @@ export default function AuthProvider({ children }) {
     }
   
       return (
-          <AuthContext.Provider value={{role, user, login, createAccount, logout, authenticated, setAuthenticated, token, type, setType, brand, setBrand, age, setAge, color, setColor, carID, setCarID, errorMsg }}>
+          <AuthContext.Provider value={{role, user, login, createAccount, logout, authenticated, setAuthenticated, token, type, setType, brand, setBrand, age, setAge, price, setPrice, color, setColor, carID, setCarID, errorMsg }}>
               {children}
           </AuthContext.Provider>
       )

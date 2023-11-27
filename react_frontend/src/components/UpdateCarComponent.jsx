@@ -47,7 +47,6 @@ export default function UpdateCarComponent(){
             Update Car
           </p>
         <div className="form-row">
-          <label name="brand" className="update-label" >Brand: </label>
           <select name="brand" value={form.brand} onChange={handleFormChange} required>
             <option value="Toyota">Toyota</option>
             <option value="Audi">Audi</option>
@@ -61,12 +60,10 @@ export default function UpdateCarComponent(){
         </div>
 
         <div className="form-row">
-          <label name="color" className="update-label">Color: </label>
           <input name="color" type="color" value={form.color} onChange={handleFormChange} className="input-color" required></input>
         </div>
 
         <div className="form-row">
-            <label name="type" className="update-label">Type: </label>
             <select name="type" value={form.type} onChange={handleFormChange} required>
                 <option value="SUV">SUV</option>
                 <option value="Sedan">Sedan</option>
@@ -80,7 +77,6 @@ export default function UpdateCarComponent(){
         </div>
 
         <div className="form-row">
-            <label name="age" className="update-label">Age: </label>
             <input name="age" type="number" className="input-text input-number" min={0} value={form.age} onChange={handleFormChange} required></input>
         </div>
 

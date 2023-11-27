@@ -104,7 +104,7 @@ export default function HomeComponent(){
                     <div className="market-card-right">
                       <div className="price-wrapper">
                         <p className="market-card-price">
-                          $25,000
+                        ${car.price.toLocaleString()}
                         </p>
                       </div>
         

@@ -130,6 +130,8 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 
 ### 11/26/2023
 - Move reviews to json file and map through them to take up less space in home component. Maybe do the same with the svg images somehow
+- Add and implement price to car
+- add info icon in login page that lets you know to login as admin to have access to users
 
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)
