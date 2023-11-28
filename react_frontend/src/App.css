@@ -177,7 +177,7 @@ select:focus{
   margin: 0 auto;
 
 
-  background-image: url("./images/car-login.jpg");
+  background-image: url("./images/car-login-new.jpg");
   background-color: lightblue;
   background-size: cover;
   background-position: center center;
@@ -458,6 +458,15 @@ img{
   padding: 2rem;
   background-color: white;
 }
+.market-money{
+  background-color: lightblue;
+  padding: 0 2rem;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  width: 22rem;
+}
+
 
 .market-btn{
   height: 3rem;

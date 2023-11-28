@@ -14,7 +14,8 @@ export default function HomeComponent(){
 
   const authContext = useAuthContext();
   const [cars, setCars] = useState([]);
-  const [money, setMoney] = useState();
+  const [money, setMoney] = useState(0);
+  const [poor, setPoor] = useState(false);
   
   
   function refreshCars(){
@@ -26,7 +27,8 @@ export default function HomeComponent(){
   }
 
   function refreshMoney(){
-    retrieveMoney().then( response =>{
+    retrieveMoney(authContext.user).then( response =>{
+          console.log(response.data);
           setMoney(response.data);
       }
     ).catch( error =>console.log(error))
@@ -57,6 +59,16 @@ export default function HomeComponent(){
 
     return(
     <div className="container ">
+      <div className="market-money">
+        <h1>Current Balance: ${money.toLocaleString()}</h1>
+
+        {(poor == true) ? 
+          <div className="market-money-poor">
+            <h1>you do not have enough money</h1>
+          </div>
+          : <></>
+        }
+      </div>
       <div className="market-container">
 
       
@@ -120,7 +132,13 @@ export default function HomeComponent(){
                       {(car.seller.toLowerCase() == authContext.user.toLowerCase()) ? 
                         <div> <button className="btn market-btn car-unlist-btn " onClick={() => unlistCarFunction(car.id)}>Unlist</button> </div>
                         : 
-                        <div> <button className="btn market-btn car-buy-btn" onClick={() => buyCarFunction(car.id)} >Buy</button> </div>                 
+                        <div> <button className="btn market-btn car-buy-btn" onClick={ () =>{
+                          (money < car.price) ? 
+                          setPoor(true)
+                          : 
+                          buyCarFunction(car.id)
+                        }
+                          } >Buy</button> </div>                 
                       }
 
                     </div>
