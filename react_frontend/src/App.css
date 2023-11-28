@@ -460,13 +460,26 @@ img{
 }
 .market-money{
   background-color: lightblue;
-  padding: 0 2rem;
+  padding: 2rem;
   position: absolute;
   top: 0%;
   right: 0%;
   width: 22rem;
 }
 
+.market-money-make-deposit{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.market-input-number{
+  width: 50%; 
+  margin: 0;
+}
 
 .market-btn{
   height: 3rem;

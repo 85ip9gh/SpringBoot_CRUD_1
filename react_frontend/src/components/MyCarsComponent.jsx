@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { removeCar, retrieveMyCars, sellCar } from "../api/CarSaleApiService";
+import { addMoneyToUser, removeCar, retrieveMoney, retrieveMyCars, sellCar } from "../api/CarSaleApiService";
 import { useAuthContext } from "./security/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import toyota from '../images/toyota.jpg';
@@ -15,14 +15,26 @@ export default function MyCarsComponent() {
   const authContext = useAuthContext();
   const [cars, setCars] = useState([]);
   const [numberOfCars, setNumberOfCars] = useState(0);
+  const [money, setMoney] = useState(0);
+  const [deposit, setDeposit] = useState();
   const navigate = useNavigate();
+
 
 
   useEffect(
     () => {
-      refreshCars()
+      refreshCars();
+      refreshMoney();
     }, []
   )
+
+  function refreshMoney(){
+    retrieveMoney(authContext.user).then( response =>{
+          console.log(response.data);
+          setMoney(response.data);
+      }
+    ).catch( error =>console.log(error))
+  }
 
   function refreshCars() {
     retrieveMyCars().then(response => {
@@ -67,8 +79,32 @@ export default function MyCarsComponent() {
       .catch(error => console.log(error));
   }
 
+  function handleDepositChange(event){
+    setDeposit(event.target.value);
+  }
+
+  const submit = async (e) => {
+    e.preventDefault();
+
+    try{
+      await addMoneyToUser(deposit);
+
+      refreshCars();
+      refreshMoney();
+    }catch(error){
+      console.log(error);
+    }
+  }
+
   return (
     <div className="container">
+      <div className="market-money">
+        <h1>Current Balance: ${money.toLocaleString()}</h1>
+          <form className="market-money-make-deposit" onSubmit={submit}>
+            <input className="input-text input-number market-input-number" name="deposit" type="number" value={deposit} onChange={handleDepositChange} min={0} required></input>
+            <button className="btn my-cars-btn" type="submit">Make Deposit</button>
+          </form>
+      </div>
       <div className="my-cars-container">
 
 
