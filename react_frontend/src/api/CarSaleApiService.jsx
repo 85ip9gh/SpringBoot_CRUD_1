@@ -27,6 +27,8 @@ export const createUser = (name, password) => apiClient.post('/addUser',{
 
 export const retrieveMoney = (name) => apiClient.get(`/users/${name}/money`);
 
+export const addMoneyToUser = (money) => apiClient.patch(`/users/add-money/${money}`);
+
 export const updateCar = (id, brand, color, type, age, price) => apiClient.put(`/updateCar`,{
     "id": `${id}`,
     "brand": `${brand}`,

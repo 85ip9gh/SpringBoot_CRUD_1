@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { buyCar, retrieveCars, retrieveMoney, unlistCar } from "../api/CarSaleApiService";
+import { addMoneyToUser, buyCar, retrieveCars, retrieveMoney, unlistCar } from "../api/CarSaleApiService";
 import { useAuthContext } from "./security/AuthProvider";
 import toyota from '../images/toyota.jpg';
 import audi from '../images/audi_new.jpg';
@@ -34,12 +34,21 @@ export default function HomeComponent(){
     ).catch( error =>console.log(error))
   }
 
-  async function buyCarFunction(id){
-    await buyCar(id)
-    .then(() =>{
+  async function buyCarFunction(id, price){
+    try{
+      await buyCar(id);
+      await addMoneyToUser(-price);
+
       refreshCars();
-    })
-    .catch(error => console.log('error'))
+      refreshMoney();
+    }catch(error){
+      console.log(error);
+    }    
+    // await buyCar(id)
+    // .then(() =>{
+    //   refreshCars();
+    // })
+    // .catch(error => console.log('error'))
   }
 
   useEffect(
@@ -136,7 +145,7 @@ export default function HomeComponent(){
                           (money < car.price) ? 
                           setPoor(true)
                           : 
-                          buyCarFunction(car.id)
+                          buyCarFunction(car.id, car.price)
                         }
                           } >Buy</button> </div>                 
                       }
