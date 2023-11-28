@@ -36,7 +36,9 @@ http://34.148.248.82:3000/
     - fixed on 10/28/2023, color in card now has square next to it with color(implementing tint on an image seems complicated for what would ultimately be an ugly feature)
 
 - Add ADMIN users and give them ADMIN priviledges to see what cars all users have
+    - fixed on 10/31/2023
 - Use CSS to make website presentable
+    - incremental changes with each update
 - Add money system to add value to cars and simulate real-life car-sale website.
 
 # General Problems - fixed on 10/28/2023, improved site styling

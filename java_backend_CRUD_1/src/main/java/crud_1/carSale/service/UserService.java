@@ -43,6 +43,14 @@ public class UserService implements UserDetailsService{
 		return userRepository.save(user);
 	}
 	
+	public long addMoney(String name, long deposit) {
+		User user = userRepository.findByName(name).get();
+		long totalMoney = user.getMoney() + deposit;
+		user.setMoney(totalMoney);
+		userRepository.save(user);
+		return totalMoney; 
+	}
+	
 	public List<User> saveAllUsers(List<User> Users) {
 		return userRepository.saveAll(Users);
 	}

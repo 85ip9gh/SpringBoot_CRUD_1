@@ -40,6 +40,7 @@ public class User implements UserDetails{
 	private String name;
 	private String password;
 	private String roles;
+	private long money; 
 
 	@OneToMany(mappedBy = "user")
 	public List<Car> myCars = new ArrayList<>();
