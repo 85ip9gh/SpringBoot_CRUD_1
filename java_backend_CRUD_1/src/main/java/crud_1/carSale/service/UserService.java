@@ -28,7 +28,7 @@ public class UserService implements UserDetailsService{
 			throw new UsernameNotFoundException("User: " + username + "not found");	
 		}
 		
-		return new User(currentUser.getName(), currentUser.getPassword(), currentUser.getRoles());
+		return new User(currentUser.getName(), currentUser.getPassword(), currentUser.getRoles(), currentUser.getMoney());
 				
 //				.map(User::new)
 //				.orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
@@ -41,6 +41,11 @@ public class UserService implements UserDetailsService{
 		}
 		
 		return userRepository.save(user);
+	}
+	
+	
+	public long getUserMoney(String name) {
+		return userRepository.findByName(name).get().getMoney();
 	}
 	
 	public long addMoney(String name, long deposit) {

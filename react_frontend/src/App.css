@@ -532,10 +532,47 @@ img{
 
 .container-home-1-text{
   padding: 2rem 5rem;
-  font-size: 4rem;
+  font-size: 5rem;
   text-align: right;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
+  color: rgb(26, 51, 73);
+}
+
+.container-home-intro{
+  min-width: 100%;
+  padding: 10rem 1rem;
+  background-color: lightgoldenrodyellow;
+
+}
+
+.container-home-intro-cards{
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.container-home-intro-card{
+  max-width: 25%;
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.container-home-intro-card-text{
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .container-home-2{
@@ -543,7 +580,6 @@ img{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 45rem;
   height: auto;
   padding: 1rem;
   overflow: scroll;
@@ -560,7 +596,7 @@ img{
   grid-template-columns: repeat(4, 1fr);
   height: 100%;
   width: 100%;
-  min-height: 20rem;
+  padding: 5rem 0;
 }
 
 .container-home-2-card{
@@ -601,7 +637,6 @@ img{
 
 .container-home-3{
   background-color: lightblue;
-  min-height: 45rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -657,6 +692,7 @@ strong{
   gap: 1rem;
   margin-bottom: 1rem;
   animation: slide 60s infinite linear;
+  padding: 5rem 0;
 }
 
 .cars-slide{
@@ -667,7 +703,7 @@ strong{
 
 
 .container-home-4{
-  background-color: lightgoldenrodyellow;
+  background-color: lightblue;
   align-items: center;
   justify-content: space-around;
   height: 20rem;

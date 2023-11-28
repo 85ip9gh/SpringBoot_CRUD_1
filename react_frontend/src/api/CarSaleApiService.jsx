@@ -25,6 +25,8 @@ export const createUser = (name, password) => apiClient.post('/addUser',{
     "password": `${password}`,
 });
 
+export const retrieveMoney = (name) => apiClient.get(`/users/${name}/money`);
+
 export const updateCar = (id, brand, color, type, age, price) => apiClient.put(`/updateCar`,{
     "id": `${id}`,
     "brand": `${brand}`,
@@ -55,22 +57,7 @@ export const listCarForSale = (brand, color, type, age, price) => apiClient.post
   }
 );
 
-// apiClient.interceptors.request.use(
-//   (config) => {
-//       console.log('intercepting');
-//       config.headers.Authorization = basicToken;
-//       return config;
-//     }
-    
-//   )
-
 export const createNewUser = (newUserName, newPassword) => apiClient.post('/createUser',{
   "name": `${newUserName}`
   }, `${newPassword}`
 );
-
-// export const retrieveLogin = () => apiClient.get("/login",{
-//   headers:{
-//     Authorization: 'Basic c2FtOm1hbg=='
-//   }
-// })

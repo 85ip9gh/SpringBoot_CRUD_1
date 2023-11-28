@@ -70,6 +70,11 @@ public class CarSaleController {
 		return userService.getAllUsers();
 	}
 	
+	@GetMapping("/users/{username}/money")
+	public long getUserMoney(@PathVariable String username){
+		return userService.getUserMoney(username);
+	}
+	
 	@PostMapping("/addCar")
 	public Car addCar(@RequestBody Car car, Principal principal) {
 		car.setUser(userService.getUserByName(principal.getName()).get());

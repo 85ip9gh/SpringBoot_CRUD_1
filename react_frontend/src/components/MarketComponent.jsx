@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { buyCar, retrieveCars, unlistCar } from "../api/CarSaleApiService";
+import { buyCar, retrieveCars, retrieveMoney, unlistCar } from "../api/CarSaleApiService";
 import { useAuthContext } from "./security/AuthProvider";
 import toyota from '../images/toyota.jpg';
 import audi from '../images/audi_new.jpg';
@@ -14,6 +14,7 @@ export default function HomeComponent(){
 
   const authContext = useAuthContext();
   const [cars, setCars] = useState([]);
+  const [money, setMoney] = useState();
   
   
   function refreshCars(){
@@ -22,6 +23,13 @@ export default function HomeComponent(){
       setCars(response.data);
       console.log(Array.isArray(cars))
     }).catch(error => console.log(error))
+  }
+
+  function refreshMoney(){
+    retrieveMoney().then( response =>{
+          setMoney(response.data);
+      }
+    ).catch( error =>console.log(error))
   }
 
   async function buyCarFunction(id){
@@ -34,7 +42,8 @@ export default function HomeComponent(){
 
   useEffect(
     () => {
-      refreshCars()
+      refreshCars();
+      refreshMoney();
     }, []
   )
 

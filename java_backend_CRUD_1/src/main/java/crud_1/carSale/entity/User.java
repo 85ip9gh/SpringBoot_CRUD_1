@@ -49,12 +49,14 @@ public class User implements UserDetails{
 		this.name = "sam";
 		this.password = "man";
 		this.roles = "ROLE_USER";
+		this.money = 1000000;
 	}
 	
-	public User(String name, String password, String roles) {
+	public User(String name, String password, String roles, long money) {
 		this.name = name;
 		this.password = password;
 		this.roles = roles;
+		this.money = money;
 	}
 	
 	public User(User user) {

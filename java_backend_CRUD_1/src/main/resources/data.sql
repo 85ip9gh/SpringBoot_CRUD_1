@@ -1,3 +1,3 @@
 use pesanth;
-INSERT IGNORE INTO user_details(id, name, password, roles) VALUES ('1', 'sam', 'man', 'ROLE_USER'); 
-INSERT IGNORE INTO user_details(id, name, password, roles) VALUES ('2', 'admin', 'man', 'ROLE_ADMIN'); 
+INSERT IGNORE INTO user_details(id, name, password, roles, money) VALUES ('1', 'sam', 'man', 'ROLE_USER', 1000000); 
+INSERT IGNORE INTO user_details(id, name, password, roles, money) VALUES ('2', 'admin', 'man', 'ROLE_ADMIN', 1000000); 
