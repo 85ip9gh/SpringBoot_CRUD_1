@@ -25,6 +25,8 @@ export const createUser = (name, password) => apiClient.post('/addUser',{
     "password": `${password}`,
 });
 
+export const deleteUser = (userId) => apiClient.delete(`/users/delete/${userId}`);
+
 export const retrieveMoney = (name) => apiClient.get(`/users/${name}/money`);
 
 export const addMoneyToUser = (money) => apiClient.patch(`/users/add-money/${money}`);

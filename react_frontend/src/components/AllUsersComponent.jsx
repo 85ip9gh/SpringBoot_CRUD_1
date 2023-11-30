@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { retrieveAllUsers } from "../api/CarSaleApiService";
+import { deleteUser, retrieveAllUsers } from "../api/CarSaleApiService";
 
 export default function AllUsersComponent() {
 
@@ -9,8 +9,6 @@ export default function AllUsersComponent() {
     async function refreshAllUsers() {
         const allUsers = await retrieveAllUsers();
         setUsers(allUsers.data);
-        console.log(allUsers.data);
-        console.log(users);
     }
 
     useEffect(() => {
@@ -19,6 +17,17 @@ export default function AllUsersComponent() {
 
     function showCars(userId) {
         setShowUserCars(userId);
+    }
+
+    async function deleteUserFunction(userId){
+        try{
+
+            await deleteUser(userId);
+            refreshAllUsers();
+
+        }catch(error){
+            console.log(error);
+        }
     }
 
     return (
@@ -51,7 +60,7 @@ export default function AllUsersComponent() {
                                     <div>{user.roles} </div>
                                     <div>{user.myCars?.length}</div>
                                     <button className="btn cars-btn all-users-btn-cars" onClick={() => showCars(user.id)} >Cars</button>
-                                    <button className="btn all-users-btn-remove">Remove User</button>
+                                    <button className="btn all-users-btn-remove" onClick={() => deleteUserFunction(user.id)} >Remove User</button>
                                     <div className="car-list" style={showUserCars == user.id ? { display: "block" } : { display: "none" }} >{
                                         user.myCars?.map(
                                             car => (
