@@ -173,18 +173,14 @@ select:focus{
   height: 100%;
   min-height: 100vh;
   overflow: scroll;
-  padding-bottom: 2rem;
   margin: 0 auto;
 
-
-  background-image: url("./images/car-login-new.jpg");
+  background-image: url("./images/car-login-new-small.jpg");
   background-color: lightblue;
-  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: rgb(189, 213, 234) ;
-  -webkit-transform: translate3d(0,0,0);
+  /* -webkit-transform: translate3d(0,0,0); */
 }
 
 
@@ -205,32 +201,11 @@ select:focus{
   background-color: rgb(36, 69, 97);
 }
 
-.user-rows > div:nth-child(even),
-.user-rows > .card-list div:nth-child(even){
-  background-color: ba(0,52,102,255);
-}
-
 .grid-container-user > .card-user{
   background-color: rgba(0,52,102,255);
   color: rgba(241,156,111,255);
 }
 
-.car-list{
-  background-color: rgb(189, 213, 234);
-  grid-column: 1/8;
-  
-}
-
-.car-details{
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  height: 2rem;
-  justify-content: space-between;
-  align-items: center;
-  text-align: left;
-  padding: 0.5rem;
-
-}
 
 .card{
   margin: 0.5rem;
@@ -374,7 +349,7 @@ select:focus{
 
 .container-title{
   /* color: rgba(255, 217, 0, 0.905); */
-  color: rgb(145, 126, 0);
+  color: black;
   background-color: transparent;
   text-align: center;
   font-size: 4rem;
@@ -382,8 +357,6 @@ select:focus{
   width: 100%;
   margin-bottom: 1rem;
   font-weight: bold;
-
-  border-bottom: 0.3rem solid rgb(145, 126, 0);
 }
 
 .home-container-inner{
@@ -397,6 +370,69 @@ img{
   height: 100%;
   width: 100%;
 }
+
+/* All Users Page CSS */
+
+.user-rows > div:nth-child(even),
+.user-rows > .card-list div:nth-child(even){
+  background-color:  white;
+}
+
+.card-user{
+  border-radius:0%;
+  box-shadow: none;
+  background-color: rgb(203, 203, 203);
+  border: 1px solid black;
+}
+
+.car-list{
+  background-color: rgb(189, 213, 234);
+  grid-column: 1/8;
+}
+
+.car-list > div:nth-child(even){
+  background-color: rgb(217, 210, 250);
+}
+
+.car-details{
+  background-color: rgb(179, 164, 244);
+  padding: 0.5rem;  
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  height: 5rem;
+
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.all-users-btn-cars,
+.all-users-btn-remove{
+  border:  1px solid black;
+  color: black;
+
+}
+
+.all-users-btn-cars:hover,
+.all-users-btn-remove:hover{
+  box-shadow: inset 2px 2px black;
+}
+
+
+.all-users-btn-cars{
+  background-color: rgb(97, 127, 159);
+}
+
+
+.all-users-btn-remove{
+  background-color: rgb(255, 96, 96);
+  
+}
+
+.all-users-btn-remove:hover{
+  background-color: rgb(255, 189, 189);
+}
+
 
 /* My Cars Page CSS */
 
@@ -454,17 +490,29 @@ img{
 /* Market Page CSS */
 
 .market-container,
+.all-users-container{
+  padding: 2rem;
+  background-color: lightblue;
+}
+
 .my-cars-container{
   padding: 2rem;
-  background-color: white;
+  background-color: lightgoldenrodyellow;
 }
+
+.container{
+  position: relative;
+}
+
 .market-money{
-  background-color: lightblue;
+  background-color: rgb(76, 166, 196);
+  border: 2px solid black;
   padding: 2rem;
   position: absolute;
   top: 0%;
   right: 0%;
   width: 22rem;
+  z-index: 10;
 }
 
 .market-money-make-deposit{
@@ -545,10 +593,11 @@ img{
   background-image: url("./images/qijin-xu-JUkdNiG9w3I-unsplash.jpg");
   background-color: lightblue;
   background-size: cover;
+  min-height: 100%;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: rgb(189, 213, 234) ;
+  position: static;
   -webkit-transform: translate3d(0,0,0);
 }
 

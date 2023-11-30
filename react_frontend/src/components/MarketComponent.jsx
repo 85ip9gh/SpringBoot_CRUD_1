@@ -44,11 +44,6 @@ export default function HomeComponent(){
     }catch(error){
       console.log(error);
     }    
-    // await buyCar(id)
-    // .then(() =>{
-    //   refreshCars();
-    // })
-    // .catch(error => console.log('error'))
   }
 
   useEffect(
@@ -67,7 +62,7 @@ export default function HomeComponent(){
     }
 
     return(
-    <div className="container ">
+    <div className="container market-container">
       <div className="market-money">
         <h1>Current Balance: ${money.toLocaleString()}</h1>
 

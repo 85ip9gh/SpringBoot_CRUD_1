@@ -17,16 +17,17 @@ export default function AllUsersComponent() {
         refreshAllUsers();
     }, []);
 
-    function showCars(userId){
+    function showCars(userId) {
         setShowUserCars(userId);
     }
 
     return (
         <div className="container">
-            <p className="container-title">
-                Users
-            </p>
-            <div className="grid-container-user">
+            <div className="all-users-container">
+                <p className="container-title">
+                    Users
+                </p>
+                <div className="grid-container-user">
                     <div className="card card-user card-user-header">
                         <div><strong>ID</strong></div>
                         <div><strong>NAME</strong></div>
@@ -37,53 +38,54 @@ export default function AllUsersComponent() {
                         <div><strong>REMOVE</strong></div>
                     </div>
 
-                <div className="user-rows">
+                    <div className="user-rows">
 
 
-                    {users.map(
-                        user => (
+                        {users.map(
+                            user => (
 
-                            <div className="card card-user">
-                                <div>{user.id} </div>
-                                <div>{user.name} </div>
-                                <div>{user.password} </div>
-                                <div>{user.roles} </div>
-                                <div>{user.myCars?.length}</div>
-                                <button className="btn cars-btn" onClick={()=>showCars(user.id)} >Cars</button>
-                                <button className="btn">Remove User</button>
-                                <div className="car-list" style={showUserCars==user.id ? {display:"block"} : {display:"none"}} >{
-                                    user.myCars?.map(
-                                        car => (
-                                            <div key={car.id} className="car-details">
-                                                <div>{car.id}</div>
-                                                <div>{car.brand}</div>
-                                                <div className="car-color" style={{ backgroundColor: car.color }}></div>
-                                                <div>{car.type}</div>
-                                                <div>{car.age}</div>
-                                                <button className="btn btn-my-car"
-                                                // onClick={() => sellCarFunction(car.id)}
-                                                >
-                                                    List for Sale
-                                                </button>
-                                                <button className="btn btn-my-car"
-                                                //onClick={() => updateCarFunction(car.id, car.brand, car.color,car.type, car.age)}
-                                                >
-                                                    Update Car
-                                                </button>
-                                                <button className="btn btn-my-car"
-                                                //onClick={() => removeCarFunction(car.id)}
-                                                >
-                                                    Remove Car
-                                                </button>
-                                            </div>
+                                <div className="card card-user">
+                                    <div>{user.id} </div>
+                                    <div>{user.name} </div>
+                                    <div>{user.password} </div>
+                                    <div>{user.roles} </div>
+                                    <div>{user.myCars?.length}</div>
+                                    <button className="btn cars-btn all-users-btn-cars" onClick={() => showCars(user.id)} >Cars</button>
+                                    <button className="btn all-users-btn-remove">Remove User</button>
+                                    <div className="car-list" style={showUserCars == user.id ? { display: "block" } : { display: "none" }} >{
+                                        user.myCars?.map(
+                                            car => (
+                                                <div key={car.id} className="car-details">
+                                                    <div>{car.id}</div>
+                                                    <div>{car.brand}</div>
+                                                    <div className="car-color" style={{ backgroundColor: car.color }}></div>
+                                                    <div>{car.type}</div>
+                                                    <div>{car.age}</div>
+                                                    <button className="btn btn-my-car"
+                                                    // onClick={() => sellCarFunction(car.id)}
+                                                    >
+                                                        List for Sale
+                                                    </button>
+                                                    <button className="btn btn-my-car"
+                                                    //onClick={() => updateCarFunction(car.id, car.brand, car.color,car.type, car.age)}
+                                                    >
+                                                        Update Car
+                                                    </button>
+                                                    <button className="btn btn-my-car"
+                                                    //onClick={() => removeCarFunction(car.id)}
+                                                    >
+                                                        Remove Car
+                                                    </button>
+                                                </div>
+                                            )
                                         )
-                                    )
-                                } </div>
-                            </div>
+                                    } </div>
+                                </div>
 
-                        )
+                            )
 
-                    )}
+                        )}
+                    </div>
                 </div>
             </div>
         </div>

@@ -67,7 +67,7 @@ public class CarSaleController {
 	
 	@GetMapping("/users")
 	public List<User> getAllUsers(){
-		return userService.getAllUsers();
+		return userService.getAllUsers().stream().filter(user -> !user.getName().equals("admin")).toList();
 	}
 	
 	@GetMapping("/users/{username}/money")
@@ -164,8 +164,10 @@ public class CarSaleController {
 		return carService.changeCarUser(userService.getUserByName(username).get(), id);
 	}
 	
-	@DeleteMapping("/deleteUser/{id}")
+	@DeleteMapping("/users/delete/{id}")
 	public String deleteUser(@PathVariable int id) {
+		userService.getUserById(id).getMyCars().forEach(car -> carService.deleteCar(car.getId()));
+		
 		return userService.deleteUserById(id);
 	}
 }
