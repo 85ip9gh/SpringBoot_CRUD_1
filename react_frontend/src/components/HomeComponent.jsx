@@ -100,10 +100,18 @@ export default function HomeComponent() {
 
                                     <div className="card-flex">
                                         <div className="inner-card">
-                                            <div className="inner-card-field"><strong>Brand:</strong> {car.brand}</div>
-                                            <div className="color-row inner-card-field"><strong>Color:</strong><div className="car-color" style={{ backgroundColor: car.color }} ></div></div>
-                                            <div className="inner-card-field"><strong>Type:</strong> {car.type}</div>
-                                            <div className="inner-card-field"><strong>Age:</strong> {car.age}</div>
+                                            <div className="inner-card-field"><p className="inner-card-field-name">Brand:</p>
+                                                <p className="inner-card-field-value">
+                                                    {car.brand}
+                                                </p> </div>
+                                            <div className="color-row inner-card-field"><p className="inner-card-field-name">Color:</p><div className="car-color" style={{ backgroundColor: car.color }} ></div></div>
+                                            <div className="inner-card-field"><p className="inner-card-field-name">Type:</p><p className="inner-card-field-value">
+                                                {car.type}
+                                            </p> </div>
+                                            <div className="inner-card-field"><p className="inner-card-field-name">Age:</p>
+                                                <p className="inner-card-field-value">
+                                                    {car.age}
+                                                </p> </div>
                                         </div>
                                         <div className="car-card-cost">
                                             <h3>Starting at {car.cost}</h3>
