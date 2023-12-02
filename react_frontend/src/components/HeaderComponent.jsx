@@ -16,6 +16,7 @@ export default function HeaderComponent() {
     <div className="header-component">
       <div className="header-profile">
         <img src={logo} className="logo" alt="logo for Car sale Application" />
+        <p className="header-company-name" >Car Sale Application</p>
       </div>
 
 
