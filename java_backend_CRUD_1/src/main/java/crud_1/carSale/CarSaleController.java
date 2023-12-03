@@ -47,7 +47,7 @@ public class CarSaleController {
 	
 	@GetMapping("/jwt-token")
 	public String jwtToken(Authentication authentication){
-		LOG.info("USER {} IS PRESENT", authentication.getName());
+		LOG.error("USER {} IS PRESENT", authentication.getName());
 		LOG.debug("user {} asking for jwt token",authentication.getName());
 		String token = tokenService.generateToken(authentication);
 		LOG.debug("Token given to user: {}", token);

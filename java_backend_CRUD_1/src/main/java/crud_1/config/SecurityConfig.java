@@ -18,7 +18,9 @@ import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
@@ -49,14 +51,13 @@ public class SecurityConfig{
 	private UserService userService;
 	
 	@Bean
-	AuthenticationSuccessHandler successHandler() {
-	    SimpleUrlAuthenticationSuccessHandler handler = new SimpleUrlAuthenticationSuccessHandler();
-	    handler.setUseReferer(true);
-	    return handler;
-	}
-
+	  PasswordEncoder passwordEncoder() {
+		  //return new BCryptPasswordEncoder();
+		  return NoOpPasswordEncoder.getInstance();
+	  }
+	
 	@Bean
-  SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
   	
 		return http
 				.csrf(csrf -> csrf.disable())
@@ -73,12 +74,6 @@ public class SecurityConfig{
 	}
   
   @Bean
-  PasswordEncoder passwordEncoder() {
-	  //return new BCryptPasswordEncoder();
-	  return NoOpPasswordEncoder.getInstance();
-  }
-  
-  @Bean
   JwtDecoder jwtDecoder() {
 	  return NimbusJwtDecoder.withPublicKey(rsaKeys.publicKey()).build();
   }
@@ -89,8 +84,8 @@ public class SecurityConfig{
 	  JWKSource<SecurityContext> jwks = new ImmutableJWKSet<>(new JWKSet(jwk));
 	  
 	  return new NimbusJwtEncoder(jwks);
-  }
-  	
+  }	
+  
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();

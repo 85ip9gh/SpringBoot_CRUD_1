@@ -62,13 +62,11 @@ public class User implements UserDetails{
 	public User(User user) {
 		this.name = user.getName();
 		this.password = user.getPassword();
+		this.roles = user.getRoles();
+		this.money = user.getMoney();
 		
 	}
 	
-	public User(String name, List<Car> myCars) {
-		this.name = name;
-		this.myCars = myCars;
-	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

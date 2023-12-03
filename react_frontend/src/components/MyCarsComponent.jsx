@@ -28,12 +28,12 @@ export default function MyCarsComponent() {
     }, []
   )
 
-  function refreshMoney(){
-    retrieveMoney(authContext.user).then( response =>{
-          console.log(response.data);
-          setMoney(response.data);
-      }
-    ).catch( error =>console.log(error))
+  function refreshMoney() {
+    retrieveMoney(authContext.user).then(response => {
+      console.log(response.data);
+      setMoney(response.data);
+    }
+    ).catch(error => console.log(error))
   }
 
   function refreshCars() {
@@ -79,19 +79,19 @@ export default function MyCarsComponent() {
       .catch(error => console.log(error));
   }
 
-  function handleDepositChange(event){
+  function handleDepositChange(event) {
     setDeposit(event.target.value);
   }
 
   const submit = async (e) => {
     e.preventDefault();
 
-    try{
+    try {
       await addMoneyToUser(deposit);
 
       refreshCars();
       refreshMoney();
-    }catch(error){
+    } catch (error) {
       console.log(error);
     }
   }
@@ -100,19 +100,18 @@ export default function MyCarsComponent() {
     <div className="container">
       <div className="market-money">
         <h1>Current Balance: ${money.toLocaleString()}</h1>
-          <form className="market-money-make-deposit" onSubmit={submit}>
-            <input className="input-text input-number market-input-number" name="deposit" type="number" value={deposit} onChange={handleDepositChange} min={0} required></input>
-            <button className="btn my-cars-btn" type="submit">Make Deposit</button>
-          </form>
+        <form className="market-money-make-deposit" onSubmit={submit}>
+          <input className="input-text input-number market-input-number" name="deposit" type="number" value={deposit} onChange={handleDepositChange} min={0} required></input>
+          <button className="btn my-cars-btn" type="submit">Make Deposit</button>
+        </form>
       </div>
       <div className="my-cars-container">
 
 
         {(numberOfCars != 0) ?
-          <div className="home-container-inner">
-            <p className="container-title">
-              {authContext.user}'s cars
-            </p>
+          <div className="container-home-title">
+            <p className="container-title">{authContext.user}'s cars</p>
+            <hr />
           </div>
           : <></>
         }
@@ -170,7 +169,7 @@ export default function MyCarsComponent() {
                           <button className="btn my-cars-btn my-cars-btn-remove-list-for-sale" onClick={() => sellCarFunction(car.id)}>List for Sale</button>
                           <button className="btn my-cars-btn" onClick={() => updateCarFunction(car.id, car.brand, car.color, car.type, car.age, car.price)}>Update Car</button>
                           <button className="btn my-cars-btn my-cars-btn-remove" onClick={() => removeCarFunction(car.id)}>Remove Car</button></div>
-                        </div>
+                      </div>
                     </div>
                   </div>
 

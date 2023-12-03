@@ -14,8 +14,8 @@ export default function AddCarComponent(){
     brand: "Toyota",
     color: "#000000",
     type: "SUV",
-    age: 0,
-    price: 0
+    age: '?',
+    price: '?'
   });
 
   function handleFormChange(event){

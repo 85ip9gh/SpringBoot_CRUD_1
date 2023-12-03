@@ -219,10 +219,20 @@ select:focus{
 
 .card{
   margin: 0.5rem;
-  background-color: rgb(0, 75, 145);
   padding: 1rem;
   box-shadow: 0.5rem 0.5rem 0.5rem rgb(1, 1, 1);
   border-radius: 1rem;
+  background-color: white;
+}
+
+.card:hover .card-flex{
+  border: 2px solid rgba(241,156,111,255) ;
+  border-top: none; 
+}
+
+.card:hover .img-box{
+  border: 2px solid rgba(241,156,111,255) ;
+  border-bottom: none; 
 }
 
 .card-flex{
@@ -230,7 +240,7 @@ select:focus{
   width: 20rem; 
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
-  border: 2px solid rgba(241,156,111,255);
+  border: 2px solid rgba(0,52,102,255);
   border-top: none; 
 }
 
@@ -253,9 +263,17 @@ select:focus{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  color: rgba(241,156,111,255);
   border-bottom-left-radius: 1rem;
-  width: 100%;
+  width: 50%;
+}
+
+.grid-container > .card:hover > .card-flex > .inner-card{  
+  color: rgba(241,156,111,255);
+}
+
+.card:hover .market-card-price,
+.card:hover .my-cars-price {  
+  color: white
 }
 
 .color-row{
@@ -284,6 +302,14 @@ select:focus{
 .btn:hover{
   cursor: pointer;
   border: 2px solid rgba(241,156,111,255);
+}
+
+.market-btn:hover{
+  cursor: pointer;
+  border-top: 2px solid rgba(241,156,111,255);
+  border-left: 2px solid rgba(241,156,111,255);
+  border-right: 2px solid rgba(0,52,102,255);
+  border-bottom: 2px solid rgba(0,52,102,255);
 }
 
 .header-btn{
@@ -350,7 +376,7 @@ select:focus{
 .img-box{
   width: 20rem;
   height: 10rem;
-  border: 2px solid rgba(241,156,111,255);
+  border: 2px solid rgba(0,52,102,255);
   border-bottom: none;
 }
 
@@ -370,6 +396,16 @@ select:focus{
   padding: 0.1rem;
   width: 100%;
   margin-bottom: 1rem;  
+}
+
+.market-container .container-home-title,
+.my-cars-container .container-home-title,
+.all-users-container .container-home-title{
+  margin-bottom: 2rem;
+}
+
+.all-users-car-color{
+  justify-self: center;
 }
 
 hr{
@@ -408,6 +444,16 @@ img{
 .car-list{
   background-color: rgb(189, 213, 234);
   grid-column: 1/8;
+  margin-top: 2rem;
+}
+
+.car-list-header{
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-column: 1/8;
+  border-radius: none;
+  justify-content: center;
+  text-align: center;
 }
 
 .car-list > div:nth-child(even){
@@ -418,12 +464,12 @@ img{
   background-color: rgb(179, 164, 244);
   padding: 0.5rem;  
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(9, 1fr);
   height: 5rem;
 
   justify-content: center;
   align-items: center;
-  text-align: left;
+  text-align: center;
 }
 
 .all-users-btn-cars,
@@ -526,14 +572,11 @@ img{
 /* Market Page CSS */
 
 .market-container,
-.all-users-container{
-  padding: 2rem;
-  background-color: lightblue;
-}
-
+.all-users-container,
 .my-cars-container{
-  padding: 2rem;
-  background-color: lightgoldenrodyellow;
+  padding: 0 2rem;
+  background-color: rgba(241, 241, 241, 0.5);
+  min-height: 100vh;
 }
 
 .container{
@@ -572,21 +615,31 @@ img{
   border-top-left-radius: 1rem;
 }
 
-.grid-container > div:nth-child(even),
-.grid-container > div:nth-child(even) .btn{
+.grid-container > div:nth-child(odd):hover,
+.grid-container > div:nth-child(odd):hover .btn{
   background-color: rgba(0,52,102,255);
+  transition: background 0.2s ease-in-out;
 }
 
-.grid-container > div:nth-child(even) .btn:hover{
+.grid-container > div:nth-child(even):hover,
+.grid-container > div:nth-child(even):hover .btn{
+  background-color: rgba(0,52,102,255);
+  transition: background 0.2s ease-in-out;
+}
+
+
+/* .grid-container > div:nth-child(even) .btn:hover{
   cursor: pointer;
   background-color: rgb(189, 213, 234);
   color: black;
-}
+} */
 
 .market-card-right{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  width: 50%;
+  margin-right: 2px;
 }
 
 .price-wrapper{
@@ -598,7 +651,6 @@ img{
 
 .market-card-price,
 .my-cars-price{
-  color: white;
   text-align: center;
   font-weight: bold;
   font-size: 1.5rem;

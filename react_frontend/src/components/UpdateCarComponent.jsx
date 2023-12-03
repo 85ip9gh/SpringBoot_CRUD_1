@@ -32,7 +32,13 @@ export default function UpdateCarComponent(){
     e.preventDefault();
      await updateCar(carID, form.brand, form.color, form.type, form.age, form.price)
      .then(() => {
-      navigate("/my-cars")
+
+      if(authContext.role == "ROLE_ADMIN"){
+        navigate("/all-users");
+      } else{
+        navigate("/my-cars");
+      }
+
      })
      .catch(error => console.log(error));
     

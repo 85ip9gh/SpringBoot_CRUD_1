@@ -10,15 +10,15 @@ import honda from '../images/honda.jpg';
 import mitsubishi from '../images/mitsubishi.jpg';
 import BMW from '../images/BMW.jpg';
 
-export default function HomeComponent(){
+export default function HomeComponent() {
 
   const authContext = useAuthContext();
   const [cars, setCars] = useState([]);
   const [money, setMoney] = useState(0);
   const [poor, setPoor] = useState(false);
-  
-  
-  function refreshCars(){
+
+
+  function refreshCars() {
     retrieveCars().then(response => {
       console.log(response.data);
       setCars(response.data);
@@ -26,24 +26,24 @@ export default function HomeComponent(){
     }).catch(error => console.log(error))
   }
 
-  function refreshMoney(){
-    retrieveMoney(authContext.user).then( response =>{
-          console.log(response.data);
-          setMoney(response.data);
-      }
-    ).catch( error =>console.log(error))
+  function refreshMoney() {
+    retrieveMoney(authContext.user).then(response => {
+      console.log(response.data);
+      setMoney(response.data);
+    }
+    ).catch(error => console.log(error))
   }
 
-  async function buyCarFunction(id, price){
-    try{
+  async function buyCarFunction(id, price) {
+    try {
       await buyCar(id);
       await addMoneyToUser(-price);
 
       refreshCars();
       refreshMoney();
-    }catch(error){
+    } catch (error) {
       console.log(error);
-    }    
+    }
   }
 
   useEffect(
@@ -53,20 +53,20 @@ export default function HomeComponent(){
     }, []
   )
 
-    function unlistCarFunction(id){
-      unlistCar(id)
-      .then(()=>{
+  function unlistCarFunction(id) {
+    unlistCar(id)
+      .then(() => {
         refreshCars();
       })
       .catch(error => console.log(error));
-    }
+  }
 
-    return(
+  return (
     <div className="container market-container">
       <div className="market-money">
         <h1>Current Balance: ${money.toLocaleString()}</h1>
 
-        {(poor == true) ? 
+        {(poor == true) ?
           <div className="market-money-poor">
             <h1>you do not have enough money</h1>
           </div>
@@ -74,88 +74,115 @@ export default function HomeComponent(){
         }
       </div>
       <div className="market-container">
+        <div className="container-home-title">
+          <p className="container-title">Market</p>
+          <hr />
+        </div>
 
-      
-      <div className="home-container-inner">
-        <p className="container-title">
-          Market
-        </p>
-
-      </div>
-      <div className="grid-container">
+        <div className="grid-container">
           {
             cars.map(
               car => (
-              (car.selling === true) ?
-                <div key={car.id} className="card market-car-card">
-                  <div className="img-box">
-                   {
-                    (car.brand === 'Toyota') ?
-                      <img src={toyota} alt="Grey Toyota Sedan" />
-                      :
-                      ((car.brand === 'Audi')) ?
-                      <img src={audi} alt="Black Audi SUV"/>
-                    :
-                    ((car.brand === 'Lamborghini')) ?
-                      <img src={lamborghini} alt="Orange Lamborghini Supercar" />
-                    :
-                    (car.brand == "Honda") ?
-                    <img src={honda} alt="Honda Car" />
-                    :
-                    (car.brand == "Mitsubishi") ?
-                    <img src={mitsubishi} alt="Mitsubishi Car" />
-                    :
-                    (car.brand == "BMW") ?
-                    <img src={BMW} alt="BMW Car" />
-                    :
-                    (car.brand == "Chevrolet") ?
-                    <img src={chevrolet} alt="Chevrolet Car" />
-                    :
-                    <img src={ferrari} alt="Red Ferrari Sportscar" style={{ }} />
+                (car.selling === true) ?
+                  <div key={car.id} className="card market-car-card">
+                    <div className="img-box">
+                      {
+                        (car.brand === 'Toyota') ?
+                          <img src={toyota} alt="Grey Toyota Sedan" />
+                          :
+                          ((car.brand === 'Audi')) ?
+                            <img src={audi} alt="Black Audi SUV" />
+                            :
+                            ((car.brand === 'Lamborghini')) ?
+                              <img src={lamborghini} alt="Orange Lamborghini Supercar" />
+                              :
+                              (car.brand == "Honda") ?
+                                <img src={honda} alt="Honda Car" />
+                                :
+                                (car.brand == "Mitsubishi") ?
+                                  <img src={mitsubishi} alt="Mitsubishi Car" />
+                                  :
+                                  (car.brand == "BMW") ?
+                                    <img src={BMW} alt="BMW Car" />
+                                    :
+                                    (car.brand == "Chevrolet") ?
+                                      <img src={chevrolet} alt="Chevrolet Car" />
+                                      :
+                                      <img src={ferrari} alt="Red Ferrari Sportscar" style={{}} />
 
-                    }
-                    </div>
-                <div className="card-flex">
-
-                  <div className="inner-card">
-                    <div><strong>ID:</strong> {car.id}</div>
-                    <div><strong>Brand:</strong>  {car.brand}</div>
-                    <div className="color-row"><strong>Color:</strong><div className="car-color" style={{backgroundColor: car.color}} ></div></div>
-                    <div><strong>Type:</strong> {car.type}</div>
-                    <div><strong>Age:</strong> {car.age}</div>
-                    <div><strong>Seller:</strong> {car.seller}</div>
-                  </div>
-                    
-                    <div className="market-card-right">
-                      <div className="price-wrapper">
-                        <p className="market-card-price">
-                        ${car.price.toLocaleString()}
-                        </p>
-                      </div>
-        
-                      {(car.seller.toLowerCase() == authContext.user.toLowerCase()) ? 
-                        <div> <button className="btn market-btn car-unlist-btn " onClick={() => unlistCarFunction(car.id)}>Unlist</button> </div>
-                        : 
-                        <div> <button className="btn market-btn car-buy-btn" onClick={ () =>{
-                          (money < car.price) ? 
-                          setPoor(true)
-                          : 
-                          buyCarFunction(car.id, car.price)
-                        }
-                          } >Buy</button> </div>                 
                       }
+                    </div>
+                    <div className="card-flex">
+
+                      <div className="inner-card">
+                        <div className="inner-card-field">
+                          <p className="inner-card-field-name">ID:</p>
+                          <p className="inner-card-field-value">
+                            {car.id}
+                          </p>
+                        </div>
+
+                        <div className="inner-card-field">
+                          <p className="inner-card-field-name">Brand:</p>
+                          <p className="inner-card-field-value">
+                            {car.brand}
+                          </p>
+                        </div>
+
+                        <div className="color-row"><p className="inner-card-field-name">Color:</p><div className="car-color" style={{ backgroundColor: car.color }} ></div></div>
+
+                        <div className="inner-card-field">
+                          <p className="inner-card-field-name">Type:</p>
+                          <p className="inner-card-field-value">
+                            {car.type}
+                          </p>
+                        </div>
+
+                        <div className="inner-card-field">
+                          <p className="inner-card-field-name">Age:</p>
+                          <p className="inner-card-field-value">
+                            {car.age}
+                          </p>
+                        </div>
+
+                        <div className="inner-card-field">
+                          <p className="inner-card-field-name">Seller:</p>
+                          <p className="inner-card-field-value">
+                            {car.seller}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="market-card-right">
+                        <div className="price-wrapper">
+                          <p className="market-card-price">
+                            ${car.price.toLocaleString()}
+                          </p>
+                        </div>
+
+                        {(car.seller.toLowerCase() == authContext.user.toLowerCase()) ?
+                          <div> <button className="btn market-btn car-unlist-btn " onClick={() => unlistCarFunction(car.id)}>Unlist</button> </div>
+                          :
+                          <div> <button className="btn market-btn car-buy-btn" onClick={() => {
+                            (money < car.price) ?
+                              setPoor(true)
+                              :
+                              buyCarFunction(car.id, car.price)
+                          }
+                          } >Buy</button> </div>
+                        }
+
+                      </div>
+
 
                     </div>
-
-   
                   </div>
-                </div>
                   : <></>
               )
-            ) 
+            )
           }
-      </div>
+        </div>
       </div>
     </div>
-    )
+  )
 }
