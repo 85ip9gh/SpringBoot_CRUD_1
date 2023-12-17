@@ -185,11 +185,12 @@ select:focus{
   overflow: scroll;
   margin: 0 auto;
 
-  background-image: url("./images/car-login-new-small.jpg");
+  background-image: url("./images/car-login-1920x1280.jpg");
   background-color: lightblue;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  /* background-size: cover; */
   /* -webkit-transform: translate3d(0,0,0); */
 }
 

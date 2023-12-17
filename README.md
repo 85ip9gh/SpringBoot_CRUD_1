@@ -149,6 +149,8 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 				}
 			);
 ```
+- BCrypt didn't work when I manually encoded the passwords so had to recrealte them. Not sure if it was because of the previous passwords or what, but when you created a user and tried to login, it worked. But previous users were denied. It works fine after wiping and recreating the users though.
+- Changed JWT token expiration time from 1hr to 10hrs in Token Service Class. Might implement token that refreshes later.
 
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)
