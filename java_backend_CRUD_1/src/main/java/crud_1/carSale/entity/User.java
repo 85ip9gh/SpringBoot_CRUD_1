@@ -59,6 +59,14 @@ public class User implements UserDetails{
 		this.money = money;
 	}
 	
+	public User(int id, String name, String password, String roles, long money) {
+		this.id = id;
+		this.name = name;
+		this.password = password;
+		this.roles = roles;
+		this.money = money;
+	}
+	
 	public User(User user) {
 		this.name = user.getName();
 		this.password = user.getPassword();

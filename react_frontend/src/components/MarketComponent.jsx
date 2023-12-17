@@ -20,9 +20,7 @@ export default function HomeComponent() {
 
   function refreshCars() {
     retrieveCars().then(response => {
-      console.log(response.data);
       setCars(response.data);
-      console.log(Array.isArray(cars))
     }).catch(error => console.log(error))
   }
 

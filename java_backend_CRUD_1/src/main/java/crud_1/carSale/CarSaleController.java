@@ -6,6 +6,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -45,6 +47,15 @@ public class CarSaleController {
 		this.tokenService = tokenService;
 	}
 	
+	@Bean
+	CommandLineRunner commandLineRunner() {
+		return args ->{
+			User sam = userService.saveUser(new User());
+			System.out.println(sam);
+			System.out.println(carService.getAllCars().toString());
+		};
+	}
+	
 	@GetMapping("/jwt-token")
 	public String jwtToken(Authentication authentication){
 		LOG.error("USER {} IS PRESENT", authentication.getName());
@@ -61,8 +72,7 @@ public class CarSaleController {
 
 	@GetMapping("/cars")
 	public List<Car> getAllCars(){
-		List<Car> allCars = carService.getAllCars();
-		return allCars;
+		return carService.getAllCars();
 	}
 	
 	@GetMapping("/users")
@@ -165,9 +175,15 @@ public class CarSaleController {
 	}
 	
 	@DeleteMapping("/users/delete/{id}")
-	public String deleteUser(@PathVariable int id) {
-		userService.getUserById(id).getMyCars().forEach(car -> carService.deleteCar(car.getId()));
+	public ResponseEntity<User> deleteUser(@PathVariable int id) {
+		User deletedUser = userService.getUserById(id);
 		
-		return userService.deleteUserById(id);
+		if(deletedUser.getMyCars().isEmpty() == false) {			
+			deletedUser.getMyCars().forEach(car -> carService.deleteCar(car.getId()));
+		}
+		
+		userService.deleteUserById(id);
+		
+		return new ResponseEntity<User>(deletedUser,HttpStatus.OK);
 	}
 }

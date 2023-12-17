@@ -9,7 +9,7 @@ export default function LoginComponent() {
   const authContext = useAuthContext();
 
   const [form, setForm] = useState({
-    username: "dino",
+    username: "sam",
     password: "man"
   });
 

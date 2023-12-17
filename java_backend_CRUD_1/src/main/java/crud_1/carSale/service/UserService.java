@@ -81,10 +81,9 @@ public class UserService implements UserDetailsService{
 		return userRepository.findByName(name);
 	}
 	
-	public String deleteUserById(int id) {
+	public void deleteUserById(int id) {
 		userRepository.deleteById(id);
-		userRepository.save(userRepository.findById(id).get());
-		return "removed User with id: " + id;
+		return;
 	}
 	
 	public List<Car> getUserCars(String username){

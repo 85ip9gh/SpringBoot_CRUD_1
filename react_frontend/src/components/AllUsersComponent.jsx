@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { deleteUser, removeCar, retrieveAllUsers, sellCar } from "../api/CarSaleApiService";
+import { deleteUser, removeCar, retrieveAllUsers, sellCar, unlistCar } from "../api/CarSaleApiService";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "./security/AuthProvider";
 
@@ -12,6 +12,7 @@ export default function AllUsersComponent() {
 
     async function refreshAllUsers() {
         const allUsers = await retrieveAllUsers();
+        console.log("refresh all users")
         setUsers(allUsers.data);
     }
 
@@ -25,10 +26,9 @@ export default function AllUsersComponent() {
 
     async function deleteUserFunction(userId) {
         try {
-
-            await deleteUser(userId);
+            const deletedUser = await deleteUser(userId);
+            console.log(deletedUser)
             refreshAllUsers();
-
         } catch (error) {
             console.log(error);
         }
@@ -40,6 +40,14 @@ export default function AllUsersComponent() {
             refreshAllUsers();
           })
           .catch(console.log('error'))
+      }
+
+      function unlistCarFunction(id) {
+        unlistCar(id)
+          .then(() => {
+            refreshAllUsers();
+          })
+          .catch(error => console.log(error));
       }
 
       function updateCarFunction(carID, brand, color, type, age, price) {
@@ -103,11 +111,20 @@ export default function AllUsersComponent() {
                                                         <div>{car.type}</div>
                                                         <div>{car.age}</div>
                                                         <div>${car.price}</div>
+                                                        {(car.selling == 1) ? 
+                                                            <button className="btn btn-my-car"
+                                                        onClick={() => unlistCarFunction(car.id)}
+                                                        >
+                                                            Unlist
+                                                        </button>
+                                                        :
                                                         <button className="btn btn-my-car"
                                                         onClick={() => sellCarFunction(car.id)}
                                                         >
                                                             List for Sale
                                                         </button>
+                                                        }
+                                                        
                                                         <button className="btn btn-my-car"
                                                         onClick={() => updateCarFunction(car.id, car.brand, car.color,car.type, car.age, car.price)}
                                                         >
