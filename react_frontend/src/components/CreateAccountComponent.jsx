@@ -60,7 +60,7 @@ export default function LoginComponent(){
         {userCreated && 
             <div className="success-msg-box">
                 <p className="success-msg">
-                    user {form.username} has been created
+                    user "{form.username}" has been created
                 </p>
             </div>}
 

@@ -68,6 +68,7 @@ public class User implements UserDetails{
 	}
 	
 	public User(User user) {
+		this.id = user.id;
 		this.name = user.getName();
 		this.password = user.getPassword();
 		this.roles = user.getRoles();

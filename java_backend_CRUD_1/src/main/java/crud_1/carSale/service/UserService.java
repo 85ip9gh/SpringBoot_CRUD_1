@@ -31,10 +31,10 @@ public class UserService implements UserDetailsService{
 		if(currentUser == null) {
 			throw new UsernameNotFoundException("User: " + username + "not found");	
 		}
-		
-		if(username.equals("sam")) {
-			return new User("sam", "man", "ROLE_USER", 100000);
-		}
+//		
+//		if(username.equals("sam")) {
+//			return new User("sam", "man", "ROLE_USER", 100000);
+//		}
 		
 		return new User(currentUser);
 				
@@ -44,6 +44,10 @@ public class UserService implements UserDetailsService{
 	}
 	
 	public User saveUser(User user) {
+		if(userRepository.existsByName(user.getName())) {
+			return null;
+		}
+		
 		return userRepository.save(user);
 	}
 	

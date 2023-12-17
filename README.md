@@ -26,6 +26,7 @@ http://34.148.248.82:3000/
 
 # Future Features to be Added
 - Change password encoder in spring boot api from NoOpPasswordEncoder to BCryptPasswordEncoder and figure out how to implement this given that all user details are stored in mysql database. Need to figure out where and how to decode the password for Spring Security to authenticate and authorize the user.
+    - fixed on 12/16/2023, all users' passwords now encoded with BCryptPassword encoder
 
 - Change login page from basic to form login in spring boot so that the user doesn't have access to their information after logging in and logging out in the same session. For example, the user can login, logout, then type in a random username/password and still be granted access to their information based on their first login. 
     - fixed on 10/22/2023, kept httpBasic but logout button works now

@@ -4,13 +4,13 @@ import { apiClient } from "./ApiBaseURL";
 
 export const basicAuthentication = (token) => apiClient.get('/basic-auth',{
   headers:{
-    Authorization: token
+    "Authorization": token
   } 
 });
 
 export const JWTAuthencation = (token) =>apiClient.get('/jwt-token',{
   headers:{
-    Authorization: token
+    "Authorization": token
   }
 })
 

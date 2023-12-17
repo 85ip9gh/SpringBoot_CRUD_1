@@ -54,16 +54,9 @@ public class CarSaleController {
 	@Bean
 	CommandLineRunner commandLineRunner() {
 		return args ->{
-			User sam = userService.saveUser(new User());
+			User sam = userService.saveUser(new User("sam", passwordEncoder.encode("man"), "ROLE_USER", 1000000));
+			User admin = userService.saveUser(new User("admin", passwordEncoder.encode("man"), "ROLE_ADMIN", 1000000));
 			System.out.println(sam);
-			
-			userService.getAllUsers().stream().forEach(user -> {
-				user.setPassword(passwordEncoder.encode(user.getPassword()));
-				userService.saveUser(user);
-				}
-			);
-			
-			userService.getAllUsers().stream().forEach(user -> System.out.println(user.getPassword()));
 		};
 	}
 	
@@ -108,7 +101,6 @@ public class CarSaleController {
 		
 		
 		User newUser = new User(user.getUsername(), passwordEncoder.encode(user.getPassword()), user.getRoles(), user.getMoney());
-		
 		
 		User addedUser = userService.saveUser(newUser);										
 
