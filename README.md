@@ -140,6 +140,12 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 - Add Unlist button to all-users page so that admin can unlist cars of any user
 - Add Bcrypt Password Encoder to encode passwords of all users
  - used for reference: https://stackoverflow.com/questions/55548290/using-bcrypt-in-spring
+- Updated passwords of all current users to be encoded in BCrypt with following code:
+    ```userService.getAllUsers().stream().forEach(user -> {
+				user.setPassword(passwordEncoder.encode(user.getPassword()));
+				userService.saveUser(user);
+				}
+			);```
 
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)
