@@ -136,6 +136,11 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 - add info icon in login page that lets you know to login as admin to have access to users
 - Deploy V4 of Car Sale Application to GCP
 
+### 12/16/2023
+- Add Unlist button to all-users page so that admin can unlist cars of any user
+- Add Bcrypt Password Encoder to encode passwords of all users
+ - used for reference: https://stackoverflow.com/questions/55548290/using-bcrypt-in-spring
+
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)
 
