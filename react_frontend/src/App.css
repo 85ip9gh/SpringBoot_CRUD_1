@@ -226,12 +226,12 @@ select:focus{
 }
 
 .card:hover .card-flex{
-  border: 2px solid rgba(241,156,111,255) ;
+  border: 1px solid rgba(241,156,111,255) ;
   border-top: none; 
 }
 
 .card:hover .img-box{
-  border: 2px solid rgba(241,156,111,255) ;
+  border: 1px solid rgba(241,156,111,255) ;
   border-bottom: none; 
 }
 
@@ -240,7 +240,7 @@ select:focus{
   width: 20rem; 
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
-  border: 2px solid rgba(0,52,102,255);
+  border: 1px solid rgba(0,52,102,255);
   border-top: none; 
 }
 
@@ -296,20 +296,20 @@ select:focus{
   background-color: rgba(0,52,102,255);
   color: rgba(241,156,111,255);
   transition: background 0.2s ease-in-out;
-  border: 2px solid rgba(0,52,102,255);
+  border: 1px solid rgba(0,52,102,255);
 }
 
 .btn:hover{
   cursor: pointer;
-  border: 2px solid rgba(241,156,111,255);
+  border: 1px solid rgba(241,156,111,255);
 }
 
 .market-btn:hover{
   cursor: pointer;
-  border-top: 2px solid rgba(241,156,111,255);
-  border-left: 2px solid rgba(241,156,111,255);
-  border-right: 2px solid rgba(0,52,102,255);
-  border-bottom: 2px solid rgba(0,52,102,255);
+  border-top: 1px solid rgba(241,156,111,255);
+  border-left: 1px solid rgba(241,156,111,255);
+  border-right: 1px solid rgba(0,52,102,255);
+  border-bottom: 1px solid rgba(0,52,102,255);
 }
 
 .header-btn{
@@ -376,7 +376,7 @@ select:focus{
 .img-box{
   width: 20rem;
   height: 10rem;
-  border: 2px solid rgba(0,52,102,255);
+  border: 1px solid rgba(0,52,102,255);
   border-bottom: none;
 }
 
@@ -560,7 +560,7 @@ img{
   width: 25rem;
   height: 3rem;
   font-weight: bold;
-  border: 2px solid black;
+  border: 1px solid black;
   padding: 0rem 0.2rem;
   padding-top: 1rem;
 }
@@ -585,7 +585,7 @@ img{
 
 .market-money{
   background-color: rgb(76, 166, 196);
-  border: 2px solid black;
+  border: 1px solid black;
   padding: 2rem;
   position: absolute;
   top: 0%;
@@ -652,7 +652,6 @@ img{
 .market-card-price,
 .my-cars-price{
   text-align: center;
-  font-weight: bold;
   font-size: 1.5rem;
 }
 
@@ -773,7 +772,7 @@ img{
 .container-home-2-card{
   margin: 2rem;
   background-color: white;
-  border: 2px solid rgb(54, 106, 152);
+  border: 1px solid rgb(54, 106, 152);
   padding: 1.5rem;
   border-radius: 1rem;
   height: auto;
@@ -842,7 +841,7 @@ img{
   border-bottom-right-radius: 1rem;
   background-color: rgba(0,52,102,255);
   color: white;
-  border: 2px solid rgba(241,156,111,255);
+  border: 1px solid rgba(241,156,111,255);
   border-top: none;
   transition: background 0.2s ease-in-out;
 }
@@ -867,18 +866,18 @@ img{
 }
 
 .container-home-3-car-card .img-box{
-  border: 2px solid rgba(0,52,102,255);
+  border: 1px solid rgba(0,52,102,255);
   border-bottom: none;
 }
 
 .container-home-3-car-card:hover .img-box{
-  border: 2px solid rgba(241,156,111,255);
+  border: 1px solid rgba(241,156,111,255);
   border-bottom: none;
   transition: background 0.2s ease-in-out;
 }
 
 .container-home-3-car-card .card-flex{
-  border: 2px solid rgba(0,52,102,255);
+  border: 1px solid rgba(0,52,102,255);
   border-top: none;
 }
 
