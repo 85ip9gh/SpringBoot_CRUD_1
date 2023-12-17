@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -39,6 +40,9 @@ public class CarSaleController {
 	@Autowired
 	private UserService userService;
 	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+	
 	private static final Logger LOG = LoggerFactory.getLogger(CarSaleController.class);
 	
 	private final TokenService tokenService;
@@ -52,7 +56,14 @@ public class CarSaleController {
 		return args ->{
 			User sam = userService.saveUser(new User());
 			System.out.println(sam);
-			System.out.println(carService.getAllCars().toString());
+			
+			userService.getAllUsers().stream().forEach(user -> {
+				user.setPassword(passwordEncoder.encode(user.getPassword()));
+				userService.saveUser(user);
+				}
+			);
+			
+			userService.getAllUsers().stream().forEach(user -> System.out.println(user.getPassword()));
 		};
 	}
 	
@@ -94,12 +105,16 @@ public class CarSaleController {
 	
 	@PostMapping("/addUser")
 	public ResponseEntity<User> addUser(@RequestBody User user) {
-		User addedUser = userService.saveUser(user);										
 		
+		
+		User newUser = new User(user.getUsername(), passwordEncoder.encode(user.getPassword()), user.getRoles(), user.getMoney());
+		
+		
+		User addedUser = userService.saveUser(newUser);										
+
 		if(addedUser == null) {
 			return new ResponseEntity<User>(addedUser,HttpStatus.CONFLICT);
 		}
-		
 		return new ResponseEntity<User>(addedUser,HttpStatus.CREATED);
 	}
 	

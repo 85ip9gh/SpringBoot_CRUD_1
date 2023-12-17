@@ -51,9 +51,9 @@ public class SecurityConfig{
 	private UserService userService;
 	
 	@Bean
-	  PasswordEncoder passwordEncoder() {
-		  //return new BCryptPasswordEncoder();
-		  return NoOpPasswordEncoder.getInstance();
+	PasswordEncoder passwordEncoder() {
+		 return new BCryptPasswordEncoder();
+		  //return NoOpPasswordEncoder.getInstance();
 	  }
 	
 	@Bean
