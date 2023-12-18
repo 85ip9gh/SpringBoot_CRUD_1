@@ -155,6 +155,8 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 
 ### 12/18/2023
  - Deploy V5 of website to GCP
+ - Able to get https working on localhost with ssl certificate using mkcert but couldn't do the same for the gcp server
+  - used this for reference: https://www.youtube.com/watch?v=-Sr1LggZbf0
 
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)
