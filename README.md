@@ -26,23 +26,24 @@ http://34.148.248.82:3000/
 
 # Future Features to be Added
 - Change password encoder in spring boot api from NoOpPasswordEncoder to BCryptPasswordEncoder and figure out how to implement this given that all user details are stored in mysql database. Need to figure out where and how to decode the password for Spring Security to authenticate and authorize the user.
-    - fixed on 12/16/2023, all users' passwords now encoded with BCryptPassword encoder
+    - **fixed on 12/16/2023, all users' passwords now encoded with BCryptPassword encoder**
 
 - Change login page from basic to form login in spring boot so that the user doesn't have access to their information after logging in and logging out in the same session. For example, the user can login, logout, then type in a random username/password and still be granted access to their information based on their first login. 
-    - fixed on 10/22/2023, kept httpBasic but logout button works now
+    - **fixed on 10/22/2023, kept httpBasic but logout button works now**
 
 - Add JWT and/or OAuth Authorization for extra security in spring boot.
-    - fixed on 10/22/2023, added JWT authorization
+    - **fixed on 10/22/2023, added JWT authorization**
 - Convert the hex color value in the "update-car" page on front-end to show color names using the color hex values stored in the database. Use hex color code to tint the image of car to add individuality.
-    - fixed on 10/28/2023, color in card now has square next to it with color(implementing tint on an image seems complicated for what would ultimately be an ugly feature)
+    - **fixed on 10/28/2023, color in card now has square next to it with color(implementing tint on an image seems complicated for what would ultimately be an ugly feature)**
 
 - Add ADMIN users and give them ADMIN priviledges to see what cars all users have
-    - fixed on 10/31/2023
+    - **fixed on 10/31/2023**
 - Use CSS to make website presentable
     - incremental changes with each update
 - Add money system to add value to cars and simulate real-life car-sale website.
+    - **fixed on 11/26/2023**
 
-# General Problems - fixed on 10/28/2023, improved site styling
+# General Problems - **fixed on 10/28/2023, improved site styling
 - Header too tall, needs to be shorter 
 - Make Header buttons smaller
 - Need Logo or Website name on top left
