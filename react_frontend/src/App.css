@@ -55,14 +55,14 @@
 .header-profile{
   min-width: 4rem;
   min-height: 4rem;
-  width: 40rem;
+  width: 100%;
   height: 4rem;
 
   display: flex;
 }
 
 .header-company-name{
-  width: 20rem;
+  width: 100%;
   color: rgba(241,156,111,255);
   align-self: center;
   margin-left: 0.5rem;
