@@ -9,6 +9,7 @@ import mitsubishi from '../images/mitsubishi.jpg';
 import BMW from '../images/BMW.jpg';
 import carData from './data/homeCarsCarousel.json';
 import carReviews from './data/homeCarReviews.json';
+ 
 
 export default function HomeComponent() {
     console.log(carData);
