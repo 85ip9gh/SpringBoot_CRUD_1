@@ -2,9 +2,12 @@
 CarSale app lets you buy cars from other users and sell your own cars!
 
 # Link to Site
-http://34.148.248.82:3000/
-
+~~http://34.148.248.82:3000~~
 - hosted on GCP(Google Cloud Platform) using e2-medium machine vm instance
+
+http://40.76.224.112:3000/
+- hosted on Azure b2 vm instance because free trial for GCP ended
+- 01/22/2024
 
 ## Architecture:
 - React as front-end
@@ -154,9 +157,13 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 - Changed JWT token expiration time from 1hr to 10hrs in Token Service Class. Might implement token that refreshes later.
 
 ### 12/18/2023
- - Deploy V5 of website to GCP
- - Able to get https working on localhost with ssl certificate using mkcert but couldn't do the same for the gcp server
-  - used this for reference: https://www.youtube.com/watch?v=-Sr1LggZbf0
+- Deploy V5 of website to GCP
+    - Able to get https working on localhost with ssl certificate using mkcert but couldn't do the same for the gcp server
+    - used this for reference: https://www.youtube.com/watch?v=-Sr1LggZbf0
+
+### 01/22/2024
+- Deploy website to Azure
+
 
 # Initial Sketches:
 ![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)

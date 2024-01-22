@@ -1,0 +1,40 @@
+version: '3.7'
+   
+services:
+    frontend:
+      image: 85ip9gh/car_sale_application:frontend-v24
+      volumes:
+        - ./:/usr/src/app/
+        - /usr/src/app/node_modules
+      ports:
+      - 3000:3000
+      command: npm start
+      networks:
+      - springapimysql-net
+    api:
+      image: 85ip9gh/car_sale_application:backend-v6
+      restart: always
+      ports:
+        - 8080:8080
+      networks:
+        - springapimysql-net
+      depends_on:
+        - mysqldb
+      volumes:
+        - .m2:/root/.m2
+    mysqldb:
+      image: mysql:latest
+      restart: unless-stopped
+      environment:
+        MYSQL_DATABASE: pesanth
+        MYSQL_PASSWORD: man
+        MYSQL_ROOT_PASSWORD: man
+      ports:
+        - 3306:3306
+      volumes:
+        - .db:/var/lib/mysql
+      networks:
+        - springapimysql-net
+
+networks:
+  springapimysql-net:
