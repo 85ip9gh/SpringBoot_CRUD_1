@@ -55,6 +55,20 @@ http://40.76.224.112:3000/
 - Make elements mobile friendly (Especially '/home' and '/my-cars' pages)
 - Buttons and image of car too big in cards. The information can look better and be better arranged.
 
+# Initial Sketches:
+![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)
+
+# Website Versions:
+
+### V2
+![Website V2 of Car Sale Application Website](./images/Website_V2.jpg)
+
+### V3 Login Page - 11/15/2023
+![Website V3 of Car Sale Application Website, login page, not deployed to GCP](./images/Website_V3_login.jpg)
+
+### V4 Home Page - 11/26/2023
+![Website V4 of Car Sale Application Website, home page, deployed to GCP](./images/Website_V4_home.jpg)
+
 # Updates
 
 ### 10/15/2023
@@ -163,18 +177,3 @@ I only found out about this after accessing the GCP vm react app on firefox and 
 
 ### 01/22/2024
 - Deploy website to Azure
-
-
-# Initial Sketches:
-![Sketches for Car Sale Website](./images/CRUD_1_Sketches.png?)
-
-# Website Versions:
-
-### V2
-![Website V2 of Car Sale Application Website](./images/Website_V2.jpg)
-
-### V3 Login Page - 11/15/2023
-![Website V3 of Car Sale Application Website, login page, not deployed to GCP](./images/Website_V3_login.jpg)
-
-### V4 Home Page - 11/26/2023
-![Website V4 of Car Sale Application Website, home page, deployed to GCP](./images/Website_V4_home.jpg)
