@@ -27,75 +27,82 @@ import crud_1.carSale.service.CarService;
 import crud_1.carSale.service.TokenService;
 import crud_1.carSale.service.UserService;
 
-
-
-//Controller which takes in http requests from the front-end application. 
-//Makes use of service classes for each entity to perform necessary actions as per each request.
+/**
+ * Car controller class for the car sale application that delegates tasks to the
+ * service layer depending on the requests received from the user.
+ * 
+ * @author Pesanth Janaseth Rangaswamy Anitha
+ */
 @RestController
 public class CarSaleController {
 
 	@Autowired
 	private CarService carService;
-	
+
 	@Autowired
 	private UserService userService;
-	
+
 	@Autowired
 	private PasswordEncoder passwordEncoder;
-	
+
 	/**
 	 * Logger for the CarSaleController class.
-     */
+	 */
 	private static final Logger LOG = LoggerFactory.getLogger(CarSaleController.class);
-	
+
 	/**
 	 * TokenService to generate jwt token for user.
 	 */
 	private final TokenService tokenService;
-	
+
 	/**
-	 * Constructor for CarSaleController class.
+	 * Constructor for CarSaleController class. When the CarSaleController class is
+	 * instantiated, the TokenService is injected into the class.
 	 * 
 	 * @param tokenService
 	 */
 	public CarSaleController(TokenService tokenService) {
 		this.tokenService = tokenService;
 	}
-	
+
 	/**
-	 * CommandLineRunner to save users to the database.
+	 * CommandLineRunner to save users to the database. This is useful because the 2
+	 * crucial users, sam and admin, are saved to the database when the application
+	 * starts.
 	 * 
 	 * @return CommandLineRunner
 	 */
 	@Bean
 	CommandLineRunner commandLineRunner() {
-		return args ->{
+		return args -> {
 			User sam = userService.saveUser(new User("sam", passwordEncoder.encode("man"), "ROLE_USER", 1000000));
 			User admin = userService.saveUser(new User("admin", passwordEncoder.encode("man"), "ROLE_ADMIN", 1000000));
 			System.out.println(sam);
 		};
 	}
-	
+
 	/**
-	 * Method to generate jwt token for user.
+	 * Method to generate jwt token for user. The token service is called to
+	 * generate a token based on the authentication object received.
 	 * 
-	 * @param authentication
-	 * @return jwt token
+	 * @param authentication for the user
+	 * @return jwt token string
 	 */
 	@GetMapping("/jwt-token")
-	public String jwtToken(Authentication authentication){
+	public String jwtToken(Authentication authentication) {
 		LOG.error("USER {} IS PRESENT", authentication.getName());
-		LOG.debug("user {} asking for jwt token",authentication.getName());
+		LOG.debug("user {} asking for jwt token", authentication.getName());
 		String token = tokenService.generateToken(authentication);
 		LOG.debug("Token given to user: {}", token);
 		return token;
 	}
-	
+
 	/**
-	 * Method to get user roles.
+	 * Method to get user roles. This is used to check if the user is an admin or
+	 * not. If so, then they'll have access to all the other users' details.
 	 * 
 	 * @param principal
-	 * @return user roles
+	 * @return string containing the user's roles
 	 */
 	@GetMapping("/basic-auth")
 	public String basicAuthentication(Principal principal) {
@@ -103,25 +110,27 @@ public class CarSaleController {
 	}
 
 	/**
-	 * Method to get all cars.
+	 * Method to get all cars via the car service.
 	 * 
-	 * @return list of cars
+	 * @return list of all cars present in the car table
 	 */
 	@GetMapping("/cars")
-	public List<Car> getAllCars(){
+	public List<Car> getAllCars() {
 		return carService.getAllCars();
 	}
-	
+
 	/**
-	 * Method to get all users.
+	 * Method to get all users from the user table. The user service is called to
+	 * filter out the admin user from the list of users so that the admin user
+	 * cannot be deleted/be seen by other admin users in the website.
 	 * 
 	 * @return list of users
 	 */
 	@GetMapping("/users")
-	public List<User> getAllUsers(){
+	public List<User> getAllUsers() {
 		return userService.getAllUsers().stream().filter(user -> !user.getName().equals("admin")).toList();
 	}
-	
+
 	/**
 	 * Method to get user by username.
 	 * 
@@ -129,12 +138,13 @@ public class CarSaleController {
 	 * @return user
 	 */
 	@GetMapping("/users/{username}/money")
-	public long getUserMoney(@PathVariable String username){
+	public long getUserMoney(@PathVariable String username) {
 		return userService.getUserMoney(username);
 	}
-	
+
 	/**
 	 * Method to post car to the database.
+	 * 
 	 * @param car
 	 * @param principal
 	 * @return car
@@ -142,10 +152,10 @@ public class CarSaleController {
 	@PostMapping("/addCar")
 	public Car addCar(@RequestBody Car car, Principal principal) {
 		car.setUser(userService.getUserByName(principal.getName()).get());
-		
+
 		return carService.saveCar(car);
 	}
-	
+
 	/**
 	 * Method to post user to the database.
 	 * 
@@ -154,19 +164,18 @@ public class CarSaleController {
 	 */
 	@PostMapping("/addUser")
 	public ResponseEntity<User> addUser(@RequestBody User user) {
-		
-		
-		User newUser = new User(user.getUsername(), passwordEncoder.encode(user.getPassword()), user.getRoles(), user.getMoney());
-		
-		User addedUser = userService.saveUser(newUser);										
 
-		if(addedUser == null) {
-			return new ResponseEntity<User>(addedUser,HttpStatus.CONFLICT);
+		User newUser = new User(user.getUsername(), passwordEncoder.encode(user.getPassword()), user.getRoles(),
+				user.getMoney());
+
+		User addedUser = userService.saveUser(newUser);
+
+		if (addedUser == null) {
+			return new ResponseEntity<User>(addedUser, HttpStatus.CONFLICT);
 		}
-		return new ResponseEntity<User>(addedUser,HttpStatus.CREATED);
+		return new ResponseEntity<User>(addedUser, HttpStatus.CREATED);
 	}
-	
-	
+
 	/**
 	 * Method to post list of cars to the database.
 	 * 
@@ -185,10 +194,10 @@ public class CarSaleController {
 	 * @return list of cars
 	 */
 	@GetMapping("/users/cars")
-	public List<Car> getMyCars(Principal principal){
+	public List<Car> getMyCars(Principal principal) {
 		return userService.getUserCars(principal.getName());
 	}
-	
+
 	/**
 	 * Method to get car by id
 	 * 
@@ -199,9 +208,10 @@ public class CarSaleController {
 	public Car getCarById(@PathVariable int id) {
 		return carService.getCarById(id);
 	}
-	
+
 	/**
-	 * Method to get car by brand. 
+	 * Method to get car by brand.
+	 * 
 	 * @param brand
 	 * @return car
 	 */
@@ -209,7 +219,7 @@ public class CarSaleController {
 	public Car getCarByBrand(@PathVariable String brand) {
 		return carService.getCarByBrand(brand);
 	}
-	
+
 	/**
 	 * Method to get car by color.
 	 * 
@@ -220,7 +230,7 @@ public class CarSaleController {
 	public Car getCarByColor(@PathVariable String color) {
 		return carService.getCarByColor(color);
 	}
-	
+
 	/**
 	 * Method to get car by type.
 	 * 
@@ -231,7 +241,7 @@ public class CarSaleController {
 	public Car getCarByType(@PathVariable String type) {
 		return carService.getCarByType(type);
 	}
-	
+
 	/**
 	 * Method to get car by age.
 	 * 
@@ -242,19 +252,19 @@ public class CarSaleController {
 	public Car getCarByAge(@PathVariable int age) {
 		return carService.getCarByAge(age);
 	}
-	
+
 	/**
-     * Method to get car by price.
-     * 
-     * @param car's ID
-     * @param principal(i.e. current user)
-     * @return car
-     */
+	 * Method to get car by price.
+	 * 
+	 * @param car's          ID
+	 * @param principal(i.e. current user)
+	 * @return car
+	 */
 	@PutMapping("/cars/{carID}/buy")
 	public Car buyCar(@PathVariable int carID, Principal principal) {
 		return carService.changeCarUser(userService.getUserByName(principal.getName()).get(), carID);
 	}
-	
+
 	/**
 	 * Method to add funds to user's account.
 	 * 
@@ -263,10 +273,10 @@ public class CarSaleController {
 	 * @return money added to user
 	 */
 	@PatchMapping("/users/add-money/{deposit}")
-	public long addMoneyToUser(@PathVariable long deposit, Principal principal){
+	public long addMoneyToUser(@PathVariable long deposit, Principal principal) {
 		return userService.addMoney(principal.getName(), deposit);
 	}
-	
+
 	/**
 	 * Method to update car details.
 	 * 
@@ -277,7 +287,7 @@ public class CarSaleController {
 	public Car updateCar(@RequestBody Car car) {
 		return carService.updateCar(car);
 	}
-	
+
 	/**
 	 * Method to sell car
 	 * 
@@ -287,7 +297,7 @@ public class CarSaleController {
 	public void sellCar(@PathVariable int id) {
 		carService.updateSellingCar(id, true);
 	}
-	
+
 	/**
 	 * Method to unlist car from market
 	 * 
@@ -297,7 +307,7 @@ public class CarSaleController {
 	public void unlistCar(@PathVariable int id) {
 		carService.updateSellingCar(id, false);
 	}
-	
+
 	/**
 	 * Method to delete car from user's list
 	 * 
@@ -308,7 +318,7 @@ public class CarSaleController {
 	public String removeCarFromMyList(@PathVariable int id) {
 		return carService.deleteCar(id);
 	}
-	
+
 	/**
 	 * method to unlist car from user's list and change car's user
 	 * 
@@ -320,8 +330,7 @@ public class CarSaleController {
 	public Car unlistCar(@PathVariable String username, @PathVariable int id) {
 		return carService.changeCarUser(userService.getUserByName(username).get(), id);
 	}
-	
-	
+
 	/**
 	 * Method to delete user from the database.
 	 * 
@@ -331,13 +340,13 @@ public class CarSaleController {
 	@DeleteMapping("/users/delete/{id}")
 	public ResponseEntity<User> deleteUser(@PathVariable int id) {
 		User deletedUser = userService.getUserById(id);
-		
-		if(deletedUser.getMyCars().isEmpty() == false) {			
+
+		if (deletedUser.getMyCars().isEmpty() == false) {
 			deletedUser.getMyCars().forEach(car -> carService.deleteCar(car.getId()));
 		}
-		
+
 		userService.deleteUserById(id);
-		
-		return new ResponseEntity<User>(deletedUser,HttpStatus.OK);
+
+		return new ResponseEntity<User>(deletedUser, HttpStatus.OK);
 	}
 }
