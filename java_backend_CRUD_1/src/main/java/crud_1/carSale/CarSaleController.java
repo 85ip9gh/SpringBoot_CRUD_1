@@ -43,14 +43,30 @@ public class CarSaleController {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
+	/**
+	 * Logger for the CarSaleController class.
+     */
 	private static final Logger LOG = LoggerFactory.getLogger(CarSaleController.class);
 	
+	/**
+	 * TokenService to generate jwt token for user.
+	 */
 	private final TokenService tokenService;
 	
+	/**
+	 * Constructor for CarSaleController class.
+	 * 
+	 * @param tokenService
+	 */
 	public CarSaleController(TokenService tokenService) {
 		this.tokenService = tokenService;
 	}
 	
+	/**
+	 * CommandLineRunner to save users to the database.
+	 * 
+	 * @return CommandLineRunner
+	 */
 	@Bean
 	CommandLineRunner commandLineRunner() {
 		return args ->{
@@ -60,6 +76,12 @@ public class CarSaleController {
 		};
 	}
 	
+	/**
+	 * Method to generate jwt token for user.
+	 * 
+	 * @param authentication
+	 * @return jwt token
+	 */
 	@GetMapping("/jwt-token")
 	public String jwtToken(Authentication authentication){
 		LOG.error("USER {} IS PRESENT", authentication.getName());
@@ -69,26 +91,54 @@ public class CarSaleController {
 		return token;
 	}
 	
+	/**
+	 * Method to get user roles.
+	 * 
+	 * @param principal
+	 * @return user roles
+	 */
 	@GetMapping("/basic-auth")
 	public String basicAuthentication(Principal principal) {
 		return userService.getUserByName(principal.getName()).get().getRoles();
 	}
 
+	/**
+	 * Method to get all cars.
+	 * 
+	 * @return list of cars
+	 */
 	@GetMapping("/cars")
 	public List<Car> getAllCars(){
 		return carService.getAllCars();
 	}
 	
+	/**
+	 * Method to get all users.
+	 * 
+	 * @return list of users
+	 */
 	@GetMapping("/users")
 	public List<User> getAllUsers(){
 		return userService.getAllUsers().stream().filter(user -> !user.getName().equals("admin")).toList();
 	}
 	
+	/**
+	 * Method to get user by username.
+	 * 
+	 * @param username
+	 * @return user
+	 */
 	@GetMapping("/users/{username}/money")
 	public long getUserMoney(@PathVariable String username){
 		return userService.getUserMoney(username);
 	}
 	
+	/**
+	 * Method to post car to the database.
+	 * @param car
+	 * @param principal
+	 * @return car
+	 */
 	@PostMapping("/addCar")
 	public Car addCar(@RequestBody Car car, Principal principal) {
 		car.setUser(userService.getUserByName(principal.getName()).get());
@@ -96,6 +146,12 @@ public class CarSaleController {
 		return carService.saveCar(car);
 	}
 	
+	/**
+	 * Method to post user to the database.
+	 * 
+	 * @param user
+	 * @return user
+	 */
 	@PostMapping("/addUser")
 	public ResponseEntity<User> addUser(@RequestBody User user) {
 		
@@ -110,77 +166,168 @@ public class CarSaleController {
 		return new ResponseEntity<User>(addedUser,HttpStatus.CREATED);
 	}
 	
+	
+	/**
+	 * Method to post list of cars to the database.
+	 * 
+	 * @param carList
+	 * @return list of cars
+	 */
 	@PostMapping("/addAllCars")
 	public List<Car> addAllCar(@RequestBody List<Car> carList) {
 		return carService.addAllCars(carList);
 	}
 
-	
+	/**
+	 * Method to get current user's cars.
+	 * 
+	 * @param principal
+	 * @return list of cars
+	 */
 	@GetMapping("/users/cars")
 	public List<Car> getMyCars(Principal principal){
 		return userService.getUserCars(principal.getName());
 	}
 	
+	/**
+	 * Method to get car by id
+	 * 
+	 * @param carID
+	 * @return car
+	 */
 	@GetMapping("/cars/{id}")
 	public Car getCarById(@PathVariable int id) {
 		return carService.getCarById(id);
 	}
 	
+	/**
+	 * Method to get car by brand. 
+	 * @param brand
+	 * @return car
+	 */
 	@GetMapping("/cars/{brand}")
 	public Car getCarByBrand(@PathVariable String brand) {
 		return carService.getCarByBrand(brand);
 	}
 	
+	/**
+	 * Method to get car by color.
+	 * 
+	 * @param id
+	 * @return user
+	 */
 	@GetMapping("/cars/{color}")
 	public Car getCarByColor(@PathVariable String color) {
 		return carService.getCarByColor(color);
 	}
 	
+	/**
+	 * Method to get car by type.
+	 * 
+	 * @param type of car
+	 * @return car
+	 */
 	@GetMapping("/cars/{type}")
 	public Car getCarByType(@PathVariable String type) {
 		return carService.getCarByType(type);
 	}
 	
+	/**
+	 * Method to get car by age.
+	 * 
+	 * @param age of car
+	 * @return car
+	 */
 	@GetMapping("/cars/{age}")
 	public Car getCarByAge(@PathVariable int age) {
 		return carService.getCarByAge(age);
 	}
 	
+	/**
+     * Method to get car by price.
+     * 
+     * @param car's ID
+     * @param principal(i.e. current user)
+     * @return car
+     */
 	@PutMapping("/cars/{carID}/buy")
 	public Car buyCar(@PathVariable int carID, Principal principal) {
 		return carService.changeCarUser(userService.getUserByName(principal.getName()).get(), carID);
 	}
 	
+	/**
+	 * Method to add funds to user's account.
+	 * 
+	 * @param deposit
+	 * @param principal
+	 * @return money added to user
+	 */
 	@PatchMapping("/users/add-money/{deposit}")
 	public long addMoneyToUser(@PathVariable long deposit, Principal principal){
 		return userService.addMoney(principal.getName(), deposit);
 	}
 	
+	/**
+	 * Method to update car details.
+	 * 
+	 * @param car
+	 * @return updated car
+	 */
 	@PutMapping("/updateCar")
 	public Car updateCar(@RequestBody Car car) {
 		return carService.updateCar(car);
 	}
 	
+	/**
+	 * Method to sell car
+	 * 
+	 * @param car ID
+	 */
 	@PutMapping("/cars/{id}/selling")
 	public void sellCar(@PathVariable int id) {
 		carService.updateSellingCar(id, true);
 	}
 	
+	/**
+	 * Method to unlist car from market
+	 * 
+	 * @param car ID
+	 */
 	@PutMapping("/cars/{id}/unlist")
 	public void unlistCar(@PathVariable int id) {
 		carService.updateSellingCar(id, false);
 	}
 	
+	/**
+	 * Method to delete car from user's list
+	 * 
+	 * @param car ID
+	 * @return message from carService
+	 */
 	@DeleteMapping("/deleteCar/{id}")
 	public String removeCarFromMyList(@PathVariable int id) {
 		return carService.deleteCar(id);
 	}
 	
+	/**
+	 * method to unlist car from user's list and change car's user
+	 * 
+	 * @param username
+	 * @param id
+	 * @return updated car
+	 */
 	@PutMapping("/cars/unlist/users/{username}/cars/{id}")
 	public Car unlistCar(@PathVariable String username, @PathVariable int id) {
 		return carService.changeCarUser(userService.getUserByName(username).get(), id);
 	}
 	
+	
+	/**
+	 * Method to delete user from the database.
+	 * 
+	 * @param id
+	 * @return deleted user
+	 */
 	@DeleteMapping("/users/delete/{id}")
 	public ResponseEntity<User> deleteUser(@PathVariable int id) {
 		User deletedUser = userService.getUserById(id);
