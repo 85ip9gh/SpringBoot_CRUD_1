@@ -14,7 +14,7 @@ CarSale app lets you buy cars from other users and sell your own cars!
 
 ~~http://carsaleapp.net~~
 - also have domain name as an alternative, but some browsers perform an infinite redirect to https, so better to use the ip address url above as it works for all browsers.
-- will get https domain name eventually if I want to spend money on SSL certificate 
+- will get https domain name eventually because I found out a way to get a free SSL certificate via "Let's Encrypt" 
 
 ## Architecture:
 - React as front-end
