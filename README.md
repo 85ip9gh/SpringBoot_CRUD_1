@@ -12,7 +12,7 @@ CarSale app lets you buy cars from other users and sell your own cars!
 - LINK DOES NOT WORK (ran out of student credits
 - Will have the site up and running again eventually
 
-http://carsaleapp.net 
+~~http://carsaleapp.net~~
 - also have domain name as an alternative, but some browsers perform an infinite redirect to https, so better to use the ip address url above as it works for all browsers.
 - will get https domain name eventually if I want to spend money on SSL certificate 
 
