@@ -9,7 +9,7 @@ CarSale app lets you buy cars from other users and sell your own cars!
 ~~http://40.76.224.112:3000/~~
 - hosted on Azure b2 vm instance because free trial for GCP ended
 - 2024/01/22
-- LINK DOES NOT WORK (ran out of student credits
+- LINK DOES NOT WORK (ran out of student credits)
 - Will have the site up and running again eventually
 
 ~~http://carsaleapp.net~~
